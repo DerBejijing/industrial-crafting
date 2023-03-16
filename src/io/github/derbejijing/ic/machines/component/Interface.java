@@ -2,13 +2,14 @@ package io.github.derbejijing.ic.machines.component;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class Interface extends MultiblockComponent {
 
-    public Interface(MultiblockMachine master, Material material, Location location) {
-        super(master, material, location);
+    public Interface(MultiblockMachine master, Vector location) {
+        super(master, Material.CHEST, location);
     }
 
     @Override

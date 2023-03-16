@@ -1,14 +1,14 @@
 package io.github.derbejijing.ic.machines.component;
 
-import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class InputHatch extends MultiblockComponent {
 
-    public InputHatch(MultiblockMachine master, Material material, Location location) {
-        super(master, material, location);
+    public InputHatch(MultiblockMachine master, Vector location) {
+        super(master, Material.DROPPER, location);
     }
 
     @Override
