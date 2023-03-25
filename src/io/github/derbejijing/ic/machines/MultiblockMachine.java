@@ -2,6 +2,7 @@ package io.github.derbejijing.ic.machines;
 
 import java.util.ArrayList;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
 import io.github.derbejijing.ic.machines.component.MultiblockComponent;
@@ -17,42 +18,24 @@ public abstract class MultiblockMachine {
     public MultiblockMachine(Location base_location, int orientation) {
         this.base_location = base_location;
         this.orientation = orientation;
+        this.state = MultiblockState.INVALID;
+        this.power = 0;
+
+        this.components = new ArrayList<MultiblockComponent>();
         this.add_components();
-    }
-
-
-    public static MultiblockMachine place_old(Location base_location, int orientation) {
-        try {
-            MultiblockMachine m = MultiblockMachine.class.getConstructor(Location.class, Integer.class).newInstance(base_location, orientation);
-
-            boolean valid = true;
-
-            for(MultiblockComponent mc : m.components) {
-                mc.rotate(orientation);
-                if(!mc.get_material().equals(base_location.add(mc.get_location()).getBlock().getType())) valid = false;
-            }
-
-            if(valid) {
-                m.init_and_build();
-                return m;
-            }
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
 
     public static <T extends MultiblockMachine> T place(Location base_location, int orientation, Class<T> clazz) {
         try {
-            T m = clazz.getConstructor(Location.class, Integer.class).newInstance(base_location, orientation);
+            T m = clazz.getConstructor(Location.class, int.class).newInstance(base_location, orientation);
 
             boolean valid = true;
 
             for(MultiblockComponent mc : m.components) {
                 mc.rotate(orientation);
                 if(!mc.get_material().equals(base_location.add(mc.get_location()).getBlock().getType())) valid = false;
+                base_location.subtract(mc.get_location());
             }
 
             if(valid) {
@@ -63,6 +46,7 @@ public abstract class MultiblockMachine {
         } catch(Exception e) {
             e.printStackTrace();
         }
+        Bukkit.getLogger().info("invalid blocks");
         return null;
     }
 
@@ -89,6 +73,12 @@ public abstract class MultiblockMachine {
 
     public void init_and_build() {
         this.on_place();
+        this.state = MultiblockState.IDLE;
+    }
+
+
+    public MultiblockState get_state() {
+        return this.state;
     }
 
 

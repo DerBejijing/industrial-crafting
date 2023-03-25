@@ -1,7 +1,6 @@
 package io.github.derbejijing.ic.machines.multiblock;
 
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;

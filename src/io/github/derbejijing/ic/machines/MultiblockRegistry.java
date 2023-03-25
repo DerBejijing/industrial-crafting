@@ -9,7 +9,7 @@ public class MultiblockRegistry {
     }
 
     public enum RegistryEnum implements Registry<MultiblockMachine> {
-        CHEMISTRY_WORKBENCH(0, ChemistryWorkbench.class);
+        CHEMISTRY_WORKBENCH(1, ChemistryWorkbench.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;

@@ -1,6 +1,5 @@
 package io.github.derbejijing.ic.machines.component;
 
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.util.Vector;
 
