@@ -33,8 +33,19 @@ public abstract class MultiblockMachine {
             boolean valid = true;
 
             for(MultiblockComponent mc : m.components) {
+                //mc.rotate(orientation);
+                //if(!mc.get_material().equals(base_location.add(mc.get_location()).getBlock().getType())) valid = false;
+                //base_location.subtract(mc.get_location());
                 mc.rotate(orientation);
-                if(!mc.get_material().equals(base_location.add(mc.get_location()).getBlock().getType())) valid = false;
+                base_location.add(mc.get_location());
+                Bukkit.getLogger().info("at [" + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ() + "]: " + base_location.getBlock().getType());
+                Bukkit.getLogger().info("at [" + (int)mc.get_location().getX() + " " + (int)mc.get_location().getY() + " " + (int)mc.get_location().getZ() + "]: " + mc.get_material());
+
+                if(!base_location.getBlock().getType().equals(mc.get_material())) {
+                    Bukkit.getLogger().info("invalid HERE");
+                    valid = false;
+                }
+
                 base_location.subtract(mc.get_location());
             }
 

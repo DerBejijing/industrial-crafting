@@ -18,7 +18,7 @@ public abstract class MultiblockComponent {
 
 
     public void rotate(int orientation) {
-        this.location.rotateAroundZ(orientation * Math.PI / 2);
+        this.location.rotateAroundY(orientation * -1 * Math.PI / 2);
     }
 
 

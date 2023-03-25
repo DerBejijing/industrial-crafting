@@ -13,7 +13,7 @@ public class MultiblockMachineManager {
 
 
     public MultiblockMachineManager() {
-
+        this.machines = new ArrayList<MultiblockMachine>();
     }
 
 
