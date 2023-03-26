@@ -8,6 +8,7 @@ import org.bukkit.block.BlockState;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 
+import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.machines.component.MultiblockComponent;
 
 public abstract class MultiblockMachine {
@@ -40,19 +41,22 @@ public abstract class MultiblockMachine {
                 //if(!mc.get_material().equals(base_location.add(mc.get_location()).getBlock().getType())) valid = false;
                 //base_location.subtract(mc.get_location());
                 mc.rotate(orientation);
-                base_location.add(mc.get_location());
-                Bukkit.getLogger().info("at [" + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ() + "]: " + base_location.getBlock().getType());
-                Bukkit.getLogger().info("at [" + (int)mc.get_location().getX() + " " + (int)mc.get_location().getY() + " " + (int)mc.get_location().getZ() + "]: " + mc.get_material());
+                //base_location.add(mc.get_location());
+                //Bukkit.getLogger().info("at [" + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ() + "]: " + base_location.getBlock().getType());
+                //Bukkit.getLogger().info("at [" + (int)mc.get_location().getX() + " " + (int)mc.get_location().getY() + " " + (int)mc.get_location().getZ() + "]: " + mc.get_material());
 
-                if(!base_location.getBlock().getType().equals(mc.get_material())) {
+                if(!base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) {
                     Bukkit.getLogger().info("invalid HERE");
                     valid = false;
                 }
+
+                if(Main.get_manager().location_occupied(base_location)) valid = false;
 
                 base_location.subtract(mc.get_location());
             }
 
             if(valid) {
+                // dangerous. If exceptions occur here, it gets initialized but not registered
                 m.init_and_build();
                 return m;
             }
@@ -106,10 +110,10 @@ public abstract class MultiblockMachine {
     }
 
 
-    protected Inventory access_inventory(Class<? extends MultiblockComponent> component_type) {
+    protected Inventory get_inventory(Class<? extends MultiblockComponent> component_type) {
         for(MultiblockComponent mbc : this.components) {
             if(mbc.getClass().getName() == component_type.getName()) {
-
+                Bukkit.getLogger().info("component: " + mbc.getClass().getName());
                 this.base_location.add(mbc.get_location());
                 BlockState bs = this.base_location.getBlock().getState();
 
