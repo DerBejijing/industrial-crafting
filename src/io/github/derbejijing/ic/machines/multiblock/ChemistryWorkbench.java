@@ -1,5 +1,6 @@
 package io.github.derbejijing.ic.machines.multiblock;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.util.Vector;
 
@@ -30,6 +31,7 @@ public class ChemistryWorkbench extends MultiblockMachine {
 
 
     protected void on_place() {
+        Bukkit.getLogger().info("yay");
     }
 
 

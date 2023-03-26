@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.block.BlockState;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 
 import io.github.derbejijing.ic.machines.component.MultiblockComponent;
 
@@ -100,6 +103,24 @@ public abstract class MultiblockMachine {
 
     protected void add_component(MultiblockComponent component) {
         this.components.add(component);
+    }
+
+
+    protected Inventory access_inventory(Class<? extends MultiblockComponent> component_type) {
+        for(MultiblockComponent mbc : this.components) {
+            if(mbc.getClass().getName() == component_type.getName()) {
+
+                this.base_location.add(mbc.get_location());
+                BlockState bs = this.base_location.getBlock().getState();
+
+                if(bs instanceof InventoryHolder) {
+                    InventoryHolder inventory_holder = (InventoryHolder) bs;
+                    return inventory_holder.getInventory();
+                }
+            }
+        }
+
+        return null;
     }
 
 

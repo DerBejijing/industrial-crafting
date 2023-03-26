@@ -17,6 +17,11 @@ public class MultiblockMachineManager {
     }
 
 
+    public void tick() {
+        for(MultiblockMachine m : this.machines) m.tick();
+    }
+
+
     public void place(Player player, Location location, int orientation, int id) {
         Bukkit.getLogger().info("attempting to place [" + id + "] at [" + location.getX() + " " + location.getY() + " " + location.getZ() + "] [" + orientation + "]");
         this.register(MultiblockMachine.place(location, orientation, RegistryEnum.get_by_id(id)));

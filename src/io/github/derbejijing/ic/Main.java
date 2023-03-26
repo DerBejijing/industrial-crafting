@@ -1,6 +1,7 @@
 package io.github.derbejijing.ic;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import io.github.derbejijing.ic.event.PlayerListener;
 import io.github.derbejijing.ic.machines.MultiblockMachineManager;
@@ -16,6 +17,13 @@ public class Main extends JavaPlugin {
         manager = new MultiblockMachineManager();
 
         this.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
+        
+        new BukkitRunnable() {       
+            @Override
+            public void run() {
+                manager.tick();
+            }
+        }.runTaskTimer(this, 0, 20);
     }
 
 
