@@ -1,20 +1,23 @@
 package io.github.derbejijing.ic.machines;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import io.github.derbejijing.ic.machines.MultiblockRegistry.RegistryEnum;
-import io.github.derbejijing.ic.machines.component.MultiblockComponent;
 
 public class MultiblockMachineManager {
     private ArrayList<MultiblockMachine> machines;
+    private AbstractMap<Location, MultiblockMachine> occupied_locations;
 
 
     public MultiblockMachineManager() {
         this.machines = new ArrayList<MultiblockMachine>();
+        this.occupied_locations = new HashMap<Location, MultiblockMachine>();
     }
 
 
@@ -29,8 +32,26 @@ public class MultiblockMachineManager {
     }
 
 
+    public void occupy_location(MultiblockMachine machine, Location location) {
+        if(!this.location_occupied(location)) this.occupied_locations.put(location, machine);
+        else {
+            Bukkit.getLogger().severe("tried to place at occupied location : [" + location.getWorld().getName() + "] [" + location.getX() + " " + location.getY() + " " +location.getZ() + "]");
+        }
+    }
+
+
+    public void free_location(MultiblockMachine machine, Location location) {
+
+    }
+
+
     public boolean location_occupied(Location location) {
-        return false;
+        return this.location_occupied_by(location) != null;
+    }
+
+
+    public MultiblockMachine location_occupied_by(Location location) {
+        return this.occupied_locations.get(location);
     }
 
 

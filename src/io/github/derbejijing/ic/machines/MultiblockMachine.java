@@ -18,6 +18,7 @@ public abstract class MultiblockMachine {
     private int power;
 
     public ArrayList<MultiblockComponent> components;
+    public ArrayList<Location> occupied_locations;
 
     public MultiblockMachine(Location base_location, int orientation) {
         this.base_location = base_location;
@@ -37,14 +38,7 @@ public abstract class MultiblockMachine {
             boolean valid = true;
 
             for(MultiblockComponent mc : m.components) {
-                //mc.rotate(orientation);
-                //if(!mc.get_material().equals(base_location.add(mc.get_location()).getBlock().getType())) valid = false;
-                //base_location.subtract(mc.get_location());
                 mc.rotate(orientation);
-                //base_location.add(mc.get_location());
-                //Bukkit.getLogger().info("at [" + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ() + "]: " + base_location.getBlock().getType());
-                //Bukkit.getLogger().info("at [" + (int)mc.get_location().getX() + " " + (int)mc.get_location().getY() + " " + (int)mc.get_location().getZ() + "]: " + mc.get_material());
-
                 if(!base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) {
                     Bukkit.getLogger().info("invalid HERE");
                     valid = false;
@@ -56,9 +50,8 @@ public abstract class MultiblockMachine {
             }
 
             if(valid) {
-                // dangerous. If exceptions occur here, it gets initialized but not registered
-                m.init_and_build();
-                return m;
+                // should be less dangerous...
+                if(m.init_and_build()) return m;
             }
 
         } catch(Exception e) {
@@ -70,10 +63,7 @@ public abstract class MultiblockMachine {
 
 
     public void tick() {
-        if(this.check_damage()) {
-            this.change_state(MultiblockState.BROKEN);
-            this.on_destroy();
-        }
+        if(this.check_damage()) this.destroy();
         if(this.state != MultiblockState.BROKEN) this.on_tick();
     }
 
@@ -89,14 +79,49 @@ public abstract class MultiblockMachine {
     }
 
 
-    public void init_and_build() {
-        this.on_place();
-        this.state = MultiblockState.IDLE;
+    public boolean init_and_build() {
+        try {
+            this.on_place();
+            this.occupy_locations();
+            this.state = MultiblockState.IDLE;
+            return true;
+        } catch(Exception e) {
+            e.printStackTrace();
+            try {
+                this.destroy();
+            } catch(Exception ee) {
+                ee.printStackTrace();
+            }
+            return false;
+        }
     }
 
 
     public MultiblockState get_state() {
         return this.state;
+    }
+
+
+    private void destroy() {
+        this.change_state(MultiblockState.BROKEN);
+        this.free_locations();
+        this.on_destroy();
+    }
+
+
+    private void occupy_locations() {
+        for(MultiblockComponent mc : this.components) {
+            Main.get_manager().occupy_location(this, this.base_location.add(mc.get_location()));
+            this.base_location.subtract(mc.get_location());
+        }
+    }
+
+
+    private void free_locations() {
+        for(MultiblockComponent mc : this.components) {
+            Main.get_manager().free_location(this, this.base_location.add(mc.get_location()));
+            this.base_location.subtract(mc.get_location());
+        }
     }
 
 
