@@ -13,6 +13,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.derbejijing.ic.Main;
+import io.github.derbejijing.ic.machines.MultiblockRegistry;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
 
 public class PlayerListener implements Listener {
@@ -26,11 +27,14 @@ public class PlayerListener implements Listener {
             if(item.getType() != Material.STICK) return;
             if(!item.getItemMeta().hasCustomModelData()) return;
 
+            int id = item.getItemMeta().getCustomModelData();
+            if(MultiblockRegistry.RegistryEnum.get_by_id(id) == null) return;
+
             Player player = e.getPlayer();
             int rotation = (int) (int) Math.floorMod(Math.round(player.getLocation().getYaw() / 90.0), 4);
             if(rotation < 0) rotation += 4;
 
-            Main.get_manager().place(e.getPlayer(), location, rotation, item.getItemMeta().getCustomModelData());
+            Main.get_manager().place(e.getPlayer(), location, rotation, id);
         }
     }
 

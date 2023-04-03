@@ -1,9 +1,6 @@
 package io.github.derbejijing.ic.machines.multiblock;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;
@@ -33,9 +30,6 @@ public class ChemistryWorkbench extends MultiblockMachine {
 
 
     protected void on_place() {
-        Bukkit.getLogger().info("yay");
-        Inventory i = this.get_inventory(Interface.class);
-        for(ItemStack is : i.getContents()) if(is != null) Bukkit.getLogger().info("Item in chest: " + is.getType());
     }
 
 

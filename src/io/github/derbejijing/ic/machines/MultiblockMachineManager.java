@@ -1,6 +1,5 @@
 package io.github.derbejijing.ic.machines;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,7 +11,7 @@ import io.github.derbejijing.ic.machines.MultiblockRegistry.RegistryEnum;
 
 public class MultiblockMachineManager {
     private ArrayList<MultiblockMachine> machines;
-    private AbstractMap<Location, MultiblockMachine> occupied_locations;
+    private HashMap<Location, MultiblockMachine> occupied_locations;
 
 
     public MultiblockMachineManager() {
@@ -33,10 +32,7 @@ public class MultiblockMachineManager {
 
 
     public void occupy_location(MultiblockMachine machine, Location location) {
-        if(!this.location_occupied(location)) this.occupied_locations.put(location, machine);
-        else {
-            Bukkit.getLogger().severe("tried to place at occupied location : [" + location.getWorld().getName() + "] [" + location.getX() + " " + location.getY() + " " +location.getZ() + "]");
-        }
+        if(!this.location_occupied(location)) this.occupied_locations.put(location.clone(), machine);
     }
 
 
