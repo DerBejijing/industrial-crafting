@@ -7,9 +7,13 @@ import org.bukkit.Location;
 import org.bukkit.block.BlockState;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
 
 import io.github.derbejijing.ic.Main;
+import io.github.derbejijing.ic.machines.component.Interface;
+import io.github.derbejijing.ic.machines.component.InterfaceUtils;
 import io.github.derbejijing.ic.machines.component.MultiblockComponent;
+import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
 public abstract class MultiblockMachine {
     protected Location base_location;
@@ -65,14 +69,31 @@ public abstract class MultiblockMachine {
     }
 
 
-    public void change_state(MultiblockState state) {
-        this.state = state;
-        this.on_change_state();
+    public void power_increment(int power) {
+        this.power += power;
     }
 
 
-    public void power_increment(int power) {
-        this.power += power;
+    public void click_button(ItemStack button) {
+        InterfaceItem interface_item = InterfaceUtils.get_interface_item(button);
+        if(interface_item == InterfaceItem.NONE) return;
+
+        if(interface_item == InterfaceItem.STATE_RUNNING || interface_item == InterfaceItem.STATE_IDLE || interface_item == InterfaceItem.STATE_NO_POWER) {
+            if(this.state == MultiblockState.IDLE) {
+                InterfaceUtils.set_interface_item(button, InterfaceItem.STATE_RUNNING);
+                this.change_state(MultiblockState.RUNNING);
+                Bukkit.getLogger().info("now running");
+            }
+            else if(this.state == MultiblockState.RUNNING) {
+                InterfaceUtils.set_interface_item(button, InterfaceItem.STATE_IDLE);
+                this.change_state(MultiblockState.IDLE);
+                Bukkit.getLogger().info("now idle");
+            }
+            else if(this.state == MultiblockState.NO_POWER) {
+                InterfaceUtils.set_interface_item(button, InterfaceItem.STATE_NO_POWER);
+                Bukkit.getLogger().info("no power!");
+            }
+        }
     }
 
 
@@ -80,6 +101,7 @@ public abstract class MultiblockMachine {
         try {
             this.on_place();
             this.occupy_locations();
+            this.load_components();
             this.state = MultiblockState.IDLE;
             return true;
         } catch(Exception e) {
@@ -96,6 +118,22 @@ public abstract class MultiblockMachine {
 
     public MultiblockState get_state() {
         return this.state;
+    }
+
+
+    public Location get_location() {
+        return this.base_location;
+    }
+
+
+    private void load_components() {
+        for(MultiblockComponent mc : this.components) mc.place();
+    }
+
+
+    private void change_state(MultiblockState state) {
+        this.state = state;
+        this.on_change_state();
     }
 
 
@@ -136,6 +174,17 @@ public abstract class MultiblockMachine {
 
     protected void add_component(MultiblockComponent component) {
         this.components.add(component);
+    }
+
+
+    protected Interface get_interface() {
+        for(MultiblockComponent mc : this.components) if(mc instanceof Interface) return (Interface) mc;
+        return null;
+    }
+
+
+    protected void set_output(ItemStack out) {
+
     }
 
 

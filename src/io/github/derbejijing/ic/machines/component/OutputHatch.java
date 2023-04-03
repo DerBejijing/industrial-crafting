@@ -11,6 +11,13 @@ public class OutputHatch extends MultiblockComponent {
         super(master, Material.DROPPER, location);
     }
 
+
     @Override
-    public void tick() {}
+    public void on_place() {
+    }
+
+
+    @Override
+    protected void on_tick() {
+    }
 }

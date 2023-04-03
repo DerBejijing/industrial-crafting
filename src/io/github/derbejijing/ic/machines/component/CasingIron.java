@@ -11,8 +11,13 @@ public class CasingIron extends MultiblockComponent {
         super(master, Material.IRON_BLOCK, location);
     }
 
-    @Override
-    public void tick() {
-    }
     
+    @Override
+    public void on_place() {
+    }
+
+
+    @Override
+    protected void on_tick() {
+    }
 }

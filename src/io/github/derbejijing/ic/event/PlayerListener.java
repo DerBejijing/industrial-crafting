@@ -13,8 +13,10 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.derbejijing.ic.Main;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.MultiblockRegistry;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
+import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
 public class PlayerListener implements Listener {
     
@@ -41,11 +43,17 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        Inventory clickedInv = event.getClickedInventory();
-        if (clickedInv != null && clickedInv.getType() == InventoryType.CHEST) {
+        Inventory clicked_inventory = event.getClickedInventory();
+        if (clicked_inventory != null && clicked_inventory.getType() == InventoryType.CHEST) {
             // check if it is part of a machine (check if occupied)
             ItemStack clicked_item = event.getCurrentItem();
-            if(clicked_item != null && clicked_item.getType() != Material.AIR) if(InterfaceUtils.is_interface_item(clicked_item)) event.setCancelled(true);
+            if(clicked_item != null && clicked_item.getType() != Material.AIR) if(InterfaceUtils.is_interface_item(clicked_item)) {
+                event.setCancelled(true);
+
+                Location location = clicked_inventory.getLocation();
+                MultiblockMachine machine = Main.get_manager().location_occupied_by(location);
+                machine.click_button(clicked_item);
+            }
         }
     }
 }

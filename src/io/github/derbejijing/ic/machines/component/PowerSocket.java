@@ -11,6 +11,13 @@ public class PowerSocket extends MultiblockComponent {
         super(master, Material.OBSERVER, location);
     }
 
+
     @Override
-    public void tick() {}
+    public void on_place() {
+    }
+
+
+    @Override
+    protected void on_tick() {
+    }
 }
