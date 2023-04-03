@@ -18,6 +18,11 @@ public class CasingIron extends MultiblockComponent {
 
 
     @Override
+    protected void on_destroy() {
+    }
+
+
+    @Override
     protected void on_tick() {
     }
 }

@@ -131,6 +131,11 @@ public abstract class MultiblockMachine {
     }
 
 
+    private void unload_components() {
+        for(MultiblockComponent mc : this.components) mc.destroy();
+    }
+
+
     private void change_state(MultiblockState state) {
         this.state = state;
         this.on_change_state();
@@ -141,6 +146,7 @@ public abstract class MultiblockMachine {
         this.change_state(MultiblockState.BROKEN);
         this.free_locations();
         this.on_destroy();
+        this.unload_components();
     }
 
 

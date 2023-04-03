@@ -18,6 +18,11 @@ public class InputHatch extends MultiblockComponent {
 
 
     @Override
+    protected void on_destroy() {
+    }
+
+
+    @Override
     protected void on_tick() {
     }
 }

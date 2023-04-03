@@ -1,6 +1,5 @@
 package io.github.derbejijing.ic.machines.component;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -22,9 +21,7 @@ public class Interface extends MultiblockComponent {
         InventoryHolder inventory_holder = (InventoryHolder) this.location_absolute.getBlock().getState();
         Inventory inventory = inventory_holder.getInventory();
 
-        for(ItemStack item : inventory.getContents()) {
-            if(InterfaceUtils.is_interface_item(item)) inventory.removeItem(item);
-        }
+        for(ItemStack item : inventory.getContents()) if(InterfaceUtils.is_interface_item(item)) inventory.removeItem(item);
 
         ItemStack pane_empty = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
         InterfaceUtils.set_interface_item(pane_empty, InterfaceItem.PANE_EMPTY);
@@ -37,7 +34,15 @@ public class Interface extends MultiblockComponent {
 
         inventory.setItem(10, pane_button);
         inventory.setItem(16, new ItemStack(Material.AIR));
+    }
 
+
+    @Override
+    protected void on_destroy() {
+        InventoryHolder inventory_holder = (InventoryHolder) this.location_absolute.getBlock().getState();
+        Inventory inventory = inventory_holder.getInventory();
+
+        for(ItemStack item : inventory.getContents()) if(InterfaceUtils.is_interface_item(item)) inventory.removeItem(item);
     }
 
 

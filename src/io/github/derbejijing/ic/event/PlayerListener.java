@@ -16,7 +16,6 @@ import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.MultiblockRegistry;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
-import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
 public class PlayerListener implements Listener {
     

@@ -33,6 +33,11 @@ public abstract class MultiblockComponent {
     }
 
 
+    public void destroy() {
+        this.on_destroy();
+    }
+
+
     public void rotate(int orientation) {
         this.location.rotateAroundY(orientation * -1 * Math.PI / 2);
     }
@@ -49,6 +54,8 @@ public abstract class MultiblockComponent {
 
 
     protected abstract void on_place();
+
+    protected abstract void on_destroy();
 
     protected abstract void on_tick();
 }
