@@ -50,10 +50,7 @@ public abstract class MultiblockMachine {
                 m.base_location.subtract(mc.get_location());
             }
             
-            if(valid) {
-                // should be less dangerous...
-                if(m.init_and_build()) return m;
-            }
+            if(valid) if(m.init_and_build()) return m;
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -197,9 +194,6 @@ public abstract class MultiblockMachine {
     protected Inventory get_inventory(Class<? extends MultiblockComponent> component_type) {
         for(MultiblockComponent mbc : this.components) {
             if(mbc.getClass().getName() == component_type.getName()) {
-                
-                //Bukkit.getLogger().info("component: " + mbc.getClass().getName());
-                
                 this.base_location.add(mbc.get_location());
                 BlockState bs = this.base_location.getBlock().getState();
                 this.base_location.subtract(mbc.get_location());
