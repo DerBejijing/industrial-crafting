@@ -8,7 +8,7 @@ public class WorldListener implements Listener {
     
     @EventHandler
     public void item_move_event(InventoryMoveItemEvent e) {
-        e.setCancelled(true);
+        //e.setCancelled(true);
     }
 
 }
