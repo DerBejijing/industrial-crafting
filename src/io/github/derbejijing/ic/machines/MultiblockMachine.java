@@ -123,7 +123,14 @@ public abstract class MultiblockMachine {
 
 
     private boolean check_damage() {
-        return false;
+        boolean damaged = false;
+
+        for(MultiblockComponent mc : this.components) {
+            if(!this.base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) damaged = true;
+            this.base_location.subtract(mc.get_location());
+        }
+
+        return damaged;
     }
 
 

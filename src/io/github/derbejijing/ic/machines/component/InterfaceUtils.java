@@ -1,5 +1,6 @@
 package io.github.derbejijing.ic.machines.component;
 
+import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -50,6 +51,8 @@ public class InterfaceUtils {
 
     // get the type of an interface item
     public static InterfaceItem get_interface_item(ItemStack item_stack) {
+        if(item_stack == null || item_stack.getType() == Material.AIR) return InterfaceItem.NONE;
+
         ItemMeta meta = item_stack.getItemMeta();
 
         if(meta == null) return InterfaceItem.NONE;

@@ -22,11 +22,14 @@ public class MultiblockMachineManager {
 
     public void tick() {
         for(MultiblockMachine mbm : this.machines) mbm.tick();
+
+        ArrayList<MultiblockMachine> machines_remove = new ArrayList<MultiblockMachine>();
+        for(MultiblockMachine mbm : this.machines) if(mbm.get_state() == MultiblockState.BROKEN) machines_remove.add(mbm);
+        this.machines.removeAll(machines_remove);
     }
 
 
     public void place(Player player, Location location, int orientation, int id) {
-        Bukkit.getLogger().info("attempting to place [" + id + "] at [" + location.getX() + " " + location.getY() + " " + location.getZ() + "] [" + orientation + "]");
         this.register(MultiblockMachine.place(location, orientation, RegistryEnum.get_by_id(id)));
     }
 
@@ -37,7 +40,7 @@ public class MultiblockMachineManager {
 
 
     public void free_location(MultiblockMachine machine, Location location) {
-
+        this.occupied_locations.remove(location);
     }
 
 
@@ -56,5 +59,6 @@ public class MultiblockMachineManager {
         if(machine.get_state() == MultiblockState.INVALID) return;
         Bukkit.getLogger().info("machine [" + machine.getClass().getName() + "] registered");
         this.machines.add(machine);
+        for(MultiblockMachine m : this.machines) Bukkit.getLogger().info("machine: " + m.toString());
     }
 }

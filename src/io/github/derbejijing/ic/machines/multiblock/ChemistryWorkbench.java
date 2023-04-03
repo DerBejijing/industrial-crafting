@@ -1,6 +1,7 @@
 package io.github.derbejijing.ic.machines.multiblock;
 
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;
@@ -34,6 +35,7 @@ public class ChemistryWorkbench extends MultiblockMachine {
 
 
     protected void on_destroy() {
+        this.base_location.getWorld().playSound(this.base_location, Sound.BLOCK_AMETHYST_BLOCK_BREAK, (float)1.0, (float)1.0);
     }
 
 
