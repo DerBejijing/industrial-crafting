@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.util.Vector;
 
+import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.component.CasingIron;
 import io.github.derbejijing.ic.machines.component.Generator;
@@ -26,11 +27,17 @@ public class ChemistryWorkbench extends MultiblockMachine {
     }
 
 
+    protected void add_recipes() {
+        this.add_recipe(ChemicalRecipeRegistry.GUNPOWDER);
+    }
+
+
     protected void on_tick() {
     }
 
 
     protected void on_place() {
+        this.set_recipe(ChemicalRecipeRegistry.GUNPOWDER);
     }
 
 

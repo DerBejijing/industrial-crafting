@@ -84,6 +84,11 @@ public class Interface extends MultiblockComponent {
     }
 
 
+    public Inventory get_inventory() {
+        return this.inventory;
+    }
+
+
     public void change_power_level(float power) {
         ItemStack button = this.inventory.getItem(10);
         ItemMeta meta = button.getItemMeta();

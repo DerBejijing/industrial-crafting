@@ -10,6 +10,8 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.derbejijing.ic.Main;
+import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
 import io.github.derbejijing.ic.machines.component.Generator;
 import io.github.derbejijing.ic.machines.component.Interface;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
@@ -22,7 +24,9 @@ public abstract class MultiblockMachine {
     private int power;
 
     protected ArrayList<MultiblockComponent> components;
-    protected ArrayList<Location> occupied_locations;
+    protected ArrayList<ChemicalRecipeRegistry> available_recipes;
+
+    protected ChemicalRecipe current_recipe;
 
     public MultiblockMachine(Location base_location, int orientation) {
         this.base_location = base_location;
@@ -30,7 +34,12 @@ public abstract class MultiblockMachine {
         this.power = 0;
 
         this.components = new ArrayList<MultiblockComponent>();
+        this.available_recipes = new ArrayList<ChemicalRecipeRegistry>();
+
+        this.current_recipe = null;
+
         this.add_components();
+        this.add_recipes();
     }
 
 
@@ -72,6 +81,10 @@ public abstract class MultiblockMachine {
             }
 
             this.get_interface().change_power_level(this.power / 1000.0f);
+        }
+
+        if(this.state == MultiblockState.RUNNING) {
+            this.attempt_crafting();
         }
     }
 
@@ -122,6 +135,20 @@ public abstract class MultiblockMachine {
 
     public Location get_location() {
         return this.base_location;
+    }
+
+
+    public void set_recipe(ChemicalRecipeRegistry recipe) {
+        for(ChemicalRecipeRegistry crr : this.available_recipes) if(crr.id == recipe.id) this.current_recipe = ChemicalRecipeRegistry.get_by_id(recipe.id);
+    }
+
+
+    private void attempt_crafting() {
+        // NOT DONE THIS IS NOT DONE
+        // check for correct output and input containers
+        if(this.current_recipe != null) {
+            if(this.current_recipe.attempt_craft(this.get_interface().get_inventory(), this.power, 9*64)) this.power -= this.current_recipe.power_required;
+        }
     }
 
 
@@ -192,6 +219,11 @@ public abstract class MultiblockMachine {
     }
 
 
+    protected void add_recipe(ChemicalRecipeRegistry recipe) {
+        this.available_recipes.add(recipe);
+    }
+
+
     protected Interface get_interface() {
         for(MultiblockComponent mc : this.components) if(mc instanceof Interface) return (Interface) mc;
         return null;
@@ -228,6 +260,8 @@ public abstract class MultiblockMachine {
 
 
     protected abstract void add_components();
+
+    protected abstract void add_recipes();
 
     protected abstract void on_tick();
 
