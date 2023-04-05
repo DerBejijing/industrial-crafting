@@ -1,6 +1,8 @@
 package io.github.derbejijing.ic.machines.component;
 
 import org.bukkit.Material;
+import org.bukkit.block.BlockState;
+import org.bukkit.block.Chest;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -18,7 +20,12 @@ public class Interface extends MultiblockComponent {
 
     @Override
     public void on_place() {
-        InventoryHolder inventory_holder = (InventoryHolder) this.location_absolute.getBlock().getState();
+        BlockState block_state = this.location_absolute.getBlock().getState();
+        Chest chest = (Chest) block_state;
+        chest.setCustomName("Machine Interface");
+        chest.update();
+
+        InventoryHolder inventory_holder = (InventoryHolder) block_state;
         Inventory inventory = inventory_holder.getInventory();
 
         for(ItemStack item : inventory.getContents()) if(InterfaceUtils.is_interface_item(item)) inventory.removeItem(item);
