@@ -18,9 +18,7 @@ import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
 public abstract class MultiblockMachine {
     protected Location base_location;
-    private int orientation;
     private MultiblockState state;
-    private MultiblockState state_last;
     private int power;
 
     protected ArrayList<MultiblockComponent> components;
@@ -28,9 +26,7 @@ public abstract class MultiblockMachine {
 
     public MultiblockMachine(Location base_location, int orientation) {
         this.base_location = base_location;
-        this.orientation = orientation;
         this.state = MultiblockState.BROKEN;
-        this.state_last = MultiblockState.BROKEN;
         this.power = 0;
 
         this.components = new ArrayList<MultiblockComponent>();

@@ -3,13 +3,11 @@ package io.github.derbejijing.ic.machines.component;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
@@ -22,9 +20,11 @@ import net.md_5.bungee.api.ChatColor;
 public class Interface extends MultiblockComponent {
 
     private Inventory inventory;
+    private boolean big_interface;
 
-    public Interface(MultiblockMachine master, Vector location) {
+    public Interface(MultiblockMachine master, Vector location, boolean big_interface) {
         super(master, Material.CHEST, location);
+        this.big_interface = big_interface;
     }
 
 
@@ -47,7 +47,11 @@ public class Interface extends MultiblockComponent {
         InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_IDLE);
 
         for(int i = 0; i < 9 * 3; ++i) this.inventory.setItem(i, pane_empty);
-        for(int i = 12; i < 15; ++i) this.inventory.setItem(i, new ItemStack(Material.AIR));;
+        for(int i = 12; i < 15; ++i) this.inventory.setItem(i, new ItemStack(Material.AIR));
+        if(this.big_interface) {
+            for(int i = 3; i < 6; ++i) this.inventory.setItem(i, new ItemStack(Material.AIR));
+            for(int i = 21; i < 24; ++i) this.inventory.setItem(i, new ItemStack(Material.AIR));
+        }
 
         this.inventory.setItem(10, pane_button);
         this.inventory.setItem(16, new ItemStack(Material.AIR));

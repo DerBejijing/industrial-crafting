@@ -23,16 +23,12 @@ public class Generator extends MultiblockComponent {
         COAL(Material.COAL, 1600),
         CHARCOAL(Material.CHARCOAL, 1600);
     
-        private Material type;
-        private int burn_time;
+        public final Material type;
+        public final int burn_time;
     
         private Fuel(Material type, int burn_time) {
             this.type = type;
             this.burn_time = burn_time;
-        }
-    
-        public int get_burn_time() {
-            return this.burn_time;
         }
 
         public static int get_burn_time(Material material) {

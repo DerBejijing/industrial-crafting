@@ -34,7 +34,8 @@ public abstract class MultiblockComponent {
 
 
     public void destroy() {
-        this.on_destroy();
+        // TODO: name of container remains. But not big issue
+        if(this.location_absolute.getBlock().getType().equals(this.material)) this.on_destroy();
     }
 
 

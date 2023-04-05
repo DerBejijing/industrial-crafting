@@ -18,7 +18,7 @@ public class ChemistryWorkbench extends MultiblockMachine {
 
     protected void add_components() {
         this.add_component(new CasingIron(this, new Vector(0, 0, 0)));
-        this.add_component(new Interface(this, new Vector(1, 0, 0)));
+        this.add_component(new Interface(this, new Vector(1, 0, 0), true));
         this.add_component(new CasingIron(this, new Vector(2, 0, 0)));
         this.add_component(new CasingIron(this, new Vector(0, 0, 1)));
         this.add_component(new Generator(this, new Vector(1, 0, 1)));
