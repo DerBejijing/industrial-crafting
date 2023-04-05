@@ -1,4 +1,4 @@
-package io.github.derbejijing.ic.chemical;
+package io.github.derbejijing.ic.chemical.property;
 
 public enum ChemicalFireHazard {
     INFLAMMABLE(0, "Inflammable"),

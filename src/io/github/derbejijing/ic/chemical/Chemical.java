@@ -2,6 +2,10 @@ package io.github.derbejijing.ic.chemical;
 
 import org.bukkit.Material;
 
+import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
+import io.github.derbejijing.ic.chemical.property.ChemicalReactivity;
+import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
+
 public class Chemical {
     private Material material;
     private int custom_model_data;

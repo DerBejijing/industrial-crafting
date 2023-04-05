@@ -7,10 +7,10 @@ import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 import io.github.derbejijing.ic.chemical.property.ChemicalReactivity;
 import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 
-public class Carbon extends Chemical {
+public class Sulfur extends Chemical {
 
-    public Carbon(int count, ChemicalPurity purity) {
-        super(Material.SUGAR, 1, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
+    public Sulfur(int count, ChemicalPurity purity) {
+        super(Material.SUGAR, 2, purity, ChemicalToxicity.HAZARDOUS, ChemicalReactivity.STABLE, count);
     }
     
 }

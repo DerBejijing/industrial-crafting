@@ -1,4 +1,4 @@
-package io.github.derbejijing.ic.chemical;
+package io.github.derbejijing.ic.chemical.property;
 
 public enum ChemicalToxicity {
     NONE(0, "Non-toxic"),

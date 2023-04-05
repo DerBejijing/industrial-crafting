@@ -21,6 +21,11 @@ public abstract class ChemicalRecipe {
     }
 
 
+    protected void add_ingredient(ChemicalComponent component) {
+        this.ingredients.add(component);
+    }
+
+
     public abstract void add_components();
 
 

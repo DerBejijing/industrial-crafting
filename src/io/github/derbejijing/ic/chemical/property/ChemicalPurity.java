@@ -1,4 +1,4 @@
-package io.github.derbejijing.ic.chemical;
+package io.github.derbejijing.ic.chemical.property;
 
 public enum ChemicalPurity {
     HEAVY_CONTAMINATION(0, "Heavy contaminations"),
