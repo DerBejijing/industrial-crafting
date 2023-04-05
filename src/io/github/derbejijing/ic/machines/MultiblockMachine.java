@@ -72,8 +72,10 @@ public abstract class MultiblockMachine {
             if(this.power <= 0) this.change_state(MultiblockState.NO_POWER);
 
             if(this.power > 0 && this.state == MultiblockState.NO_POWER) {
-                this.change_state(MultiblockState.RUNNING);
+                this.change_state(MultiblockState.IDLE);
             }
+
+            this.get_interface().change_power_level(this.power / 1000.0f);
         }
     }
 

@@ -1,16 +1,23 @@
 package io.github.derbejijing.ic.machines.component;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.MultiblockState;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
+import net.md_5.bungee.api.ChatColor;
 
 public class Interface extends MultiblockComponent {
 
@@ -70,5 +77,38 @@ public class Interface extends MultiblockComponent {
         if(state == MultiblockState.RUNNING) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_RUNNING);
 
         this.inventory.setItem(10, pane_button);
+    }
+
+
+    public void change_power_level(float power) {
+        ItemStack button = this.inventory.getItem(10);
+        ItemMeta meta = button.getItemMeta();
+
+        List<String> lore = new ArrayList<String>();
+        lore.add(ChatColor.GRAY + "Power: [" + progress_bar(power) + ChatColor.GRAY + "]");
+        lore.add(ChatColor.GRAY + "Current job: ");
+        meta.setLore(lore);
+
+        button.setItemMeta(meta);
+    }
+
+
+    private static String progress_bar(float progress) {
+        if(progress >= 1) progress = 1.0f;
+        if(progress <= 0) progress = 0.0f;
+        int green = Math.round(progress * 10);
+        int red = 10 - green;
+    
+        StringBuilder bar = new StringBuilder();
+    
+        for (int i = 0; i < green; i++) {
+            bar.append(ChatColor.GREEN + "I");
+        }
+    
+        for (int i = 0; i < red; i++) {
+            bar.append(ChatColor.RED + "I");
+        }
+    
+        return bar.toString();
     }
 }

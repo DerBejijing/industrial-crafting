@@ -77,7 +77,7 @@ public class Generator extends MultiblockComponent {
     public int generate_energy() {
         for(ItemStack item : this.inventory.getContents()) {
             if(item != null && item.getType() != Material.AIR) {
-                int power = Fuel.get_burn_time(item.getType()) / 200;
+                int power = Fuel.get_burn_time(item.getType()) / 20;
                 if(power > 0) {
                     item.setAmount(item.getAmount() - 1);
                     return power;
