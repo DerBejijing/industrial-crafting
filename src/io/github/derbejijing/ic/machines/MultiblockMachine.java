@@ -10,6 +10,7 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.derbejijing.ic.Main;
+import io.github.derbejijing.ic.machines.component.Generator;
 import io.github.derbejijing.ic.machines.component.Interface;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
 import io.github.derbejijing.ic.machines.component.MultiblockComponent;
@@ -19,6 +20,7 @@ public abstract class MultiblockMachine {
     protected Location base_location;
     private int orientation;
     private MultiblockState state;
+    private MultiblockState state_last;
     private int power;
 
     protected ArrayList<MultiblockComponent> components;
@@ -27,7 +29,8 @@ public abstract class MultiblockMachine {
     public MultiblockMachine(Location base_location, int orientation) {
         this.base_location = base_location;
         this.orientation = orientation;
-        this.state = MultiblockState.INVALID;
+        this.state = MultiblockState.BROKEN;
+        this.state_last = MultiblockState.BROKEN;
         this.power = 0;
 
         this.components = new ArrayList<MultiblockComponent>();
@@ -62,12 +65,16 @@ public abstract class MultiblockMachine {
 
     public void tick() {
         if(this.check_damage()) this.destroy();
-        if(this.state != MultiblockState.BROKEN) this.on_tick();
-    }
+        if(this.state != MultiblockState.BROKEN) {
+            this.on_tick();
 
+            if(this.power < 1000) this.regenerate_power();
+            if(this.power <= 0) this.change_state(MultiblockState.NO_POWER);
 
-    public void power_increment(int power) {
-        this.power += power;
+            if(this.power > 0 && this.state == MultiblockState.NO_POWER) {
+                this.change_state(MultiblockState.RUNNING);
+            }
+        }
     }
 
 
@@ -77,17 +84,14 @@ public abstract class MultiblockMachine {
 
         if(interface_item == InterfaceItem.STATE_RUNNING || interface_item == InterfaceItem.STATE_IDLE || interface_item == InterfaceItem.STATE_NO_POWER) {
             if(this.state == MultiblockState.IDLE) {
-                InterfaceUtils.set_interface_item(button, InterfaceItem.STATE_RUNNING);
                 this.change_state(MultiblockState.RUNNING);
                 Bukkit.getLogger().info("now running");
             }
             else if(this.state == MultiblockState.RUNNING) {
-                InterfaceUtils.set_interface_item(button, InterfaceItem.STATE_IDLE);
                 this.change_state(MultiblockState.IDLE);
                 Bukkit.getLogger().info("now idle");
             }
             else if(this.state == MultiblockState.NO_POWER) {
-                InterfaceUtils.set_interface_item(button, InterfaceItem.STATE_NO_POWER);
                 Bukkit.getLogger().info("no power!");
             }
         }
@@ -99,7 +103,7 @@ public abstract class MultiblockMachine {
             this.on_place();
             this.occupy_locations();
             this.load_components();
-            this.state = MultiblockState.IDLE;
+            this.change_state(MultiblockState.IDLE);
             return true;
         } catch(Exception e) {
             e.printStackTrace();
@@ -135,6 +139,7 @@ public abstract class MultiblockMachine {
 
     private void change_state(MultiblockState state) {
         this.state = state;
+        this.get_interface().change_state(state);
         this.on_change_state();
     }
 
@@ -175,6 +180,15 @@ public abstract class MultiblockMachine {
     }
 
 
+    private boolean regenerate_power() {
+        Generator generator = this.get_generator();
+        int generated = generator.generate_energy();
+        this.power += generated;
+        if(generated > 0) return true;
+        return false;
+    }
+
+
     protected void add_component(MultiblockComponent component) {
         this.components.add(component);
     }
@@ -182,6 +196,12 @@ public abstract class MultiblockMachine {
 
     protected Interface get_interface() {
         for(MultiblockComponent mc : this.components) if(mc instanceof Interface) return (Interface) mc;
+        return null;
+    }
+
+
+    protected Generator get_generator() {
+        for(MultiblockComponent mc : this.components) if(mc instanceof Generator) return (Generator) mc;
         return null;
     }
 

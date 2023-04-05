@@ -56,7 +56,7 @@ public class MultiblockMachineManager {
 
     public void register(MultiblockMachine machine) {
         if(machine == null) return;
-        if(machine.get_state() == MultiblockState.INVALID) return;
+        if(machine.get_state() == MultiblockState.BROKEN) return;
         Bukkit.getLogger().info("machine [" + machine.getClass().getName() + "] registered");
         this.machines.add(machine);
         for(MultiblockMachine m : this.machines) Bukkit.getLogger().info("machine: " + m.toString());

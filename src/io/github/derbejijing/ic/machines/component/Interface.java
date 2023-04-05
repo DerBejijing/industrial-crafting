@@ -9,9 +9,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;
+import io.github.derbejijing.ic.machines.MultiblockState;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
 public class Interface extends MultiblockComponent {
+
+    private Inventory inventory;
 
     public Interface(MultiblockMachine master, Vector location) {
         super(master, Material.CHEST, location);
@@ -26,9 +29,9 @@ public class Interface extends MultiblockComponent {
         chest.update();
 
         InventoryHolder inventory_holder = (InventoryHolder) block_state;
-        Inventory inventory = inventory_holder.getInventory();
+        this.inventory = inventory_holder.getInventory();
 
-        for(ItemStack item : inventory.getContents()) if(InterfaceUtils.is_interface_item(item)) inventory.removeItem(item);
+        for(ItemStack item : this.inventory.getContents()) if(InterfaceUtils.is_interface_item(item)) this.inventory.removeItem(item);
 
         ItemStack pane_empty = new ItemStack(Material.BLACK_STAINED_GLASS_PANE);
         InterfaceUtils.set_interface_item(pane_empty, InterfaceItem.PANE_EMPTY);
@@ -36,11 +39,11 @@ public class Interface extends MultiblockComponent {
         ItemStack pane_button = new ItemStack(Material.RED_STAINED_GLASS_PANE);
         InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_IDLE);
 
-        for(int i = 0; i < 9 * 3; ++i) inventory.setItem(i, pane_empty);
-        for(int i = 12; i < 15; ++i) inventory.setItem(i, new ItemStack(Material.AIR));;
+        for(int i = 0; i < 9 * 3; ++i) this.inventory.setItem(i, pane_empty);
+        for(int i = 12; i < 15; ++i) this.inventory.setItem(i, new ItemStack(Material.AIR));;
 
-        inventory.setItem(10, pane_button);
-        inventory.setItem(16, new ItemStack(Material.AIR));
+        this.inventory.setItem(10, pane_button);
+        this.inventory.setItem(16, new ItemStack(Material.AIR));
     }
 
 
@@ -55,5 +58,17 @@ public class Interface extends MultiblockComponent {
 
     @Override
     protected void on_tick() {
+    }
+
+
+    public void change_state(MultiblockState state) {
+        ItemStack pane_button = new ItemStack(Material.GLASS_PANE);
+    
+        if(state == MultiblockState.BROKEN) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_BROKEN);
+        if(state == MultiblockState.IDLE) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_IDLE);
+        if(state == MultiblockState.NO_POWER) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_NO_POWER);
+        if(state == MultiblockState.RUNNING) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_RUNNING);
+
+        this.inventory.setItem(10, pane_button);
     }
 }

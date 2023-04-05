@@ -16,7 +16,8 @@ public class InterfaceUtils {
         STATE_RUNNING(0, "Click to disable", Material.LIME_STAINED_GLASS_PANE),
         STATE_IDLE(1, "Click to enable", Material.RED_STAINED_GLASS_PANE),
         STATE_NO_POWER(2, "No power", Material.ORANGE_STAINED_GLASS_PANE),
-        PANE_EMPTY(3, " ", Material.BLACK_STAINED_GLASS_PANE);
+        STATE_BROKEN(3, "Broken", Material.GLASS_PANE),
+        PANE_EMPTY(4, " ", Material.BLACK_STAINED_GLASS_PANE);
 
         public final int id;
         public final String text;
