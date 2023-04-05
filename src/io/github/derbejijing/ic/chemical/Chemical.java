@@ -19,3 +19,9 @@ public class Chemical {
         this.count = count;
     }
 }
+
+
+
+/* Notes
+ * there should be some sort of Chemical.from() method, so that basically any regular block can be used in recipes
+ */

@@ -42,3 +42,15 @@ public class ChemistryWorkbench extends MultiblockMachine {
     protected void on_change_state() {
     }
 }
+
+
+/* NOTES
+ * in constructor, there should be a method like add_recipe, that picks a recipe from some sort of registry
+ * then, when a blueprint/recipe is inserted, the machine's registry will be searched for that specific recipe
+ * if it is found the current recipe is set to the new one. It takes the inventory as an argument
+ * 
+ * every tick, the recipe.craft method is called
+ * it takes as arguments: the current power level, the free space in the output and an arrayList of all input materials
+ * it will consume the necessary items and add a new one to the output (using sth like master.add_output, bc it can either be the output hatch or the output slot)
+ * it will return a boolean, true if everything is fine
+ */
