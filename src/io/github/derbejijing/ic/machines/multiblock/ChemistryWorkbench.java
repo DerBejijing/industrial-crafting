@@ -8,7 +8,6 @@ import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.component.CasingIron;
 import io.github.derbejijing.ic.machines.component.Generator;
 import io.github.derbejijing.ic.machines.component.Interface;
-import io.github.derbejijing.ic.machines.component.PowerSocket;
 
 public class ChemistryWorkbench extends MultiblockMachine {
 

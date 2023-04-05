@@ -220,3 +220,18 @@ public abstract class MultiblockMachine {
     protected abstract void on_change_state();
 
 }
+
+
+
+
+
+/* Notes
+ * 
+ * power consumption:
+ * when power has reached 1, get the generator's inventory and try to remove one item, to regenerate power
+ * the method should return, how much "energy" the item produces (wood < coal < lava)
+ * if the power is then still at 0, the state is set to no_power
+ * 
+ * when the state is at no_power, the machine must attempt to refill
+ * Thus, the method above should be packed into regenerate_power, returning if it was successful
+ */
