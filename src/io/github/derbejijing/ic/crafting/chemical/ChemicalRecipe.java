@@ -2,16 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-
-import io.github.derbejijing.ic.chemical.Chemical;
-import io.github.derbejijing.ic.chemical.ChemicalItem;
 
 public abstract class ChemicalRecipe {
     private ArrayList<ChemicalComponent> ingredients;

@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 public class Sulfur extends Chemical {
 
     public Sulfur(int count, ChemicalPurity purity) {
-        super(ChemicalItem.SULFUR.material, ChemicalItem.SULFUR.id, purity, ChemicalToxicity.HAZARDOUS, ChemicalReactivity.STABLE, count);
+        super("Sulfur", ChemicalItem.SULFUR.material, ChemicalItem.SULFUR.id, purity, ChemicalToxicity.HAZARDOUS, ChemicalReactivity.STABLE, count);
     }
     
 }

@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 public class PotassiumNitrate extends Chemical {
 
     public PotassiumNitrate(int count, ChemicalPurity purity) {
-        super(ChemicalItem.POTASSIUM_NITRATE.material, ChemicalItem.POTASSIUM_NITRATE.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
+        super("Potassium Nitrate", ChemicalItem.POTASSIUM_NITRATE.material, ChemicalItem.POTASSIUM_NITRATE.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
     }
     
 }

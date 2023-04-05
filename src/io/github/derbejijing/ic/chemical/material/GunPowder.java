@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 public class GunPowder extends Chemical {
 
     public GunPowder(int count, ChemicalPurity purity) {
-        super(ChemicalItem.GUNPOWDER.material, ChemicalItem.GUNPOWDER.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.EXPLOSIVE, count);
+        super("Gun powder", ChemicalItem.GUNPOWDER.material, ChemicalItem.GUNPOWDER.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.EXPLOSIVE, count);
     }
     
 }

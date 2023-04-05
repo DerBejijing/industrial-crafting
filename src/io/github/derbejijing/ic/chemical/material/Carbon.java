@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 public class Carbon extends Chemical {
 
     public Carbon(int count, ChemicalPurity purity) {
-        super(ChemicalItem.CARBON.material, ChemicalItem.CARBON.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
+        super("Carbon", ChemicalItem.CARBON.material, ChemicalItem.CARBON.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
     }
     
 }
