@@ -5,3 +5,6 @@ author: Der_Bejijing
 prefix: ic
 website: https://github.com/DerBejijing/industrial-crafting
 main: io.github.derbejijing.ic.Main
+commands:
+  getchemical:
+    description: get a certain chemical

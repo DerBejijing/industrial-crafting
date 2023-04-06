@@ -1,23 +1,30 @@
 package io.github.derbejijing.ic.crafting.chemical.recipe;
 
-import org.bukkit.entity.Trident;
-
 import io.github.derbejijing.ic.chemical.ChemicalItem;
-import io.github.derbejijing.ic.crafting.chemical.ChemicalComponent;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 
 public class GunPowder extends ChemicalRecipe {
 
     public GunPowder() {
-        super(new ChemicalComponent(ChemicalItem.GUNPOWDER, 8, false), 1);
+        super(1, 1);
     }
 
 
     @Override
-    public void add_components() {
-        this.add_ingredient(new ChemicalComponent(ChemicalItem.CARBON, 1, true));
-        this.add_ingredient(new ChemicalComponent(ChemicalItem.SULFUR, 1, true));
-        this.add_ingredient(new ChemicalComponent(ChemicalItem.POTASSIUM_NITRATE, 6, true));
+    public void add_ingredients() {
+        this.add_ingredient(ChemicalItem.CARBON, 1);
+        this.add_ingredient(ChemicalItem.SULFUR, 1);
+        this.add_ingredient(ChemicalItem.POTASSIUM_NITRATE, 6);
     }
-    
+
+
+    @Override
+    public void add_requirements() {
+    }
+
+
+    @Override
+    public void add_outputs() {
+        this.add_output(ChemicalItem.GUNPOWDER, 8);
+    }
 }

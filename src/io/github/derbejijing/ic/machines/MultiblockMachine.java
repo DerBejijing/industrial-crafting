@@ -147,7 +147,7 @@ public abstract class MultiblockMachine {
         // NOT DONE THIS IS NOT DONE
         // check for correct output and input containers
         if(this.current_recipe != null) {
-            if(this.current_recipe.attempt_craft(this.get_interface().get_inventory(), this.power, 9*64)) this.power -= this.current_recipe.power_required;
+            if(this.current_recipe.attempt_craft(this.get_interface().get_inventory(), this.get_interface().get_inventory(), this.power, 9*64)) this.power -= this.current_recipe.power_required;
         }
     }
 

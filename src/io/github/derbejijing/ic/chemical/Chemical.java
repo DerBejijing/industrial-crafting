@@ -7,7 +7,6 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
 import io.github.derbejijing.ic.Main;
@@ -47,7 +46,7 @@ public class Chemical {
         List<String> lore = new ArrayList<String>();
         lore.add(ChatColor.GRAY + "Purity: " + this.purity.color + this.purity.description);
         lore.add(ChatColor.GRAY + "Toxicity: " + this.toxicity.color + this.toxicity.description);
-        lore.add(ChatColor.GRAY + "Reactivity:" + this.reactivity.color + this.reactivity.description);
+        lore.add(ChatColor.GRAY + "Reactivity: " + this.reactivity.color + this.reactivity.description);
         meta.setLore(lore);
 
         meta.setDisplayName(this.name);
@@ -71,17 +70,11 @@ public class Chemical {
 
         int purity = meta.getPersistentDataContainer().get(nsk_pure, PersistentDataType.BYTE);
 
-        Class<? extends Chemical> chemical_class = ChemicalItem.get_by_id(id);
+        return ChemicalItem.get_by_id(id, ChemicalPurity.get_by_id(purity), item_stack.getAmount());
+    }
 
-        if(chemical_class == null) return null;
 
-        try {
-            Chemical chemical = chemical_class.getConstructor(int.class, ChemicalPurity.class).newInstance(item_stack.getAmount(), ChemicalPurity.get_by_id(purity));
-            return chemical;
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        
-        return null;
+    public ChemicalPurity get_purity() {
+        return this.purity;
     }
 }

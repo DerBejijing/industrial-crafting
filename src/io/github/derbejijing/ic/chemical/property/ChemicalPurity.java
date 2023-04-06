@@ -3,12 +3,12 @@ package io.github.derbejijing.ic.chemical.property;
 import net.md_5.bungee.api.ChatColor;
 
 public enum ChemicalPurity {
-    HEAVY_CONTAMINATION(0, "Heavy contaminations", ChatColor.DARK_RED),
-    SLIGHT_CONTAMINATION(1, "Slight contaminations", ChatColor.RED),
-    LOW_CONTAMINATION(2, "Low contaminations", ChatColor.YELLOW),
-    CONSUMER_GRADE(3, "Considered clean", ChatColor.YELLOW),
-    COMMERCIAL_GRADE(4, "Commercial grade purity", ChatColor.DARK_GREEN),
-    INDUSTRIAL_GRADE(5, "Industrial grade purity", ChatColor.GREEN);
+    HEAVY_CONTAMINATION(5, "Heavy contaminations", ChatColor.DARK_RED),
+    SLIGHT_CONTAMINATION(4, "Contaminated", ChatColor.RED),
+    LOW_CONTAMINATION(3, "Low contaminations", ChatColor.YELLOW),
+    CONSUMER_GRADE(2, "Considered clean", ChatColor.YELLOW),
+    COMMERCIAL_GRADE(1, "Commercial grade purity", ChatColor.DARK_GREEN),
+    INDUSTRIAL_GRADE(0, "Industrial grade purity", ChatColor.GREEN);
 
     public final int purity;
     public final String description;

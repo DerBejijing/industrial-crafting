@@ -6,6 +6,7 @@ import io.github.derbejijing.ic.chemical.material.Carbon;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.PotassiumNitrate;
 import io.github.derbejijing.ic.chemical.material.Sulfur;
+import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 
 public enum ChemicalItem {
     CARBON(1, Material.SUGAR, Carbon.class),
@@ -24,8 +25,24 @@ public enum ChemicalItem {
     }
 
 
-    public static Class<? extends Chemical> get_by_id(int id) {
-        for(ChemicalItem item : ChemicalItem.values()) if(item.id == id) return item.chemical_class;
+    public Chemical to_chemical(ChemicalPurity purity, int amount) {
+        try {
+            return this.chemical_class.getConstructor(int.class, ChemicalPurity.class).newInstance(amount, purity);
+        } catch(Exception e) {}
+        return null;
+    }
+
+
+    public static Chemical get_by_id(int id, ChemicalPurity purity, int count) {
+        try {
+            for(ChemicalItem item : ChemicalItem.values()) if(item.id == id) return item.chemical_class.getConstructor(int.class, ChemicalPurity.class).newInstance(count, purity);
+        } catch(Exception e) {}
+        return null;
+    }
+
+
+    public static ChemicalItem get_from(Chemical chemical) {
+        for(ChemicalItem item : ChemicalItem.values()) if(item.chemical_class.equals(chemical.getClass())) return item;
         return null;
     }
 }
