@@ -1,9 +1,11 @@
 package io.github.derbejijing.ic.crafting.chemical;
 
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
+import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecomposition;
 
 public enum ChemicalRecipeRegistry {
-    GUNPOWDER(0, GunPowder.class);
+    GUNPOWDER(0, GunPowder.class),
+    WATER_DECOMPOSITION(1, WaterDecomposition.class);
 
     public final int id;
     public final Class<? extends ChemicalRecipe> recipe_class;

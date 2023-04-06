@@ -3,7 +3,10 @@ package io.github.derbejijing.ic.chemical;
 import org.bukkit.Material;
 
 import io.github.derbejijing.ic.chemical.material.Carbon;
+import io.github.derbejijing.ic.chemical.material.DistilledWater;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
+import io.github.derbejijing.ic.chemical.material.Hydrogen;
+import io.github.derbejijing.ic.chemical.material.Oxygen;
 import io.github.derbejijing.ic.chemical.material.PotassiumNitrate;
 import io.github.derbejijing.ic.chemical.material.Sulfur;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
@@ -12,7 +15,10 @@ public enum ChemicalItem {
     CARBON(1, Material.SUGAR, Carbon.class),
     SULFUR(2, Material.SUGAR,Sulfur.class),
     POTASSIUM_NITRATE(3, Material.SUGAR,PotassiumNitrate.class),
-    GUNPOWDER(4, Material.SUGAR,GunPowder.class);
+    GUNPOWDER(4, Material.SUGAR,GunPowder.class),
+    DISTILLED_WATER(5, Material.GLASS_BOTTLE, DistilledWater.class),
+    HYDROGEN(6, Material.GLASS_BOTTLE, Hydrogen.class),
+    OXYGEN(7, Material.GLASS_BOTTLE, Oxygen.class);
 
     public final int id;
     public final Material material;

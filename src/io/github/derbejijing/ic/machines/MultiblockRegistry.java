@@ -1,6 +1,7 @@
 package io.github.derbejijing.ic.machines;
 
 import io.github.derbejijing.ic.machines.multiblock.ChemistryWorkbench;
+import io.github.derbejijing.ic.machines.multiblock.Electrolyzer;
 
 public class MultiblockRegistry {
     private interface Registry<T extends MultiblockMachine> {
@@ -9,7 +10,8 @@ public class MultiblockRegistry {
     }
 
     public enum RegistryEnum implements Registry<MultiblockMachine> {
-        CHEMISTRY_WORKBENCH(1, ChemistryWorkbench.class);
+        CHEMISTRY_WORKBENCH(1, ChemistryWorkbench.class),
+        ELECTROLYZER(2, Electrolyzer.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;

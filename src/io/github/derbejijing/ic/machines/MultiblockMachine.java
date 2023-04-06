@@ -13,9 +13,11 @@ import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
 import io.github.derbejijing.ic.machines.component.Generator;
+import io.github.derbejijing.ic.machines.component.InputHatch;
 import io.github.derbejijing.ic.machines.component.Interface;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
 import io.github.derbejijing.ic.machines.component.MultiblockComponent;
+import io.github.derbejijing.ic.machines.component.OutputHatch;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
 public abstract class MultiblockMachine {
@@ -51,7 +53,10 @@ public abstract class MultiblockMachine {
             
             for(MultiblockComponent mc : m.components) {
                 mc.rotate(orientation);
-                if(!m.base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) valid = false;
+                if(!m.base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) {
+                    valid = false;
+                    Bukkit.getLogger().info("fail here [" + mc.get_material() + "]: " + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ());
+                }
 
                 if(Main.get_manager().location_occupied(m.base_location)) valid = false;
 
@@ -143,11 +148,25 @@ public abstract class MultiblockMachine {
     }
 
 
+    private Inventory get_input() {
+        InputHatch i = this.get_input_hatch();
+        if(i != null) return i.get_inventory();
+
+        return this.get_interface().get_inventory();
+    }
+
+
+    private Inventory get_output() {
+        OutputHatch o = this.get_output_hatch();
+        if(o != null) return o.get_inventory();
+
+        return this.get_interface().get_inventory();
+    }
+
+
     private void attempt_crafting() {
-        // NOT DONE THIS IS NOT DONE
-        // check for correct output and input containers
         if(this.current_recipe != null) {
-            if(this.current_recipe.attempt_craft(this.get_interface().get_inventory(), this.get_interface().get_inventory(), this.power, 9*64)) this.power -= this.current_recipe.power_required;
+            if(this.current_recipe.attempt_craft(this.get_input(), this.get_output(), this.power)) this.power -= this.current_recipe.power_required;
         }
     }
 
@@ -232,6 +251,18 @@ public abstract class MultiblockMachine {
 
     protected Generator get_generator() {
         for(MultiblockComponent mc : this.components) if(mc instanceof Generator) return (Generator) mc;
+        return null;
+    }
+
+
+    protected InputHatch get_input_hatch() {
+        for(MultiblockComponent mc : this.components) if(mc instanceof InputHatch) return (InputHatch) mc;
+        return null;
+    }
+
+
+    protected OutputHatch get_output_hatch() {
+        for(MultiblockComponent mc : this.components) if(mc instanceof OutputHatch) return (OutputHatch) mc;
         return null;
     }
 
