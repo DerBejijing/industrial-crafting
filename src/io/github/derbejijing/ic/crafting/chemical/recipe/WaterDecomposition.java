@@ -18,7 +18,7 @@ public class WaterDecomposition extends ChemicalRecipe {
 
     @Override
     public void add_requirements() {
-        // add sulfuric acid to make water conductive
+        this.add_requirement(ChemicalItem.SULFURIC_ACID, 1);
     }
 
 
