@@ -21,12 +21,15 @@ public abstract class ChemicalRecipe {
     public int power_required;                                  // energy required
     public int time;                                            // time (seconds) required to craft
 
+    private int progress;
+
     public ChemicalRecipe(int power_required, int time) {
         this.ingredients = new ArrayList<ChemicalItem>();
         this.requirements = new ArrayList<ChemicalItem>();
         this.outputs = new HashMap<ChemicalItem, Integer>();
         this.power_required = power_required;
         this.time = time;
+        this.progress = 0;
         this.add_ingredients();
         this.add_requirements();
         this.add_outputs();
@@ -84,6 +87,10 @@ public abstract class ChemicalRecipe {
         // all required items have been removed
         // check if output has enough space
         if(!enough_space(outputs_copy, outputs)) return false;
+
+        ++this.progress;
+        if(this.progress < this.time) return false;
+        this.progress = 0;
 
         input.setContents(inputs_copy.getContents());
         output.setContents(outputs_copy.getContents());
