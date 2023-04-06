@@ -40,3 +40,15 @@ public class Main extends JavaPlugin {
         return manager;
     }
 }
+
+
+
+/*Notes
+ * DODO: think
+ * How to use already existing components like water.
+ * - device to turn them from their raw form into chemicals (like "cleaning", would make sense...)
+ * - automatically convert them upon obtaining (bad, too many...)
+ * - ...
+ * 
+ * think think think
+ */
