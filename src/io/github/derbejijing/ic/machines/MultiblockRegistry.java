@@ -1,5 +1,6 @@
 package io.github.derbejijing.ic.machines;
 
+import io.github.derbejijing.ic.machines.multiblock.Centrifuge;
 import io.github.derbejijing.ic.machines.multiblock.ChemicalRefinery;
 import io.github.derbejijing.ic.machines.multiblock.ChemistryWorkbench;
 import io.github.derbejijing.ic.machines.multiblock.Condenser;
@@ -15,7 +16,8 @@ public class MultiblockRegistry {
         CHEMISTRY_WORKBENCH(1, ChemistryWorkbench.class),
         ELECTROLYZER(2, Electrolyzer.class),
         CHEMICAL_REFINERY(3, ChemicalRefinery.class),
-        CONDENSER(4, Condenser.class);
+        CONDENSER(4, Condenser.class),
+        CENTRIFUGE(5, Centrifuge.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;

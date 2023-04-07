@@ -6,10 +6,10 @@ import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 import io.github.derbejijing.ic.chemical.property.ChemicalReactivity;
 import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 
-public class Water extends Chemical {
+public class StoneDust extends Chemical {
 
-    public Water(int count, ChemicalPurity purity) {
-        super("Water", ChemicalItem.WATER.material, ChemicalItem.WATER.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
+    public StoneDust(int count, ChemicalPurity purity) {
+        super("Stone dust", ChemicalItem.STONE_DUST.material, ChemicalItem.STONE_DUST.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
     }
     
 }

@@ -3,12 +3,19 @@ package io.github.derbejijing.ic.chemical;
 import org.bukkit.Material;
 
 import io.github.derbejijing.ic.chemical.material.Carbon;
+import io.github.derbejijing.ic.chemical.material.CobbleStone;
+import io.github.derbejijing.ic.chemical.material.CrushedNetherrack;
 import io.github.derbejijing.ic.chemical.material.DistilledWater;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
+import io.github.derbejijing.ic.chemical.material.MetalDust;
+import io.github.derbejijing.ic.chemical.material.Netherrack;
 import io.github.derbejijing.ic.chemical.material.Oxygen;
+import io.github.derbejijing.ic.chemical.material.Phosphorous;
 import io.github.derbejijing.ic.chemical.material.PotassiumNitrate;
 import io.github.derbejijing.ic.chemical.material.SodiumChloride;
+import io.github.derbejijing.ic.chemical.material.Soil;
+import io.github.derbejijing.ic.chemical.material.StoneDust;
 import io.github.derbejijing.ic.chemical.material.Sulfur;
 import io.github.derbejijing.ic.chemical.material.SulfuricAcid;
 import io.github.derbejijing.ic.chemical.material.Water;
@@ -24,7 +31,14 @@ public enum ChemicalItem {
     HYDROGEN(7, Material.GLASS_BOTTLE, Hydrogen.class, false),
     OXYGEN(8, Material.GLASS_BOTTLE, Oxygen.class, false),
     SULFURIC_ACID(9, Material.GLASS_BOTTLE, SulfuricAcid.class, false),
-    WATER(10, Material.WATER_BUCKET, Water.class, true);
+    WATER(10, Material.WATER_BUCKET, Water.class, true),
+    SOIL(11, Material.DIRT, Soil.class, true),
+    COBBLESTONE(12, Material.COBBLESTONE, CobbleStone.class, true),
+    STONE_DUST(13, Material.SUGAR, StoneDust.class, false),
+    METAL_DUST(14, Material.SUGAR, MetalDust.class, false),
+    NETHERRACK(15, Material.NETHERRACK, Netherrack.class, true),
+    CRUSHED_NETHERRACK(16, Material.SUGAR, CrushedNetherrack.class, false),
+    PHOSPHOROUS(17, Material.SUGAR, Phosphorous.class, false);
 
     public final int id;
     public final Material material;
