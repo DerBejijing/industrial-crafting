@@ -18,12 +18,13 @@ import io.github.derbejijing.ic.machines.component.Interface;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
 import io.github.derbejijing.ic.machines.component.MultiblockComponent;
 import io.github.derbejijing.ic.machines.component.OutputHatch;
+import io.github.derbejijing.ic.machines.component.SolarCell;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
 public abstract class MultiblockMachine {
     protected Location base_location;
     private MultiblockState state;
-    private int power;
+    private float power;
 
     protected ArrayList<MultiblockComponent> components;
     protected ArrayList<ChemicalRecipeRegistry> available_recipes;
@@ -226,20 +227,21 @@ public abstract class MultiblockMachine {
 
     private boolean regenerate_power() {
         Generator generator = this.get_generator();
+        if(generator == null) return false;
         int generated = generator.generate_energy();
-        this.power += generated;
-        if(generated > 0) return true;
-        return false;
+        this.increment_power(generated);
+        return generated > 0;
     }
 
 
-    protected int get_power() {
+    protected float get_power() {
         return this.power;
     }
 
 
-    protected void increment_power(int amount) {
+    protected void increment_power(float amount) {
         this.power += amount;
+        if(this.power > 1500) this.power = 1500;
     }
 
 
@@ -250,6 +252,12 @@ public abstract class MultiblockMachine {
 
     protected void add_recipe(ChemicalRecipeRegistry recipe) {
         this.available_recipes.add(recipe);
+    }
+
+
+    protected SolarCell get_solar_cell() {
+        for(MultiblockComponent mc : this.components) if(mc instanceof SolarCell) return (SolarCell) mc;
+        return null;
     }
 
 

@@ -58,7 +58,7 @@ public abstract class ChemicalRecipe {
     }
 
 
-    public boolean attempt_craft(Inventory input, Inventory output, int power) {
+    public boolean attempt_craft(Inventory input, Inventory output, float power) {
         if(power - this.power_required < 0) return false;
 
         Inventory outputs_copy = Bukkit.createInventory((InventoryHolder)null, output.getSize());
