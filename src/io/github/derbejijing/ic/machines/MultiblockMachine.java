@@ -233,6 +233,16 @@ public abstract class MultiblockMachine {
     }
 
 
+    protected int get_power() {
+        return this.power;
+    }
+
+
+    protected void increment_power(int amount) {
+        this.power += amount;
+    }
+
+
     protected void add_component(MultiblockComponent component) {
         this.components.add(component);
     }
