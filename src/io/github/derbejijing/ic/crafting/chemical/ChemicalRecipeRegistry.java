@@ -1,13 +1,19 @@
 package io.github.derbejijing.ic.crafting.chemical;
 
+import io.github.derbejijing.ic.crafting.chemical.recipe.CrushNetherrack;
+import io.github.derbejijing.ic.crafting.chemical.recipe.CrushStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Salt;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecomposition;
 
 public enum ChemicalRecipeRegistry {
     GUNPOWDER(0, GunPowder.class),
     WATER_DECOMPOSITION(1, WaterDecomposition.class),
-    SALT(2, Salt.class);
+    SALT(2, Salt.class),
+    CRUSH_NETHERRACK(3, CrushNetherrack.class),
+    CRUSH_STONE(4, CrushStone.class),
+    SEPARATE_NETHERRACK(5, SeparateNetherrack.class);
 
     public final int id;
     public final Class<? extends ChemicalRecipe> recipe_class;

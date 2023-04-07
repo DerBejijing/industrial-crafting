@@ -5,6 +5,7 @@ import io.github.derbejijing.ic.machines.multiblock.ChemicalRefinery;
 import io.github.derbejijing.ic.machines.multiblock.ChemistryWorkbench;
 import io.github.derbejijing.ic.machines.multiblock.Condenser;
 import io.github.derbejijing.ic.machines.multiblock.Electrolyzer;
+import io.github.derbejijing.ic.machines.multiblock.Macerator;
 
 public class MultiblockRegistry {
     private interface Registry<T extends MultiblockMachine> {
@@ -17,7 +18,8 @@ public class MultiblockRegistry {
         ELECTROLYZER(2, Electrolyzer.class),
         CHEMICAL_REFINERY(3, ChemicalRefinery.class),
         CONDENSER(4, Condenser.class),
-        CENTRIFUGE(5, Centrifuge.class);
+        CENTRIFUGE(5, Centrifuge.class),
+        MACERATOR(6, Macerator.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;

@@ -3,6 +3,7 @@ package io.github.derbejijing.ic.machines.multiblock;
 import org.bukkit.Location;
 import org.bukkit.util.Vector;
 
+import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.component.CasingStone;
 import io.github.derbejijing.ic.machines.component.CasingStoneSlab;
@@ -36,6 +37,8 @@ public class Macerator extends MultiblockMachine {
 
     @Override
     protected void add_recipes() {
+        this.add_recipe(ChemicalRecipeRegistry.CRUSH_NETHERRACK);
+        this.add_recipe(ChemicalRecipeRegistry.CRUSH_STONE);
     }
 
     @Override
@@ -44,6 +47,7 @@ public class Macerator extends MultiblockMachine {
 
     @Override
     protected void on_place() {
+        this.set_recipe(ChemicalRecipeRegistry.CRUSH_NETHERRACK);
     }
 
     @Override
