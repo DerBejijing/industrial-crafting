@@ -9,6 +9,8 @@ import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 public class Water extends Chemical {
 
     public Water(int count, ChemicalPurity purity) {
+        // water will always be contaminated
+        // find a way to implement that without messing up other recipes
         super("Water", ChemicalItem.WATER.material, ChemicalItem.WATER.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
     }
     

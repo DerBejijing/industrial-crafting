@@ -55,4 +55,8 @@ public class Main extends JavaPlugin {
  * 
  * 
  * swap locations of in and out
+ * 
+ * 
+ * some chemicals will always be impure or very pure
+ * recipes need to respect this fact
  */

@@ -6,7 +6,7 @@ import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 public class GunPowder extends ChemicalRecipe {
 
     public GunPowder() {
-        super(1, 1);
+        super(1, 1, 0);
     }
 
 

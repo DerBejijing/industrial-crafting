@@ -166,7 +166,7 @@ public abstract class MultiblockMachine {
 
     private void attempt_crafting() {
         if(this.current_recipe != null) {
-            if(this.current_recipe.attempt_craft(this.get_input(), this.get_output(), this.power)) this.power -= this.current_recipe.power_required;
+            if(this.current_recipe.attempt_craft(this.get_input(), this.get_output(), this.power)) this.power -= this.current_recipe.get_power_required();
         }
     }
 

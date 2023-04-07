@@ -14,21 +14,43 @@ import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 
 public abstract class ChemicalRecipe {
-    private ArrayList<ChemicalItem> ingredients;         // items that will be consumed
-    private ArrayList<ChemicalItem> requirements;        // items that are required but will not be consumed
-    private HashMap<ChemicalItem, Integer> outputs;             // items that will be produced 
+    private class OutputItemData {
+        public int amount;
+        public int purity;
+        public boolean has_fixed_purity;
+        
+        public OutputItemData(int amount, int fixed_purity) {
+            this.amount = amount;
+            this.purity = fixed_purity;
+            this.has_fixed_purity = true;
+        }
+
+        public OutputItemData(int amount) {
+            this.amount = amount;
+            this.purity = 0;
+            this.has_fixed_purity = false;
+        }
+    }
+
+
+    private ArrayList<ChemicalItem> ingredients;            // items that will be consumed
+    private ArrayList<ChemicalItem> requirements;           // items that are required but will not be consumed
+    private HashMap<ChemicalItem, OutputItemData> outputs;         // items that will be produced 
     
-    public int power_required;                                  // energy required
-    public int time;                                            // time (seconds) required to craft
+    private int base_impurity;                              // result will be contaminated no matter what
+    private int power_required;                             // energy required
+    private int time;                                       // time (seconds) required to craft
 
     private int progress;
 
-    public ChemicalRecipe(int power_required, int time) {
+
+    public ChemicalRecipe(int power_required, int time, int base_impurity) {
         this.ingredients = new ArrayList<ChemicalItem>();
         this.requirements = new ArrayList<ChemicalItem>();
-        this.outputs = new HashMap<ChemicalItem, Integer>();
+        this.outputs = new HashMap<ChemicalItem, OutputItemData>();
         this.power_required = power_required;
         this.time = time;
+        this.base_impurity = base_impurity;
         this.progress = 0;
         this.add_ingredients();
         this.add_requirements();
@@ -52,7 +74,7 @@ public abstract class ChemicalRecipe {
         ArrayList<ChemicalItem> ingredients_copy = new ArrayList<ChemicalItem>(this.ingredients);
         ArrayList<ChemicalItem> requirements_copy = new ArrayList<ChemicalItem>(this.requirements);
 
-        int purity_best = 0;
+        int purity_best = this.base_impurity;
 
         // get all itemstacks and check if they are required
         // if so, get their impurities to process later
@@ -99,6 +121,11 @@ public abstract class ChemicalRecipe {
     }
 
 
+    public int get_power_required() {
+        return this.power_required;
+    }
+
+
     protected void add_ingredient(ChemicalItem ingredient, int amount) {
         for(int i = 0; i < amount; ++i) this.ingredients.add(ingredient);
     }
@@ -110,7 +137,12 @@ public abstract class ChemicalRecipe {
 
 
     protected void add_output(ChemicalItem output, int amount) {
-        this.outputs.put(output, amount);
+        this.outputs.put(output, new OutputItemData(amount));
+    }
+
+
+    protected void add_output(ChemicalItem output, int amount, ChemicalPurity fixed_purity) {
+        this.outputs.put(output, new OutputItemData(amount, fixed_purity.purity));
     }
 
 
@@ -132,8 +164,12 @@ public abstract class ChemicalRecipe {
 
     private ArrayList<ItemStack> get_output_items(int purity) {
         ArrayList<ItemStack> items = new ArrayList<ItemStack>();
-        for(Map.Entry<ChemicalItem, Integer> entry : this.outputs.entrySet()) {
-            ItemStack new_item = entry.getKey().to_chemical(ChemicalPurity.get_by_id(purity), entry.getValue()).to_item();
+        for(Map.Entry<ChemicalItem, OutputItemData> entry : this.outputs.entrySet()) {
+            OutputItemData oid = entry.getValue();
+            int purity_item = purity;
+            if(oid.has_fixed_purity) purity_item = oid.purity;
+
+            ItemStack new_item = entry.getKey().to_chemical(ChemicalPurity.get_by_id(purity_item), oid.amount).to_item();
             items.add(new_item);
         }
         return items;

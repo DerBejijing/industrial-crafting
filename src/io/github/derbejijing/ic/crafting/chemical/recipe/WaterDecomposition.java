@@ -6,7 +6,7 @@ import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 public class WaterDecomposition extends ChemicalRecipe {
 
     public WaterDecomposition() {
-        super(10, 1);
+        super(10, 1, 0);
     }
 
 
