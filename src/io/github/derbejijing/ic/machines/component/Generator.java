@@ -8,6 +8,8 @@ import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
+import io.github.derbejijing.ic.chemical.Chemical;
+import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class Generator extends MultiblockComponent {
@@ -33,6 +35,15 @@ public class Generator extends MultiblockComponent {
 
         public static int get_burn_time(Material material) {
             for(Fuel fuel : Fuel.values()) if(fuel.type.equals(material)) return fuel.burn_time;
+            return 0;
+        }
+
+        public static int get_chemical_burn_time(ItemStack item) {
+            Chemical chemical = Chemical.get_from(item);
+            if(chemical == null) return 0;
+
+            if(Chemical.class == ChemicalItem.HYDROGEN.chemical_class) return 2000;
+
             return 0;
         }
     }
@@ -74,6 +85,8 @@ public class Generator extends MultiblockComponent {
         for(ItemStack item : this.inventory.getContents()) {
             if(item != null && item.getType() != Material.AIR) {
                 int power = Fuel.get_burn_time(item.getType()) / 20;
+                power += Fuel.get_chemical_burn_time(item) / 20;
+
                 if(power > 0) {
                     item.setAmount(item.getAmount() - 1);
                     return power;
