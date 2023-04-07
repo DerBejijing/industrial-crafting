@@ -8,6 +8,7 @@ import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
 import io.github.derbejijing.ic.chemical.material.Oxygen;
 import io.github.derbejijing.ic.chemical.material.PotassiumNitrate;
+import io.github.derbejijing.ic.chemical.material.SodiumChloride;
 import io.github.derbejijing.ic.chemical.material.Sulfur;
 import io.github.derbejijing.ic.chemical.material.SulfuricAcid;
 import io.github.derbejijing.ic.chemical.material.Water;
@@ -18,7 +19,7 @@ public enum ChemicalItem {
     SULFUR(2, Material.SUGAR,Sulfur.class, false),
     POTASSIUM_NITRATE(3, Material.SUGAR,PotassiumNitrate.class, false),
     GUNPOWDER(4, Material.SUGAR,GunPowder.class, false),
-    SODIUM_CHLORIDE(5, Material.SUGAR, GunPowder.class, false),
+    SODIUM_CHLORIDE(5, Material.SUGAR, SodiumChloride.class, false),
     DISTILLED_WATER(6, Material.GLASS_BOTTLE, DistilledWater.class, false),
     HYDROGEN(7, Material.GLASS_BOTTLE, Hydrogen.class, false),
     OXYGEN(8, Material.GLASS_BOTTLE, Oxygen.class, false),

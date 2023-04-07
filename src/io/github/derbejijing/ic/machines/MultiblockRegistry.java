@@ -2,6 +2,7 @@ package io.github.derbejijing.ic.machines;
 
 import io.github.derbejijing.ic.machines.multiblock.ChemicalRefinery;
 import io.github.derbejijing.ic.machines.multiblock.ChemistryWorkbench;
+import io.github.derbejijing.ic.machines.multiblock.Condenser;
 import io.github.derbejijing.ic.machines.multiblock.Electrolyzer;
 
 public class MultiblockRegistry {
@@ -13,7 +14,8 @@ public class MultiblockRegistry {
     public enum RegistryEnum implements Registry<MultiblockMachine> {
         CHEMISTRY_WORKBENCH(1, ChemistryWorkbench.class),
         ELECTROLYZER(2, Electrolyzer.class),
-        CHEMICAL_REFINERY(3, ChemicalRefinery.class);
+        CHEMICAL_REFINERY(3, ChemicalRefinery.class),
+        CONDENSER(4, Condenser.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;
