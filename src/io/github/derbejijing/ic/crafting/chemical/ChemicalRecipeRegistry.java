@@ -9,7 +9,9 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.Booze;
 import io.github.derbejijing.ic.crafting.chemical.recipe.BoozeSugarCane;
 import io.github.derbejijing.ic.crafting.chemical.recipe.BurnCoal;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CalciumCarbonate;
+import io.github.derbejijing.ic.crafting.chemical.recipe.ChlorinatedHydrocarbons;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Chloroacetone;
+import io.github.derbejijing.ic.crafting.chemical.recipe.Chloroform;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
@@ -65,6 +67,8 @@ public enum ChemicalRecipeRegistry {
     SODIUM_HYDROXIDE_SOLUTION(28, SodiumHydroxideSolution.class, "Sodium hydroxide solution"),
     SODIUM_HYDROXIDE_SOLUTION_ELECTROLYSIS(29, SodiumHydroxideSolutionElectrolysis.class, "Sodium hydroxide electrolysis"),
     METHANE(30, Methane.class, "Methane"),
+    CHLORINATED_HYDROCARBONS(31, ChlorinatedHydrocarbons.class, "Chlorinated Hydrocarbons"),
+    CHLOROFORM(32, Chloroform.class, "Chloroform"),
     NONE(-1, null, "None");
 
     public final int id;

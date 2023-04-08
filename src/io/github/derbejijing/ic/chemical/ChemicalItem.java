@@ -11,8 +11,10 @@ import io.github.derbejijing.ic.chemical.material.CalciumCarbonate;
 import io.github.derbejijing.ic.chemical.material.Carbon;
 import io.github.derbejijing.ic.chemical.material.CarbonDioxide;
 import io.github.derbejijing.ic.chemical.material.CarbonMonoxide;
+import io.github.derbejijing.ic.chemical.material.ChlorinatedHydrocarbons;
 import io.github.derbejijing.ic.chemical.material.Chlorine;
 import io.github.derbejijing.ic.chemical.material.Chloroacetone;
+import io.github.derbejijing.ic.chemical.material.Chloroform;
 import io.github.derbejijing.ic.chemical.material.Coal;
 import io.github.derbejijing.ic.chemical.material.CobbleStone;
 import io.github.derbejijing.ic.chemical.material.CrushedNetherrack;
@@ -82,14 +84,14 @@ public enum ChemicalItem {
     APPLE(28, Material.APPLE, Apple.class, true),
     ORGANIC_WASTE(29, Material.ROTTEN_FLESH, OrganicWaste.class, true),
     CHLORINE(30, Material.GLASS_BOTTLE, Chlorine.class, false),
-    CHLOROACETONE(32, Material.SPLASH_POTION, Chloroacetone.class, false),
+    CHLOROACETONE(32, Material.GLASS_BOTTLE, Chloroacetone.class, false),
     POTASSIUM_CHLORIDE(33, Material.SUGAR, PotassiumChloride.class, false),
     POTASSIUM_CHLORATE(34, Material.SUGAR, PotassiumChlorate.class, false),
     POTASSIUM_HYDROXIDE(35, Material.GLASS_BOTTLE, PotassiumHydroxide.class, false),
     POTASSIUM_HYDROXIDE_SOLUTION(36, Material.GLASS_BOTTLE, PotassiumHydroxideSolution.class, false),
     PRIMER_POWDER(37, Material.SUGAR, PrimerPowder.class, false),
     HYDROGEN_PEROXIDE(38, Material.GLASS_BOTTLE, HydrogenPeroxide.class, false),
-    ACETONE_PEROXIDE(39, Material.SPLASH_POTION, AcetonePeroxide.class, false),
+    ACETONE_PEROXIDE(39, Material.SUGAR, AcetonePeroxide.class, false),
     SUGAR_CANE(40, Material.SUGAR_CANE, SugarCane.class, true),
     EMPTY_BUCKET(41, Material.BUCKET, EmptyBucket.class, true),
     SULFUR_DIOXIDE(42, Material.GLASS_BOTTLE, SulfurDioxide.class, false),
@@ -98,7 +100,9 @@ public enum ChemicalItem {
     SODIUM_HYDROXIDE_SOLUTION(45, Material.GLASS_BOTTLE, SodiumHydroxideSolution.class, false),
     SODIUM_ACETATE(46, Material.SUGAR, SodiumAcetate.class, false),
     SODIUM_CARBONATE(47, Material.SUGAR, SodiumCarbonate.class, false),
-    METHANE(48, Material.GLASS_BOTTLE, Methane.class, false);
+    METHANE(48, Material.GLASS_BOTTLE, Methane.class, false),
+    CHLOROFORM(49, Material.GLASS_BOTTLE, Chloroform.class, false),
+    CHLORINATED_HYDROCARBONS(50, Material.GLASS_BOTTLE, ChlorinatedHydrocarbons.class, false);
 
 
     public final int id;

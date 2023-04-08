@@ -59,6 +59,7 @@ public class Condenser extends MultiblockMachine {
         this.add_recipe(ChemicalRecipeRegistry.ALCOHOL_DISTILLATION);
         this.add_recipe(ChemicalRecipeRegistry.POTASSIUM_HYDROXIDE);
         this.add_recipe(ChemicalRecipeRegistry.SODIUM_HYDROXIDE);
+        this.add_recipe(ChemicalRecipeRegistry.CHLOROFORM);
     }
 
     @Override

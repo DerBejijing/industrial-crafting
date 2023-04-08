@@ -66,6 +66,7 @@ public class Furnace extends MultiblockMachine {
         this.add_recipe(ChemicalRecipeRegistry.SULFUR_DIOXIDE);
         this.add_recipe(ChemicalRecipeRegistry.SULFUR_TRIOXIDE);
         this.add_recipe(ChemicalRecipeRegistry.METHANE);
+        this.add_recipe(ChemicalRecipeRegistry.CHLORINATED_HYDROCARBONS);
     }
 
     @Override
