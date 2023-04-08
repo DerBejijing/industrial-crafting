@@ -98,11 +98,13 @@ public class PlayerListener implements Listener {
 
                 potion_meta.setBasePotionData(new PotionData(PotionType.INSTANT_DAMAGE));
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 3, 10), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 10, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 7, 10), true);
                 potion_item.setItemMeta(potion_meta);
 
                 ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
                 potion.setItem(potion_item);
+
+                item.setAmount(item.getAmount() - 1);
             }
         }
     }
