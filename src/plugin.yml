@@ -9,4 +9,6 @@ commands:
   getchemical:
     description: get a certain chemical
   setrecipe:
-    description: set the recipe for a certain machine
+    description: write a recipe to the blueprint
+  setmachine:
+    description: write a machine to the blueprint

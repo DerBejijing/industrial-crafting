@@ -5,7 +5,6 @@ import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
-import io.github.derbejijing.ic.machines.component.CasingGlass;
 import io.github.derbejijing.ic.machines.component.CasingGlassTinted;
 import io.github.derbejijing.ic.machines.component.CasingStone;
 import io.github.derbejijing.ic.machines.component.Generator;
@@ -13,13 +12,8 @@ import io.github.derbejijing.ic.machines.component.BlastFurnace;
 import io.github.derbejijing.ic.machines.component.InputHatch;
 import io.github.derbejijing.ic.machines.component.Interface;
 import io.github.derbejijing.ic.machines.component.OutputHatch;
-import io.github.derbejijing.ic.machines.component.SolarCell;
-import io.github.derbejijing.ic.machines.component.Water;
 
 public class Furnace extends MultiblockMachine {
-
-    private double temperature = 0;
-    private float power_yield = 0;
 
     public Furnace(Location base_location, int orientation) {
         super(base_location, orientation);

@@ -49,7 +49,7 @@ public class Chemical {
         lore.add(ChatColor.GRAY + "Reactivity: " + this.reactivity.color + this.reactivity.description);
         meta.setLore(lore);
 
-        meta.setDisplayName(this.name);
+        meta.setDisplayName(ChatColor.RESET + this.name);
 
         item.setItemMeta(meta);
 

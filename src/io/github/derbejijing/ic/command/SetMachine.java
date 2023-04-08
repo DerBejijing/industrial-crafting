@@ -15,15 +15,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import io.github.derbejijing.ic.Main;
-import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
-import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
+import io.github.derbejijing.ic.machines.MultiblockRegistry;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 
-public class SetRecipe implements CommandExecutor {
+public class SetMachine implements CommandExecutor {
 
-    private final int LEVELS_REQUIRED = 2;
+    private final int LEVELS_REQUIRED = 5;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -31,15 +31,15 @@ public class SetRecipe implements CommandExecutor {
             Player player = (Player) sender;
 
             if(args.length < 1) {
-                player.sendMessage("Click one of the recipes:");
-                for(ChemicalRecipeRegistry crr : ChemicalRecipeRegistry.values()) {
-                    int id = crr.id;
-                    String text = crr.name;
+                player.sendMessage("Click one of the machines:");
+                for(MultiblockRegistry.RegistryEnum mr : MultiblockRegistry.RegistryEnum.values()) {
+                    int id = mr.id;
+                    String text = mr.machine_class.getSimpleName();
 
                     if(id < 0) continue;
 
                     TextComponent message = new TextComponent(ChatColor.GRAY + "" + id + ChatColor.WHITE + " " + text);
-                    message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/setrecipe " + id));
+                    message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/setmachine " + id));
 
                     player.spigot().sendMessage(message);
                 }
@@ -58,8 +58,8 @@ public class SetRecipe implements CommandExecutor {
                 return false;
             }
 
-            ChemicalRecipe recipe = ChemicalRecipeRegistry.get_by_id(id);
-            if(recipe == null) return false;
+            Class<? extends MultiblockMachine> machine = MultiblockRegistry.RegistryEnum.get_by_id(id);
+            if(machine == null) return false;
 
             ItemStack item = player.getInventory().getItemInMainHand();
             if(item == null || !item.getType().equals(Material.PAPER)) {
@@ -78,6 +78,7 @@ public class SetRecipe implements CommandExecutor {
                 return true;
             }
 
+
             if(player.getLevel() < this.LEVELS_REQUIRED) {
                 player.sendMessage(ChatColor.RED + "You do not have enough levels!");
                 player.sendMessage(ChatColor.RED + "Levels required: " + ChatColor.GOLD + this.LEVELS_REQUIRED);
@@ -87,16 +88,16 @@ public class SetRecipe implements CommandExecutor {
             player.setLevel(Math.max(0, player.getLevel() - this.LEVELS_REQUIRED));
 
 
-            NamespacedKey nsk = new NamespacedKey(Main.get_main(), "recipe_id");
+            NamespacedKey nsk = new NamespacedKey(Main.get_main(), "machine_id");
             meta.getPersistentDataContainer().set(nsk, PersistentDataType.BYTE, (byte)id);
 
             List<String> lore = new ArrayList<String>();
-            lore.add(ChatColor.GRAY + "Recipe: " + ChatColor.BLUE + ChemicalRecipeRegistry.get_name(recipe));
+            lore.add(ChatColor.GRAY + "Machine: " + ChatColor.BLUE + machine.getSimpleName());
             meta.setLore(lore);
 
             item.setItemMeta(meta);
 
-            player.sendMessage(ChatColor.GREEN + "The recipe has been written to your blueprint!");
+            player.sendMessage(ChatColor.GREEN + "The machine has been written to your blueprint!");
 
             return true;
         }
