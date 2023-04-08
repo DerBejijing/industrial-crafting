@@ -28,5 +28,6 @@ public class SeparateStone extends ChemicalRecipe {
         this.add_output(ChemicalItem.SULFUR, 1);
         this.add_output(ChemicalItem.PHOSPHOROUS, 1);
         this.add_output(ChemicalItem.POTASSIUM_NITRATE, 1);
+        this.add_output(ChemicalItem.SODIUM_CHLORIDE, 1);
     }
 }

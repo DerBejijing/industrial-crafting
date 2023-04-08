@@ -14,7 +14,7 @@ public class BoozeSugarCane extends ChemicalRecipe {
     public void add_ingredients() {
         this.add_ingredient(ChemicalItem.ORGANIC_WASTE, 1);
         this.add_ingredient(ChemicalItem.SUGAR_CANE, 1);
-        this.add_ingredient(ChemicalItem.WATER, 5);
+        this.add_ingredient(ChemicalItem.WATER, 1);
     }
 
 
@@ -25,7 +25,7 @@ public class BoozeSugarCane extends ChemicalRecipe {
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.LIQUOR, 5);
-        this.add_output(ChemicalItem.EMPTY_BUCKET, 5);
+        this.add_output(ChemicalItem.LIQUOR, 1);
+        this.add_output(ChemicalItem.EMPTY_BUCKET, 1);
     }
 }

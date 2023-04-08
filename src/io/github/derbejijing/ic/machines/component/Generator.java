@@ -42,7 +42,7 @@ public class Generator extends MultiblockComponent {
             Chemical chemical = Chemical.get_from(item);
             if(chemical == null) return 0;
 
-            if(Chemical.class == ChemicalItem.HYDROGEN.chemical_class) return 2000;
+            if(chemical.getClass().equals(ChemicalItem.HYDROGEN.chemical_class)) return 1000;
 
             return 0;
         }
