@@ -48,7 +48,6 @@ public class Macerator extends MultiblockMachine {
 
     @Override
     protected void on_place() {
-        this.set_recipe(ChemicalRecipeRegistry.CRUSH_NETHERRACK);
     }
 
     @Override

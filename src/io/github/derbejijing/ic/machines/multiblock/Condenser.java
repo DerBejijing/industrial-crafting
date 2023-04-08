@@ -65,7 +65,6 @@ public class Condenser extends MultiblockMachine {
 
     @Override
     protected void on_place() {
-        this.set_recipe(ChemicalRecipeRegistry.SALT);
     }
 
     @Override

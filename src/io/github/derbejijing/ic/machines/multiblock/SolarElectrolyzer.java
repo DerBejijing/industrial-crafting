@@ -77,7 +77,6 @@ public class SolarElectrolyzer extends MultiblockMachine {
 
     @Override
     protected void on_place() {
-        this.set_recipe(ChemicalRecipeRegistry.WATER_DECOMPOSITION);
         this.temperature = this.base_location.getBlock().getTemperature();
 
         if(this.temperature < 0.5) this.power_yield = 0;

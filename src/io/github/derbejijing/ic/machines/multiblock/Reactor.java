@@ -5,17 +5,18 @@ import org.bukkit.util.Vector;
 
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
-import io.github.derbejijing.ic.machines.component.CasingGlass;
+import io.github.derbejijing.ic.machines.component.CasingGlassTinted;
 import io.github.derbejijing.ic.machines.component.CasingStone;
+import io.github.derbejijing.ic.machines.component.Cauldron;
 import io.github.derbejijing.ic.machines.component.Generator;
 import io.github.derbejijing.ic.machines.component.InputHatch;
 import io.github.derbejijing.ic.machines.component.Interface;
+import io.github.derbejijing.ic.machines.component.LightningRod;
 import io.github.derbejijing.ic.machines.component.OutputHatch;
-import io.github.derbejijing.ic.machines.component.Water;
 
-public class Electrolyzer extends MultiblockMachine {
+public class Reactor extends MultiblockMachine {
 
-    public Electrolyzer(Location base_location, int orientation) {
+    public Reactor(Location base_location, int orientation) {
         super(base_location, orientation);
     }
 
@@ -25,17 +26,17 @@ public class Electrolyzer extends MultiblockMachine {
         this.add_component(new Interface(this, new Vector(1, 0, 0), false));
         this.add_component(new CasingStone(this, new Vector(2, 0, 0)));
         this.add_component(new InputHatch(this, new Vector(0, 0, 1)));
-        this.add_component(new CasingStone(this, new Vector(1, 0, 1)));
+        this.add_component(new Cauldron(this, new Vector(1, 0, 1)));
         this.add_component(new OutputHatch(this, new Vector(2, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(0, 0, 2)));
         this.add_component(new Generator(this, new Vector(1, 0, 2)));
         this.add_component(new CasingStone(this, new Vector(2, 0, 2)));
 
         this.add_component(new CasingStone(this, new Vector(0, 1, 0)));
-        this.add_component(new CasingGlass(this, new Vector(1, 1, 0)));
+        this.add_component(new CasingGlassTinted(this, new Vector(1, 1, 0)));
         this.add_component(new CasingStone(this, new Vector(2, 1, 0)));
         this.add_component(new CasingStone(this, new Vector(0, 1, 1)));
-        this.add_component(new Water(this, new Vector(1, 1, 1)));
+        this.add_component(new LightningRod(this, new Vector(1, 1, 1)));
         this.add_component(new CasingStone(this, new Vector(2, 1, 1)));
         this.add_component(new CasingStone(this, new Vector(0, 1, 2)));
         this.add_component(new CasingStone(this, new Vector(1, 1, 2)));
@@ -54,7 +55,8 @@ public class Electrolyzer extends MultiblockMachine {
 
     @Override
     protected void add_recipes() {
-        this.add_recipe(ChemicalRecipeRegistry.WATER_DECOMPOSITION);
+        this.add_recipe(ChemicalRecipeRegistry.ACETIC_ACID);
+        this.add_recipe(ChemicalRecipeRegistry.GUNPOWDER);
     }
 
     @Override

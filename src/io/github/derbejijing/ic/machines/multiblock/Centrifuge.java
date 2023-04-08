@@ -93,7 +93,6 @@ public class Centrifuge extends MultiblockMachine {
 
     @Override
     protected void on_place() {
-        this.set_recipe(ChemicalRecipeRegistry.SEPARATE_NETHERRACK);
     }
 
     @Override
