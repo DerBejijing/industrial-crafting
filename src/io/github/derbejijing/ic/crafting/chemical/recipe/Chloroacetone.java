@@ -3,17 +3,17 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 
-public class AcetoneDistillation extends ChemicalRecipe {
+public class Chloroacetone extends ChemicalRecipe {
 
-    public AcetoneDistillation() {
-        super(100, 10, 0);
+    public Chloroacetone() {
+        super(1, 10, 0);
     }
 
 
     @Override
     public void add_ingredients() {
-        this.add_ingredient(ChemicalItem.ACETIC_ACID, 1);
-        this.add_ingredient(ChemicalItem.CALCIUM_CARBONATE, 1);
+        this.add_ingredient(ChemicalItem.ACETONE, 1);
+        this.add_ingredient(ChemicalItem.CHLORINE, 1);
     }
 
 
@@ -24,6 +24,6 @@ public class AcetoneDistillation extends ChemicalRecipe {
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.ACETONE, 1);
+        this.add_output(ChemicalItem.CHLOROACETONE, 1);
     }
 }

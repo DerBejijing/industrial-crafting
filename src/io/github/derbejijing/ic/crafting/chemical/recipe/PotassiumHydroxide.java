@@ -4,16 +4,16 @@ import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 
-public class SeparateNetherrack extends ChemicalRecipe {
+public class PotassiumHydroxide extends ChemicalRecipe {
 
-    public SeparateNetherrack() {
-        super(10, 1, ChemicalPurity.CONTAMINATION.purity);
+    public PotassiumHydroxide() {
+        super(100, 10, 0);
     }
 
 
     @Override
     public void add_ingredients() {
-        this.add_ingredient(ChemicalItem.CRUSHED_NETHERRACK, 32);
+        this.add_ingredient(ChemicalItem.POTASSIUM_HYDROXIDE_SOLUTION, 1);
     }
 
 
@@ -24,8 +24,7 @@ public class SeparateNetherrack extends ChemicalRecipe {
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.SULFUR, 1);
-        this.add_output(ChemicalItem.PHOSPHOROUS, 1);
-        this.add_output(ChemicalItem.POTASSIUM_NITRATE, 8);
+        this.add_output(ChemicalItem.POTASSIUM_HYDROXIDE, 1, ChemicalPurity.INDUSTRIAL_GRADE);
+        this.add_output(ChemicalItem.DISTILLED_WATER, 1, ChemicalPurity.INDUSTRIAL_GRADE);
     }
 }

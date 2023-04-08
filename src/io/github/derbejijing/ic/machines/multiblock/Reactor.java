@@ -57,6 +57,9 @@ public class Reactor extends MultiblockMachine {
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.ACETIC_ACID);
         this.add_recipe(ChemicalRecipeRegistry.GUNPOWDER);
+        this.add_recipe(ChemicalRecipeRegistry.BOOZE);
+        this.add_recipe(ChemicalRecipeRegistry.CHLOROACETONE);
+        this.add_recipe(ChemicalRecipeRegistry.POTASSIUM_HYDROXIDE_SOLUTION);
     }
 
     @Override

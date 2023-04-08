@@ -4,13 +4,19 @@ package io.github.derbejijing.ic.crafting.chemical;
 import io.github.derbejijing.ic.crafting.chemical.recipe.AceticAcid;
 import io.github.derbejijing.ic.crafting.chemical.recipe.AcetoneDistillation;
 import io.github.derbejijing.ic.crafting.chemical.recipe.AlcoholDistillation;
+import io.github.derbejijing.ic.crafting.chemical.recipe.Booze;
 import io.github.derbejijing.ic.crafting.chemical.recipe.BurnCoal;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CalciumCarbonate;
+import io.github.derbejijing.ic.crafting.chemical.recipe.Chloroacetone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
+import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxide;
+import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideElectrolysis;
+import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideSolution;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Salt;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateNetherrack;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecomposition;
 
 public enum ChemicalRecipeRegistry {
@@ -25,6 +31,12 @@ public enum ChemicalRecipeRegistry {
     ACETIC_ACID(8, AceticAcid.class, "Acetic acid"),
     ACETONE_DISTILLATION(9, AcetoneDistillation.class, "Acetone distillation"),
     CALCIUM_CARBONATE(10, CalciumCarbonate.class, "Calcium carbonate crushing"),
+    BOOZE(11, Booze.class, "Booze"),
+    CHLOROACETONE(12, Chloroacetone.class, "Chloroacetone"),
+    SEPARATE_STONE(13, SeparateStone.class, "Stone separation"),
+    POTASSIUM_HYDROXIDE(14, PotassiumHydroxide.class, "Potassium hydroxide drying"),
+    POTASSIUM_HYDROXIDE_SOLUTION(15, PotassiumHydroxideSolution.class, "Potassium hydroxide solution"),
+    POTASSIUM_HYDROXIDE_ELECTROLYSIS(16, PotassiumHydroxideElectrolysis.class, "Potassium hydroxide solution"),
     NONE(-1, null, "None");
 
     public final int id;

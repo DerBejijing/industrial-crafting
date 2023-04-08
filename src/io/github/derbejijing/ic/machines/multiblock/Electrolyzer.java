@@ -55,6 +55,7 @@ public class Electrolyzer extends MultiblockMachine {
     @Override
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.WATER_DECOMPOSITION);
+        this.add_recipe(ChemicalRecipeRegistry.POTASSIUM_HYDROXIDE_ELECTROLYSIS);
     }
 
     @Override

@@ -4,11 +4,14 @@ import org.bukkit.Material;
 
 import io.github.derbejijing.ic.chemical.material.AceticAcid;
 import io.github.derbejijing.ic.chemical.material.Acetone;
+import io.github.derbejijing.ic.chemical.material.Apple;
 import io.github.derbejijing.ic.chemical.material.Calcite;
 import io.github.derbejijing.ic.chemical.material.CalciumCarbonate;
 import io.github.derbejijing.ic.chemical.material.Carbon;
 import io.github.derbejijing.ic.chemical.material.CarbonDioxide;
 import io.github.derbejijing.ic.chemical.material.CarbonMonoxide;
+import io.github.derbejijing.ic.chemical.material.Chlorine;
+import io.github.derbejijing.ic.chemical.material.Chloroacetone;
 import io.github.derbejijing.ic.chemical.material.Coal;
 import io.github.derbejijing.ic.chemical.material.CobbleStone;
 import io.github.derbejijing.ic.chemical.material.CrushedNetherrack;
@@ -20,8 +23,13 @@ import io.github.derbejijing.ic.chemical.material.Liquor;
 import io.github.derbejijing.ic.chemical.material.MetalDust;
 import io.github.derbejijing.ic.chemical.material.Methanol;
 import io.github.derbejijing.ic.chemical.material.Netherrack;
+import io.github.derbejijing.ic.chemical.material.OrganicWaste;
 import io.github.derbejijing.ic.chemical.material.Oxygen;
 import io.github.derbejijing.ic.chemical.material.Phosphorous;
+import io.github.derbejijing.ic.chemical.material.PotassiumChlorate;
+import io.github.derbejijing.ic.chemical.material.PotassiumChloride;
+import io.github.derbejijing.ic.chemical.material.PotassiumHydroxide;
+import io.github.derbejijing.ic.chemical.material.PotassiumHydroxideSolution;
 import io.github.derbejijing.ic.chemical.material.PotassiumNitrate;
 import io.github.derbejijing.ic.chemical.material.SodiumChloride;
 import io.github.derbejijing.ic.chemical.material.Soil;
@@ -58,7 +66,15 @@ public enum ChemicalItem {
     LIQUOR(24, Material.GLASS_BOTTLE, Liquor.class, false),
     COAL(25, Material.COAL, Coal.class, true),
     CARBON_DIOXIDE(26, Material.GLASS_BOTTLE, CarbonDioxide.class, false),
-    ACETONE(27, Material.GLASS_BOTTLE, Acetone.class, false);
+    ACETONE(27, Material.GLASS_BOTTLE, Acetone.class, false),
+    APPLE(28, Material.APPLE, Apple.class, true),
+    ORGANIC_WASTE(29, Material.ROTTEN_FLESH, OrganicWaste.class, true),
+    CHLORINE(30, Material.GLASS_BOTTLE, Chlorine.class, false),
+    CHLOROACETONE(32, Material.SPLASH_POTION, Chloroacetone.class, false),
+    POTASSIUM_CHLORIDE(33, Material.SUGAR, PotassiumChloride.class, false),
+    POTASSIUM_CHLORATE(34, Material.SUGAR, PotassiumChlorate.class, false),
+    POTASSIUM_HYDROXIDE(35, Material.GLASS_BOTTLE, PotassiumHydroxide.class, false),
+    POTASSIUM_HYDROXIDE_SOLUTION(36, Material.GLASS_BOTTLE, PotassiumHydroxideSolution.class, false);
 
     public final int id;
     public final Material material;
