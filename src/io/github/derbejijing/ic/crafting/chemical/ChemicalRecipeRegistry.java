@@ -3,6 +3,7 @@ package io.github.derbejijing.ic.crafting.chemical;
 
 import io.github.derbejijing.ic.crafting.chemical.recipe.AceticAcid;
 import io.github.derbejijing.ic.crafting.chemical.recipe.AcetoneDistillation;
+import io.github.derbejijing.ic.crafting.chemical.recipe.AcetonePeroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.AlcoholDistillation;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Booze;
 import io.github.derbejijing.ic.crafting.chemical.recipe.BurnCoal;
@@ -11,13 +12,17 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.Chloroacetone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
+import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxide;
+import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxideCheap;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideElectrolysis;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideSolution;
+import io.github.derbejijing.ic.crafting.chemical.recipe.PrimerPowder;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Salt;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecomposition;
+import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecompositionCheap;
 
 public enum ChemicalRecipeRegistry {
     GUNPOWDER(0, GunPowder.class, "Gunpowder"),
@@ -37,6 +42,11 @@ public enum ChemicalRecipeRegistry {
     POTASSIUM_HYDROXIDE(14, PotassiumHydroxide.class, "Potassium hydroxide drying"),
     POTASSIUM_HYDROXIDE_SOLUTION(15, PotassiumHydroxideSolution.class, "Potassium hydroxide solution"),
     POTASSIUM_HYDROXIDE_ELECTROLYSIS(16, PotassiumHydroxideElectrolysis.class, "Potassium hydroxide solution"),
+    PRIMER_POWDER(17, PrimerPowder.class, "Primer powder"),
+    HYDROGEN_PEROXIDE(18, HydrogenPeroxide.class, "Hydrogen peroxide"),
+    HYDROGEN_PEROXIDE_CHEAP(19, HydrogenPeroxideCheap.class, "Hydrogen peroxide (cheap)"),
+    WATER_DECOMPOSITION_CHEAP(20, WaterDecompositionCheap.class, "Water electrolysis (cheap)"),
+    ACETONE_PEROXIDE(21, AcetonePeroxide.class, "Acetone peroxide"),
     NONE(-1, null, "None");
 
     public final int id;

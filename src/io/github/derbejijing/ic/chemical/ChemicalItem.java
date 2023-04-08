@@ -4,6 +4,7 @@ import org.bukkit.Material;
 
 import io.github.derbejijing.ic.chemical.material.AceticAcid;
 import io.github.derbejijing.ic.chemical.material.Acetone;
+import io.github.derbejijing.ic.chemical.material.AcetonePeroxide;
 import io.github.derbejijing.ic.chemical.material.Apple;
 import io.github.derbejijing.ic.chemical.material.Calcite;
 import io.github.derbejijing.ic.chemical.material.CalciumCarbonate;
@@ -19,6 +20,7 @@ import io.github.derbejijing.ic.chemical.material.DistilledWater;
 import io.github.derbejijing.ic.chemical.material.Ethanol;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
+import io.github.derbejijing.ic.chemical.material.HydrogenPeroxide;
 import io.github.derbejijing.ic.chemical.material.Liquor;
 import io.github.derbejijing.ic.chemical.material.MetalDust;
 import io.github.derbejijing.ic.chemical.material.Methanol;
@@ -31,6 +33,7 @@ import io.github.derbejijing.ic.chemical.material.PotassiumChloride;
 import io.github.derbejijing.ic.chemical.material.PotassiumHydroxide;
 import io.github.derbejijing.ic.chemical.material.PotassiumHydroxideSolution;
 import io.github.derbejijing.ic.chemical.material.PotassiumNitrate;
+import io.github.derbejijing.ic.chemical.material.PrimerPowder;
 import io.github.derbejijing.ic.chemical.material.SodiumChloride;
 import io.github.derbejijing.ic.chemical.material.Soil;
 import io.github.derbejijing.ic.chemical.material.StoneDust;
@@ -74,7 +77,10 @@ public enum ChemicalItem {
     POTASSIUM_CHLORIDE(33, Material.SUGAR, PotassiumChloride.class, false),
     POTASSIUM_CHLORATE(34, Material.SUGAR, PotassiumChlorate.class, false),
     POTASSIUM_HYDROXIDE(35, Material.GLASS_BOTTLE, PotassiumHydroxide.class, false),
-    POTASSIUM_HYDROXIDE_SOLUTION(36, Material.GLASS_BOTTLE, PotassiumHydroxideSolution.class, false);
+    POTASSIUM_HYDROXIDE_SOLUTION(36, Material.GLASS_BOTTLE, PotassiumHydroxideSolution.class, false),
+    PRIMER_POWDER(37, Material.SUGAR, PrimerPowder.class, false),
+    HYDROGEN_PEROXIDE(38, Material.GLASS_BOTTLE, HydrogenPeroxide.class, false),
+    ACETONE_PEROXIDE(39, Material.SPLASH_POTION, AcetonePeroxide.class, false);
 
     public final int id;
     public final Material material;
