@@ -1,5 +1,9 @@
 package io.github.derbejijing.ic.crafting.chemical;
 
+import io.github.derbejijing.ic.crafting.chemical.recipe.AceticAcid;
+import io.github.derbejijing.ic.crafting.chemical.recipe.AcetoneDistillation;
+import io.github.derbejijing.ic.crafting.chemical.recipe.AlcoholDistillation;
+import io.github.derbejijing.ic.crafting.chemical.recipe.BurnCoal;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
@@ -13,7 +17,11 @@ public enum ChemicalRecipeRegistry {
     SALT(2, Salt.class),
     CRUSH_NETHERRACK(3, CrushNetherrack.class),
     CRUSH_STONE(4, CrushStone.class),
-    SEPARATE_NETHERRACK(5, SeparateNetherrack.class);
+    SEPARATE_NETHERRACK(5, SeparateNetherrack.class),
+    BURN_COAL(6, BurnCoal.class),
+    ALCOHOL_DISTILLATION(7, AlcoholDistillation.class),
+    ACETIC_ACID(8, AceticAcid.class),
+    ACETONE_DISTILLATION(9, AcetoneDistillation.class);
 
     public final int id;
     public final Class<? extends ChemicalRecipe> recipe_class;

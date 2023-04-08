@@ -2,13 +2,23 @@ package io.github.derbejijing.ic.chemical;
 
 import org.bukkit.Material;
 
+import io.github.derbejijing.ic.chemical.material.AceticAcid;
+import io.github.derbejijing.ic.chemical.material.Acetone;
+import io.github.derbejijing.ic.chemical.material.Calcite;
+import io.github.derbejijing.ic.chemical.material.CalciumCarbonate;
 import io.github.derbejijing.ic.chemical.material.Carbon;
+import io.github.derbejijing.ic.chemical.material.CarbonDioxide;
+import io.github.derbejijing.ic.chemical.material.CarbonMonoxide;
+import io.github.derbejijing.ic.chemical.material.Coal;
 import io.github.derbejijing.ic.chemical.material.CobbleStone;
 import io.github.derbejijing.ic.chemical.material.CrushedNetherrack;
 import io.github.derbejijing.ic.chemical.material.DistilledWater;
+import io.github.derbejijing.ic.chemical.material.Ethanol;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
+import io.github.derbejijing.ic.chemical.material.Liquor;
 import io.github.derbejijing.ic.chemical.material.MetalDust;
+import io.github.derbejijing.ic.chemical.material.Methanol;
 import io.github.derbejijing.ic.chemical.material.Netherrack;
 import io.github.derbejijing.ic.chemical.material.Oxygen;
 import io.github.derbejijing.ic.chemical.material.Phosphorous;
@@ -38,7 +48,17 @@ public enum ChemicalItem {
     METAL_DUST(14, Material.SUGAR, MetalDust.class, false),
     NETHERRACK(15, Material.NETHERRACK, Netherrack.class, true),
     CRUSHED_NETHERRACK(16, Material.SUGAR, CrushedNetherrack.class, false),
-    PHOSPHOROUS(17, Material.SUGAR, Phosphorous.class, false);
+    PHOSPHOROUS(17, Material.SUGAR, Phosphorous.class, false),
+    CALCITE(18, Material.CALCITE, Calcite.class, true),
+    CALCIUM_CARBONATE(19, Material.SUGAR, CalciumCarbonate.class, false),
+    ACETIC_ACID(20, Material.GLASS_BOTTLE, AceticAcid.class, false),
+    CARBON_MONOXIDE(21, Material.GLASS_BOTTLE, CarbonMonoxide.class, false),
+    METHANOL(22, Material.GLASS_BOTTLE, Methanol.class, false),
+    ETHANOL(23, Material.GLASS_BOTTLE, Ethanol.class, false),
+    LIQUOR(24, Material.GLASS_BOTTLE, Liquor.class, false),
+    COAL(25, Material.COAL, Coal.class, true),
+    CARBON_DIOXIDE(26, Material.GLASS_BOTTLE, CarbonDioxide.class, false),
+    ACETONE(27, Material.GLASS, Acetone.class, false);
 
     public final int id;
     public final Material material;
