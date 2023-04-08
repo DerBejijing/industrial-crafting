@@ -7,6 +7,7 @@ import io.github.derbejijing.ic.machines.multiblock.Electrolyzer;
 import io.github.derbejijing.ic.machines.multiblock.Furnace;
 import io.github.derbejijing.ic.machines.multiblock.Macerator;
 import io.github.derbejijing.ic.machines.multiblock.Reactor;
+import io.github.derbejijing.ic.machines.multiblock.Recrystallizer;
 import io.github.derbejijing.ic.machines.multiblock.SolarElectrolyzer;
 
 public class MultiblockRegistry {
@@ -23,7 +24,8 @@ public class MultiblockRegistry {
         MACERATOR(5, Macerator.class),
         SOLAR_ELECTROLYZER(6, SolarElectrolyzer.class),
         FURNACE(7, Furnace.class),
-        REACTOR(8, Reactor.class);
+        REACTOR(8, Reactor.class),
+        RECRYSTALLIZER(9, Recrystallizer.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;

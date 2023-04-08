@@ -78,16 +78,7 @@ public class Main extends JavaPlugin {
 
 
 /*Notes
- * Implement blueprint crafting
- * 
- * 
  * swap locations of in and out
  * 
- * 
- * 
- * 
- * add chemical reactor for alcohol and acetic acid
- * 
- * 
- * 
+ * add recrystallisation to purify chemicals
  */

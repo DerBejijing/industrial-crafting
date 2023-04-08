@@ -22,6 +22,11 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideElectrolysis;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideSolution;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PrimerPowder;
+import io.github.derbejijing.ic.crafting.chemical.recipe.RecrystallizePhosphorous;
+import io.github.derbejijing.ic.crafting.chemical.recipe.RecrystallizePotassiumChloride;
+import io.github.derbejijing.ic.crafting.chemical.recipe.RecrystallizePotassiumNitrate;
+import io.github.derbejijing.ic.crafting.chemical.recipe.RecrystallizeSodiumChloride;
+import io.github.derbejijing.ic.crafting.chemical.recipe.RecrystallizeSulfur;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Salt;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateStone;
@@ -69,6 +74,11 @@ public enum ChemicalRecipeRegistry {
     METHANE(30, Methane.class, "Methane"),
     CHLORINATED_HYDROCARBONS(31, ChlorinatedHydrocarbons.class, "Chlorinated Hydrocarbons"),
     CHLOROFORM(32, Chloroform.class, "Chloroform"),
+    RECRYSTALLIZE_PHOSPHOROUS(33, RecrystallizePhosphorous.class, "Recrystallize phosphorous"),
+    RECRYSTALLIZE_POTASSIUM_CHLORIDE(34, RecrystallizePotassiumChloride.class, "Recrystallize potassium chloride"),
+    RECRYSTALLIZE_POTASSIUM_NITRATE(35, RecrystallizePotassiumNitrate.class, "Recrystallize potassium nitrate"),
+    RECRYSTALLIZE_SODIUM_CHLORIDE(36, RecrystallizeSodiumChloride.class, "Recrystallize sodium chloride"),
+    RECRYSTALLIZE_SULFUR(37, RecrystallizeSulfur.class, "Recrystallize sulfur"),
     NONE(-1, null, "None");
 
     public final int id;
