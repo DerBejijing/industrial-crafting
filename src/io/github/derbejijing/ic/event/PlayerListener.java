@@ -3,7 +3,9 @@ package io.github.derbejijing.ic.event;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.ThrownPotion;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -13,10 +15,18 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionData;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionType;
 
 import io.github.derbejijing.ic.Main;
+import io.github.derbejijing.ic.chemical.Chemical;
+import io.github.derbejijing.ic.chemical.material.AcetonePeroxide;
+import io.github.derbejijing.ic.chemical.material.Chloroacetone;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.MultiblockRegistry;
@@ -59,6 +69,40 @@ public class PlayerListener implements Listener {
 
                     Main.get_manager().place(e.getPlayer(), location, rotation, id);
                 }
+            }
+        }
+
+        if(e.getAction() == Action.RIGHT_CLICK_AIR && e.hasItem()) {
+            ItemStack item = e.getItem();
+
+            Chemical chemical = Chemical.get_from(item);
+            if(chemical == null) return;
+
+            Player player = e.getPlayer();
+
+            if(chemical.getClass().equals(AcetonePeroxide.class)) {
+                Arrow arrow = player.launchProjectile(Arrow.class);
+                arrow.setVelocity(player.getEyeLocation().getDirection().multiply(1.0f));
+                arrow.setDamage(0);
+                
+                PersistentDataContainer container = arrow.getPersistentDataContainer();
+                NamespacedKey nsk = new NamespacedKey(Main.get_main(), "projectile_tatp");
+                container.set(nsk, PersistentDataType.BYTE, (byte)1);
+
+                item.setAmount(item.getAmount() - 1);
+            }
+
+            if(chemical.getClass().equals(Chloroacetone.class)) {
+                ItemStack potion_item = new ItemStack(Material.SPLASH_POTION);
+                PotionMeta potion_meta = (PotionMeta) potion_item.getItemMeta();
+
+                potion_meta.setBasePotionData(new PotionData(PotionType.INSTANT_DAMAGE));
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 3, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 10, 10), true);
+                potion_item.setItemMeta(potion_meta);
+
+                ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
+                potion.setItem(potion_item);
             }
         }
     }

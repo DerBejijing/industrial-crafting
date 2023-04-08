@@ -1,17 +1,23 @@
 package io.github.derbejijing.ic.event;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.inventory.InventoryMoveItemEvent;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 
 import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
@@ -66,13 +72,19 @@ public class WorldListener implements Listener {
             }
         }
     }
+    
 
+    @EventHandler
+    public void arrow_hit(ProjectileHitEvent e) {
+        if(e.getEntityType().equals(EntityType.ARROW)) {
+            Arrow arrow = (Arrow) e.getEntity();
 
-    /*
-     * notes
-     * 
-     * why check for block breaking?
-     * Because no interface items shall end up in player's inventories
-     * therefore, look only for destruction of chests
-     */
+            PersistentDataContainer container = arrow.getPersistentDataContainer();
+            NamespacedKey nsk = new NamespacedKey(Main.get_main(), "projectile_tatp");
+
+            if(container == null || !container.has(nsk, PersistentDataType.BYTE)) return;
+            arrow.getWorld().createExplosion(arrow.getLocation(), 3, true);
+            arrow.remove();
+        }
+    }
 }
