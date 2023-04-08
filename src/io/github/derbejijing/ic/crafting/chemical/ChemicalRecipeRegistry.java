@@ -15,6 +15,7 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.CrushStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
 import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxideCheap;
+import io.github.derbejijing.ic.crafting.chemical.recipe.Methane;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideElectrolysis;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideSolution;
@@ -22,6 +23,10 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.PrimerPowder;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Salt;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateStone;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SodiumAcetate;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SodiumHydroxide;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SodiumHydroxideSolution;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SodiumHydroxideSolutionElectrolysis;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SulfurDioxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SulfurTrioxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SulfuricAcid;
@@ -45,7 +50,7 @@ public enum ChemicalRecipeRegistry {
     SEPARATE_STONE(13, SeparateStone.class, "Stone separation"),
     POTASSIUM_HYDROXIDE(14, PotassiumHydroxide.class, "Potassium hydroxide drying"),
     POTASSIUM_HYDROXIDE_SOLUTION(15, PotassiumHydroxideSolution.class, "Potassium hydroxide solution"),
-    POTASSIUM_HYDROXIDE_ELECTROLYSIS(16, PotassiumHydroxideElectrolysis.class, "Potassium hydroxide solution"),
+    POTASSIUM_HYDROXIDE_ELECTROLYSIS(16, PotassiumHydroxideElectrolysis.class, "Potassium hydroxide electrolysis"),
     PRIMER_POWDER(17, PrimerPowder.class, "Primer powder"),
     HYDROGEN_PEROXIDE(18, HydrogenPeroxide.class, "Hydrogen peroxide"),
     HYDROGEN_PEROXIDE_CHEAP(19, HydrogenPeroxideCheap.class, "Hydrogen peroxide (cheap)"),
@@ -55,6 +60,11 @@ public enum ChemicalRecipeRegistry {
     SULFUR_DIOXIDE(23, SulfurDioxide.class, "Sulfur dioxide"),
     SULFUR_TRIOXIDE(24, SulfurTrioxide.class, "Sulfur trioxide"),
     SULFURIC_ACID(25, SulfuricAcid.class, "Sulfuric Acid"),
+    SODIUM_ACETATE(26, SodiumAcetate.class, "Sodium Acetate"),
+    SODIUM_HYDROXIDE(27, SodiumHydroxide.class, "Sodium hydroxide drying"),
+    SODIUM_HYDROXIDE_SOLUTION(28, SodiumHydroxideSolution.class, "Sodium hydroxide solution"),
+    SODIUM_HYDROXIDE_SOLUTION_ELECTROLYSIS(29, SodiumHydroxideSolutionElectrolysis.class, "Sodium hydroxide electrolysis"),
+    METHANE(30, Methane.class, "Methane"),
     NONE(-1, null, "None");
 
     public final int id;

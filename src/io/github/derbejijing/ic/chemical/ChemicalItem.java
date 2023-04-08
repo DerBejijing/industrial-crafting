@@ -24,6 +24,7 @@ import io.github.derbejijing.ic.chemical.material.Hydrogen;
 import io.github.derbejijing.ic.chemical.material.HydrogenPeroxide;
 import io.github.derbejijing.ic.chemical.material.Liquor;
 import io.github.derbejijing.ic.chemical.material.MetalDust;
+import io.github.derbejijing.ic.chemical.material.Methane;
 import io.github.derbejijing.ic.chemical.material.Methanol;
 import io.github.derbejijing.ic.chemical.material.Netherrack;
 import io.github.derbejijing.ic.chemical.material.OrganicWaste;
@@ -35,7 +36,11 @@ import io.github.derbejijing.ic.chemical.material.PotassiumHydroxide;
 import io.github.derbejijing.ic.chemical.material.PotassiumHydroxideSolution;
 import io.github.derbejijing.ic.chemical.material.PotassiumNitrate;
 import io.github.derbejijing.ic.chemical.material.PrimerPowder;
+import io.github.derbejijing.ic.chemical.material.SodiumAcetate;
+import io.github.derbejijing.ic.chemical.material.SodiumCarbonate;
 import io.github.derbejijing.ic.chemical.material.SodiumChloride;
+import io.github.derbejijing.ic.chemical.material.SodiumHydroxide;
+import io.github.derbejijing.ic.chemical.material.SodiumHydroxideSolution;
 import io.github.derbejijing.ic.chemical.material.Soil;
 import io.github.derbejijing.ic.chemical.material.StoneDust;
 import io.github.derbejijing.ic.chemical.material.SugarCane;
@@ -88,7 +93,13 @@ public enum ChemicalItem {
     SUGAR_CANE(40, Material.SUGAR_CANE, SugarCane.class, true),
     EMPTY_BUCKET(41, Material.BUCKET, EmptyBucket.class, true),
     SULFUR_DIOXIDE(42, Material.GLASS_BOTTLE, SulfurDioxide.class, false),
-    SULFUR_TRIOXIDE(43, Material.GLASS_BOTTLE, SulfurTrioxide.class, false);
+    SULFUR_TRIOXIDE(43, Material.GLASS_BOTTLE, SulfurTrioxide.class, false),
+    SODIUM_HYDROXIDE(44, Material.SUGAR, SodiumHydroxide.class, false),
+    SODIUM_HYDROXIDE_SOLUTION(45, Material.GLASS_BOTTLE, SodiumHydroxideSolution.class, false),
+    SODIUM_ACETATE(46, Material.SUGAR, SodiumAcetate.class, false),
+    SODIUM_CARBONATE(47, Material.SUGAR, SodiumCarbonate.class, false),
+    METHANE(48, Material.GLASS_BOTTLE, Methane.class, false);
+
 
     public final int id;
     public final Material material;

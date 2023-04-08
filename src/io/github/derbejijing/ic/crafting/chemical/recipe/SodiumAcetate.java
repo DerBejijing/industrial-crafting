@@ -3,17 +3,17 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 
-public class AcetonePeroxide extends ChemicalRecipe {
+public class SodiumAcetate extends ChemicalRecipe {
 
-    public AcetonePeroxide() {
-        super(1, 100, 0);
+    public SodiumAcetate() {
+        super(1, 1, 0);
     }
 
 
     @Override
     public void add_ingredients() {
-        this.add_ingredient(ChemicalItem.ACETONE, 1);
-        this.add_ingredient(ChemicalItem.HYDROGEN_PEROXIDE, 1);
+        this.add_ingredient(ChemicalItem.ACETIC_ACID, 1);
+        this.add_ingredient(ChemicalItem.SODIUM_HYDROXIDE, 1);
     }
 
 
@@ -24,6 +24,6 @@ public class AcetonePeroxide extends ChemicalRecipe {
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.ACETONE_PEROXIDE, 1);
+        this.add_output(ChemicalItem.SODIUM_ACETATE, 1);
     }
 }

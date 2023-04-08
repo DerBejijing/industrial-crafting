@@ -59,6 +59,7 @@ public class Electrolyzer extends MultiblockMachine {
         this.add_recipe(ChemicalRecipeRegistry.POTASSIUM_HYDROXIDE_ELECTROLYSIS);
         this.add_recipe(ChemicalRecipeRegistry.HYDROGEN_PEROXIDE);
         this.add_recipe(ChemicalRecipeRegistry.HYDROGEN_PEROXIDE_CHEAP);
+        this.add_recipe(ChemicalRecipeRegistry.SODIUM_HYDROXIDE_SOLUTION_ELECTROLYSIS);
     }
 
     @Override
