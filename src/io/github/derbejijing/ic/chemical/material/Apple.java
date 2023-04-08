@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.chemical.property.ChemicalToxicity;
 public class Apple extends Chemical {
 
     public Apple(int count, ChemicalPurity purity) {
-        super("Apple", ChemicalItem.APPLE.material, ChemicalItem.APPLE.id, purity, ChemicalToxicity.LETHAL, ChemicalReactivity.STABLE, count);
+        super("Apple", ChemicalItem.APPLE.material, ChemicalItem.APPLE.id, purity, ChemicalToxicity.NONE, ChemicalReactivity.STABLE, count);
     }
     
 }
