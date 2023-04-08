@@ -3,9 +3,9 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 
-public class Booze extends ChemicalRecipe {
+public class BoozeSugarCane extends ChemicalRecipe {
 
-    public Booze() {
+    public BoozeSugarCane() {
         super(1, 10, 0);
     }
 
@@ -13,7 +13,7 @@ public class Booze extends ChemicalRecipe {
     @Override
     public void add_ingredients() {
         this.add_ingredient(ChemicalItem.ORGANIC_WASTE, 1);
-        this.add_ingredient(ChemicalItem.APPLE, 1);
+        this.add_ingredient(ChemicalItem.SUGAR_CANE, 1);
         this.add_ingredient(ChemicalItem.WATER, 5);
     }
 

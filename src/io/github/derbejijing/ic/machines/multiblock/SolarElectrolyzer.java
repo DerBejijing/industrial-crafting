@@ -68,6 +68,10 @@ public class SolarElectrolyzer extends MultiblockMachine {
     @Override
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.WATER_DECOMPOSITION);
+        this.add_recipe(ChemicalRecipeRegistry.WATER_DECOMPOSITION_CHEAP);
+        this.add_recipe(ChemicalRecipeRegistry.POTASSIUM_HYDROXIDE_ELECTROLYSIS);
+        this.add_recipe(ChemicalRecipeRegistry.HYDROGEN_PEROXIDE);
+        this.add_recipe(ChemicalRecipeRegistry.HYDROGEN_PEROXIDE_CHEAP);
     }
 
     @Override

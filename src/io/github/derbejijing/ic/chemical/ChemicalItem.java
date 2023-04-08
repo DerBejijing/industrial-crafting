@@ -17,6 +17,7 @@ import io.github.derbejijing.ic.chemical.material.Coal;
 import io.github.derbejijing.ic.chemical.material.CobbleStone;
 import io.github.derbejijing.ic.chemical.material.CrushedNetherrack;
 import io.github.derbejijing.ic.chemical.material.DistilledWater;
+import io.github.derbejijing.ic.chemical.material.EmptyBucket;
 import io.github.derbejijing.ic.chemical.material.Ethanol;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
@@ -37,6 +38,7 @@ import io.github.derbejijing.ic.chemical.material.PrimerPowder;
 import io.github.derbejijing.ic.chemical.material.SodiumChloride;
 import io.github.derbejijing.ic.chemical.material.Soil;
 import io.github.derbejijing.ic.chemical.material.StoneDust;
+import io.github.derbejijing.ic.chemical.material.SugarCane;
 import io.github.derbejijing.ic.chemical.material.Sulfur;
 import io.github.derbejijing.ic.chemical.material.SulfuricAcid;
 import io.github.derbejijing.ic.chemical.material.Water;
@@ -80,7 +82,9 @@ public enum ChemicalItem {
     POTASSIUM_HYDROXIDE_SOLUTION(36, Material.GLASS_BOTTLE, PotassiumHydroxideSolution.class, false),
     PRIMER_POWDER(37, Material.SUGAR, PrimerPowder.class, false),
     HYDROGEN_PEROXIDE(38, Material.GLASS_BOTTLE, HydrogenPeroxide.class, false),
-    ACETONE_PEROXIDE(39, Material.SPLASH_POTION, AcetonePeroxide.class, false);
+    ACETONE_PEROXIDE(39, Material.SPLASH_POTION, AcetonePeroxide.class, false),
+    SUGAR_CANE(40, Material.SUGAR_CANE, SugarCane.class, true),
+    EMPTY_BUCKET(41, Material.BUCKET, EmptyBucket.class, true);
 
     public final int id;
     public final Material material;

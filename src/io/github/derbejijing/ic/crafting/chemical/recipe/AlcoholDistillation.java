@@ -1,7 +1,6 @@
 package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
-import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 
 public class AlcoholDistillation extends ChemicalRecipe {
@@ -24,8 +23,8 @@ public class AlcoholDistillation extends ChemicalRecipe {
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.METHANOL, 1, ChemicalPurity.CONSUMER_GRADE);
-        this.add_output(ChemicalItem.ETHANOL, 16, ChemicalPurity.CONSUMER_GRADE);
+        this.add_output(ChemicalItem.METHANOL, 1);
+        this.add_output(ChemicalItem.ETHANOL, 16);
         this.add_output(ChemicalItem.DISTILLED_WATER, 16);
     }
 }

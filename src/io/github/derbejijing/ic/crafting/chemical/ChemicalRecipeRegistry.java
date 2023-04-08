@@ -6,6 +6,7 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.AcetoneDistillation;
 import io.github.derbejijing.ic.crafting.chemical.recipe.AcetonePeroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.AlcoholDistillation;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Booze;
+import io.github.derbejijing.ic.crafting.chemical.recipe.BoozeSugarCane;
 import io.github.derbejijing.ic.crafting.chemical.recipe.BurnCoal;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CalciumCarbonate;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Chloroacetone;
@@ -47,6 +48,7 @@ public enum ChemicalRecipeRegistry {
     HYDROGEN_PEROXIDE_CHEAP(19, HydrogenPeroxideCheap.class, "Hydrogen peroxide (cheap)"),
     WATER_DECOMPOSITION_CHEAP(20, WaterDecompositionCheap.class, "Water electrolysis (cheap)"),
     ACETONE_PEROXIDE(21, AcetonePeroxide.class, "Acetone peroxide"),
+    BOOZE_SUGAR_CANE(22, BoozeSugarCane.class, "Sugar cane liquor (rum)"),
     NONE(-1, null, "None");
 
     public final int id;

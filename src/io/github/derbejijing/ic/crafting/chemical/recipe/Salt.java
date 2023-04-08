@@ -26,5 +26,6 @@ public class Salt extends ChemicalRecipe {
     public void add_outputs() {
         this.add_output(ChemicalItem.SODIUM_CHLORIDE, 1, ChemicalPurity.CONTAMINATION);
         this.add_output(ChemicalItem.DISTILLED_WATER, 1);
+        this.add_output(ChemicalItem.EMPTY_BUCKET, 1);
     }
 }
