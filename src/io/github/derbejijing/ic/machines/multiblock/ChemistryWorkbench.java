@@ -29,6 +29,7 @@ public class ChemistryWorkbench extends MultiblockMachine {
 
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.GUNPOWDER);
+        this.add_recipe(ChemicalRecipeRegistry.ACETIC_ACID);
     }
 
 

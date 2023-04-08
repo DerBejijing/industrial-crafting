@@ -39,7 +39,7 @@ public abstract class MultiblockMachine {
         this.components = new ArrayList<MultiblockComponent>();
         this.available_recipes = new ArrayList<ChemicalRecipeRegistry>();
 
-        this.current_recipe = null;
+        this.current_recipe = ChemicalRecipeRegistry.get_by_id(-1);
 
         this.add_components();
         this.add_recipes();
@@ -86,7 +86,7 @@ public abstract class MultiblockMachine {
                 this.change_state(MultiblockState.IDLE);
             }
 
-            this.get_interface().change_power_level(this.power / 1000.0f);
+            this.get_interface().update_data(this.power / 1000.0f, ChemicalRecipeRegistry.get_name(this.current_recipe));
         }
 
         if(this.state == MultiblockState.RUNNING) {

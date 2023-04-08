@@ -8,6 +8,7 @@ import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.component.CasingGlass;
 import io.github.derbejijing.ic.machines.component.CasingGlassTinted;
 import io.github.derbejijing.ic.machines.component.CasingStone;
+import io.github.derbejijing.ic.machines.component.Generator;
 import io.github.derbejijing.ic.machines.component.BlastFurnace;
 import io.github.derbejijing.ic.machines.component.InputHatch;
 import io.github.derbejijing.ic.machines.component.Interface;
@@ -33,7 +34,7 @@ public class Furnace extends MultiblockMachine {
         this.add_component(new CasingStone(this, new Vector(1, 0, 1)));
         this.add_component(new OutputHatch(this, new Vector(2, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(0, 0, 2)));
-        this.add_component(new CasingStone(this, new Vector(1, 0, 2)));
+        this.add_component(new Generator(this, new Vector(1, 0, 2)));
         this.add_component(new CasingStone(this, new Vector(2, 0, 2)));
 
         this.add_component(new CasingStone(this, new Vector(0, 1, 0)));
@@ -67,6 +68,7 @@ public class Furnace extends MultiblockMachine {
 
     @Override
     protected void add_recipes() {
+        this.add_recipe(ChemicalRecipeRegistry.BURN_COAL);
     }
 
     @Override

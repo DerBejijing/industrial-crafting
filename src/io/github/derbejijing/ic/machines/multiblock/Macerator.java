@@ -39,6 +39,7 @@ public class Macerator extends MultiblockMachine {
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.CRUSH_NETHERRACK);
         this.add_recipe(ChemicalRecipeRegistry.CRUSH_STONE);
+        this.add_recipe(ChemicalRecipeRegistry.CALCIUM_CARBONATE);
     }
 
     @Override

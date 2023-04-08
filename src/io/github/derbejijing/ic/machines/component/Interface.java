@@ -89,13 +89,13 @@ public class Interface extends MultiblockComponent {
     }
 
 
-    public void change_power_level(float power) {
+    public void update_data(float power, String current_job) {
         ItemStack button = this.inventory.getItem(10);
         ItemMeta meta = button.getItemMeta();
 
         List<String> lore = new ArrayList<String>();
         lore.add(ChatColor.GRAY + "Power: [" + progress_bar(power) + ChatColor.GRAY + "]");
-        lore.add(ChatColor.GRAY + "Current job: ");
+        lore.add(ChatColor.GRAY + "Current job: " + ChatColor.GREEN + current_job);
         meta.setLore(lore);
 
         button.setItemMeta(meta);

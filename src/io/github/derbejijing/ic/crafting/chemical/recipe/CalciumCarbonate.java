@@ -3,28 +3,26 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 
-public class AceticAcid extends ChemicalRecipe {
+public class CalciumCarbonate extends ChemicalRecipe {
 
-    public AceticAcid() {
-        super(10, 10, 0);
+    public CalciumCarbonate() {
+        super(100, 1, 0);
     }
 
 
     @Override
     public void add_ingredients() {
-        this.add_ingredient(ChemicalItem.METHANOL, 10);
-        this.add_ingredient(ChemicalItem.CARBON_MONOXIDE, 10);
+        this.add_ingredient(ChemicalItem.CALCITE, 1);
     }
 
 
     @Override
     public void add_requirements() {
-        // actually a catalyst is needed (Rhodium)
     }
 
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.ACETIC_ACID, 10);
+        this.add_output(ChemicalItem.CALCIUM_CARBONATE, 1);
     }
 }

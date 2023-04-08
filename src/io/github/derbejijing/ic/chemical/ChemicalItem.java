@@ -58,7 +58,7 @@ public enum ChemicalItem {
     LIQUOR(24, Material.GLASS_BOTTLE, Liquor.class, false),
     COAL(25, Material.COAL, Coal.class, true),
     CARBON_DIOXIDE(26, Material.GLASS_BOTTLE, CarbonDioxide.class, false),
-    ACETONE(27, Material.GLASS, Acetone.class, false);
+    ACETONE(27, Material.GLASS_BOTTLE, Acetone.class, false);
 
     public final int id;
     public final Material material;

@@ -55,6 +55,8 @@ public class Condenser extends MultiblockMachine {
     @Override
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.SALT);
+        this.add_recipe(ChemicalRecipeRegistry.ACETONE_DISTILLATION);
+        this.add_recipe(ChemicalRecipeRegistry.ALCOHOL_DISTILLATION);
     }
 
     @Override

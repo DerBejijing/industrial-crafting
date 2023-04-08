@@ -8,3 +8,5 @@ main: io.github.derbejijing.ic.Main
 commands:
   getchemical:
     description: get a certain chemical
+  setrecipe:
+    description: set the recipe for a certain machine
