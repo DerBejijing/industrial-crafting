@@ -22,6 +22,9 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.PrimerPowder;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Salt;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SeparateStone;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SulfurDioxide;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SulfurTrioxide;
+import io.github.derbejijing.ic.crafting.chemical.recipe.SulfuricAcid;
 import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecomposition;
 import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecompositionCheap;
 
@@ -49,6 +52,9 @@ public enum ChemicalRecipeRegistry {
     WATER_DECOMPOSITION_CHEAP(20, WaterDecompositionCheap.class, "Water electrolysis (cheap)"),
     ACETONE_PEROXIDE(21, AcetonePeroxide.class, "Acetone peroxide"),
     BOOZE_SUGAR_CANE(22, BoozeSugarCane.class, "Sugar cane liquor (rum)"),
+    SULFUR_DIOXIDE(23, SulfurDioxide.class, "Sulfur dioxide"),
+    SULFUR_TRIOXIDE(24, SulfurTrioxide.class, "Sulfur trioxide"),
+    SULFURIC_ACID(25, SulfuricAcid.class, "Sulfuric Acid"),
     NONE(-1, null, "None");
 
     public final int id;

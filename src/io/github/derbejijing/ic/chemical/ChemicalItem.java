@@ -40,6 +40,8 @@ import io.github.derbejijing.ic.chemical.material.Soil;
 import io.github.derbejijing.ic.chemical.material.StoneDust;
 import io.github.derbejijing.ic.chemical.material.SugarCane;
 import io.github.derbejijing.ic.chemical.material.Sulfur;
+import io.github.derbejijing.ic.chemical.material.SulfurDioxide;
+import io.github.derbejijing.ic.chemical.material.SulfurTrioxide;
 import io.github.derbejijing.ic.chemical.material.SulfuricAcid;
 import io.github.derbejijing.ic.chemical.material.Water;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
@@ -84,7 +86,9 @@ public enum ChemicalItem {
     HYDROGEN_PEROXIDE(38, Material.GLASS_BOTTLE, HydrogenPeroxide.class, false),
     ACETONE_PEROXIDE(39, Material.SPLASH_POTION, AcetonePeroxide.class, false),
     SUGAR_CANE(40, Material.SUGAR_CANE, SugarCane.class, true),
-    EMPTY_BUCKET(41, Material.BUCKET, EmptyBucket.class, true);
+    EMPTY_BUCKET(41, Material.BUCKET, EmptyBucket.class, true),
+    SULFUR_DIOXIDE(42, Material.GLASS_BOTTLE, SulfurDioxide.class, false),
+    SULFUR_TRIOXIDE(43, Material.GLASS_BOTTLE, SulfurTrioxide.class, false);
 
     public final int id;
     public final Material material;

@@ -63,6 +63,8 @@ public class Furnace extends MultiblockMachine {
     @Override
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.BURN_COAL);
+        this.add_recipe(ChemicalRecipeRegistry.SULFUR_DIOXIDE);
+        this.add_recipe(ChemicalRecipeRegistry.SULFUR_TRIOXIDE);
     }
 
     @Override
