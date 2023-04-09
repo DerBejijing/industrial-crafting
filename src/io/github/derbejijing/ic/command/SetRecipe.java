@@ -86,7 +86,7 @@ public class SetRecipe implements CommandExecutor {
 
             NamespacedKey nsk_recipe = new NamespacedKey(Main.get_main(), "recipe_id");
             NamespacedKey nsk_machine = new NamespacedKey(Main.get_main(), "machine_id");
-            NamespacedKey nsk_weapon = new NamespacedKey(Main.get_main(), "machine_id");
+            NamespacedKey nsk_weapon = new NamespacedKey(Main.get_main(), "weapon_id");
 
             if(meta.getPersistentDataContainer().has(nsk_recipe, PersistentDataType.BYTE) || meta.getPersistentDataContainer().has(nsk_machine, PersistentDataType.BYTE) || meta.getPersistentDataContainer().has(nsk_weapon, PersistentDataType.BYTE)) {
                 player.sendMessage(ChatColor.RED + "You cannot overwrite blueprints!");
