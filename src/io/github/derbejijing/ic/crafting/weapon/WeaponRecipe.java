@@ -33,7 +33,6 @@ public abstract class WeaponRecipe {
 
 
     public boolean attempt_craft(Location center, Inventory input, Inventory output, float power) {
-        Bukkit.getLogger().info("attempt weapon");
         if(power - this.power_required < 0) return false;
 
         Inventory inputs_copy = Bukkit.createInventory((InventoryHolder) null, input.getSize());
@@ -45,14 +44,14 @@ public abstract class WeaponRecipe {
         if(this.progress < this.time_required) return false;
         this.progress = 0;
 
+        input.setContents(inputs_copy.getContents());
+
         ArmorStand armor_stand = (ArmorStand) center.getWorld().spawnEntity(center, EntityType.ARMOR_STAND);
         armor_stand.setInvisible(true);
-
-        Bukkit.dispatchCommand(armor_stand, this.output.command);
+        
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute as " + armor_stand.getUniqueId().toString() + " at @s run function " + this.output.command);
 
         armor_stand.setHealth(0);
-
-        Bukkit.getLogger().info("attempt weapon #2");
 
         return true;
     }
@@ -78,12 +77,11 @@ public abstract class WeaponRecipe {
 
 
     protected void set_output(Weapon weapon) {
-
+        this.output = weapon;
     }
 
 
     public abstract void add_ingredients();
 
     public abstract void set_output();
-    
 }
