@@ -32,6 +32,7 @@ All recipes and machines are obtained by first crafting a "blueprint" using one 
 The blueprint can be written using:  
 `/setrecipe` : choose from a list of all available recipes  
 `/setmachine`: choose from a list of all available machines  
+`/setweapon`: choose from a list of all available weapons  
 
 <br>
 
