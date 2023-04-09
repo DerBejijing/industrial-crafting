@@ -54,3 +54,84 @@ Click on any of them to get detailed instructions.
 | Recrystallizer | Used to purify some cristalline chemicals like sulfur. |
 | Macerator | Crush blocks to powder. |
 | Condenser | Separate solids from fluids and distill fluid mixtures. |
+| Macerator | Crush blocks into powder. |
+| Centrifuge | Separate powders. |
+| Electrolyser | Separate molecules through electrolysis. |
+| Solar Electrolyser | The same as the normal electrolyser, but powered by the sun. |
+| Furnace | Burn materials. |
+
+<br>
+
+## About chemicals  
+This plugin adds many new chemicals, some with certain abilities.  
+Every chemical has a certain purity assigned.  
+
+Unpure chemicals have the following undesirable side effects:  
+- the crafted material will (usually) also be contaminated  
+- in a final crafting stage, the recipe has an increased chance of producing junk  
+- if throwable explosives like TATP are contaminated, there is an increasing chance of spontaneous decomposition upon throwing  
+
+These are the purity rates, ranked from worst to best:  
+- Heavy contaminations  
+- Contaminated  
+- Low contaminations  
+- Considered clean  
+- Commercial grade purity  
+- Industrial grade purity  
+
+<br>
+
+## Added chemicals  
+The following materials/chemicals were added.  
+Click on any of them to get detailed information on their usage and synthesis.  
+| Raw | Special | Material |
+| --- | --- | --- |
+| :x: | | Acetic acid |
+| | | Acetone |
+| | | Acetone peroxide |
+| :white_check_mark: | | Apple |
+| :white_check_mark: | | Calcite |
+| | | Calcium carbonate |
+| | | Carbon |
+| | | Carbon dioxide |
+| | | Carbon monoxide |
+| | | Chlorinated hydrocarbons |
+| | | Chlorine |
+| | | Chloroacetone |
+| | | Chloroform |
+| :white_check_mark: | | Coal |
+| :white_check_mark: | | Cobble stone |
+| | | Crushed netherrack |
+| | | Distilled water |
+| :white_check_mark: | | Empty bucket |
+| | | Ethanol |
+| | | Gun powder |
+| | | Hydrogen |
+| | | Hydrogen peroxide |
+| | | Liquor |
+| | | Metal dust |
+| | | Methane |
+| | | Methanol |
+| | | Netherrack |
+| :white_check_mark: | | Organic waste |
+| | | Oxygen |
+| | | Phosphorous |
+| | | Potassium chlorate |
+| | | Potassium chloride |
+| | | Potassium hydroxide |
+| | | Potassium hydroxide (solution) |
+| | | Potassium nitrate |
+| | | Primer powder |
+| | | Sodium acetate |
+| | | Sodium carbonate |
+| | | Sodium chloride |
+| | | Sodium hydroxide |
+| | | Sodium hydroxide (solution) |
+| :white_check_mark: | | Soil |
+| | | Stone dust |
+| :white_check_mark: | | Sugar cane |
+| | | Sulfur |
+| | | Sulfur dioxide |
+| | | Sulfuric acid |
+| | | Sulfur trioxide |
+| :white_check_mark: | | Water |
