@@ -15,15 +15,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import io.github.derbejijing.ic.Main;
-import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
-import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
+import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
+import io.github.derbejijing.ic.crafting.weapon.WeaponRecipeRegistry;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 
-public class SetRecipe implements CommandExecutor {
+public class SetWeapon implements CommandExecutor {
 
-    private final int LEVELS_REQUIRED = 2;
+    private final int LEVELS_REQUIRED = 1;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -32,14 +32,14 @@ public class SetRecipe implements CommandExecutor {
 
             if(args.length < 1) {
                 player.sendMessage("Click one of the recipes:");
-                for(ChemicalRecipeRegistry crr : ChemicalRecipeRegistry.values()) {
-                    int id = crr.id;
-                    String text = crr.name;
+                for(WeaponRecipeRegistry wrr : WeaponRecipeRegistry.values()) {
+                    int id = wrr.id;
+                    String text = wrr.name;
 
                     if(id < 0) continue;
 
                     TextComponent message = new TextComponent(ChatColor.GRAY + "" + id + ChatColor.WHITE + " " + text);
-                    message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/setrecipe " + id));
+                    message.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/setweapon " + id));
 
                     player.spigot().sendMessage(message);
                 }
@@ -58,7 +58,7 @@ public class SetRecipe implements CommandExecutor {
                 return false;
             }
 
-            ChemicalRecipe recipe = ChemicalRecipeRegistry.get_by_id(id);
+            WeaponRecipe recipe = WeaponRecipeRegistry.get_by_id(id);
             if(recipe == null) return false;
 
             ItemStack item = player.getInventory().getItemInMainHand();
@@ -96,10 +96,10 @@ public class SetRecipe implements CommandExecutor {
 
             player.setLevel(Math.max(0, player.getLevel() - this.LEVELS_REQUIRED));
 
-            meta.getPersistentDataContainer().set(nsk_recipe, PersistentDataType.BYTE, (byte)id);
+            meta.getPersistentDataContainer().set(nsk_weapon, PersistentDataType.BYTE, (byte)id);
 
             List<String> lore = new ArrayList<String>();
-            lore.add(ChatColor.GRAY + "Recipe: " + ChatColor.BLUE + ChemicalRecipeRegistry.get_name(recipe));
+            lore.add(ChatColor.GRAY + "Weapon: " + ChatColor.BLUE + WeaponRecipeRegistry.get_name(recipe));
             meta.setLore(lore);
 
             item.setItemMeta(meta);

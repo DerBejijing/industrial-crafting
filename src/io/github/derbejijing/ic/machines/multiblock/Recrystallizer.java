@@ -16,7 +16,7 @@ import io.github.derbejijing.ic.machines.component.Water;
 public class Recrystallizer extends MultiblockMachine {
 
     public Recrystallizer(Location base_location, int orientation) {
-        super(base_location, orientation);
+        super(base_location, orientation, true);
     }
 
     @Override

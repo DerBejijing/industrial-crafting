@@ -19,7 +19,7 @@ public class SolarElectrolyzer extends MultiblockMachine {
     private float power_yield = 0;
 
     public SolarElectrolyzer(Location base_location, int orientation) {
-        super(base_location, orientation);
+        super(base_location, orientation, true);
     }
 
     @Override

@@ -12,3 +12,5 @@ commands:
     description: write a recipe to the blueprint
   setmachine:
     description: write a machine to the blueprint
+  setweapon:
+    description: write a weapon recipe to the blueprint

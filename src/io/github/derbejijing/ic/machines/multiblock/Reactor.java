@@ -17,7 +17,7 @@ import io.github.derbejijing.ic.machines.component.OutputHatch;
 public class Reactor extends MultiblockMachine {
 
     public Reactor(Location base_location, int orientation) {
-        super(base_location, orientation);
+        super(base_location, orientation, true);
     }
 
     @Override

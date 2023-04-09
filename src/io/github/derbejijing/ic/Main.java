@@ -12,6 +12,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import io.github.derbejijing.ic.command.GetChemical;
 import io.github.derbejijing.ic.command.SetMachine;
 import io.github.derbejijing.ic.command.SetRecipe;
+import io.github.derbejijing.ic.command.SetWeapon;
 import io.github.derbejijing.ic.event.PlayerListener;
 import io.github.derbejijing.ic.event.WorldListener;
 import io.github.derbejijing.ic.machines.MultiblockMachineManager;
@@ -33,6 +34,7 @@ public class Main extends JavaPlugin {
         this.getCommand("getchemical").setExecutor(new GetChemical());
         this.getCommand("setrecipe").setExecutor(new SetRecipe());
         this.getCommand("setmachine").setExecutor(new SetMachine());
+        this.getCommand("setweapon").setExecutor(new SetWeapon());
 
         this.add_recipes();
 
@@ -80,5 +82,5 @@ public class Main extends JavaPlugin {
 /*Notes
  * swap locations of in and out
  * 
- * add recrystallisation to purify chemicals
+ * remove getchemical command
  */

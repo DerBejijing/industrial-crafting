@@ -15,7 +15,7 @@ import io.github.derbejijing.ic.machines.component.OutputHatch;
 public class Centrifuge extends MultiblockMachine {
 
     public Centrifuge(Location base_location, int orientation) {
-        super(base_location, orientation);
+        super(base_location, orientation, true);
     }
 
     @Override

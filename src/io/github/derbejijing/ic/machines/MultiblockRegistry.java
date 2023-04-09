@@ -9,6 +9,7 @@ import io.github.derbejijing.ic.machines.multiblock.Macerator;
 import io.github.derbejijing.ic.machines.multiblock.Reactor;
 import io.github.derbejijing.ic.machines.multiblock.Recrystallizer;
 import io.github.derbejijing.ic.machines.multiblock.SolarElectrolyzer;
+import io.github.derbejijing.ic.machines.multiblock.WeaponAssembly;
 
 public class MultiblockRegistry {
     private interface Registry<T extends MultiblockMachine> {
@@ -25,7 +26,8 @@ public class MultiblockRegistry {
         SOLAR_ELECTROLYZER(6, SolarElectrolyzer.class),
         FURNACE(7, Furnace.class),
         REACTOR(8, Reactor.class),
-        RECRYSTALLIZER(9, Recrystallizer.class);
+        RECRYSTALLIZER(9, Recrystallizer.class),
+        WEAPON_ASSEMBLY(10, WeaponAssembly.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;

@@ -27,7 +27,9 @@ import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.chemical.Chemical;
 import io.github.derbejijing.ic.chemical.material.AcetonePeroxide;
 import io.github.derbejijing.ic.chemical.material.Chloroacetone;
+import io.github.derbejijing.ic.chemical.material.Chloroform;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
+import io.github.derbejijing.ic.crafting.weapon.WeaponRecipeRegistry;
 import io.github.derbejijing.ic.machines.MultiblockMachine;
 import io.github.derbejijing.ic.machines.MultiblockRegistry;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils;
@@ -48,6 +50,7 @@ public class PlayerListener implements Listener {
 
                 NamespacedKey nsk_recipe = new NamespacedKey(Main.get_main(), "recipe_id");
                 NamespacedKey nsk_machine = new NamespacedKey(Main.get_main(), "machine_id");
+                NamespacedKey nsk_weapon = new NamespacedKey(Main.get_main(), "weapon_id");
                 PersistentDataContainer data_container = meta.getPersistentDataContainer();
 
                 if(data_container.has(nsk_recipe, PersistentDataType.BYTE)) {
@@ -55,6 +58,14 @@ public class PlayerListener implements Listener {
                     if(machine == null) return;
 
                     machine.set_recipe(ChemicalRecipeRegistry.get_type_by_id(data_container.get(nsk_recipe, PersistentDataType.BYTE)));
+                    return;
+                }
+
+                if(data_container.has(nsk_weapon, PersistentDataType.BYTE)) {
+                    MultiblockMachine machine = Main.get_manager().location_occupied_by(location);
+                    if(machine == null) return;
+
+                    machine.set_recipe(WeaponRecipeRegistry.get_type_by_id(data_container.get(nsk_weapon, PersistentDataType.BYTE)));
                     return;
                 }
 
@@ -99,6 +110,22 @@ public class PlayerListener implements Listener {
                 potion_meta.setBasePotionData(new PotionData(PotionType.INSTANT_DAMAGE));
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 3, 10), true);
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 7, 10), true);
+                potion_item.setItemMeta(potion_meta);
+
+                ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
+                potion.setItem(potion_item);
+
+                item.setAmount(item.getAmount() - 1);
+            }
+
+            if(chemical.getClass().equals(Chloroform.class)) {
+                ItemStack potion_item = new ItemStack(Material.SPLASH_POTION);
+                PotionMeta potion_meta = (PotionMeta) potion_item.getItemMeta();
+
+                potion_meta.setBasePotionData(new PotionData(PotionType.AWKWARD));
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.DARKNESS, 20 * 3, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 7, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 4, 2), true);
                 potion_item.setItemMeta(potion_meta);
 
                 ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));

@@ -15,7 +15,7 @@ import io.github.derbejijing.ic.machines.component.OutputHatch;
 public class Macerator extends MultiblockMachine {
 
     public Macerator(Location base_location, int orientation) {
-        super(base_location, orientation);
+        super(base_location, orientation, true);
     }
 
     @Override

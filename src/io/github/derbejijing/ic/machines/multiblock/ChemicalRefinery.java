@@ -29,7 +29,7 @@ public class ChemicalRefinery extends MultiblockMachine {
     private int energy_required = 5;
 
     public ChemicalRefinery(Location base_location, int orientation) {
-        super(base_location, orientation);
+        super(base_location, orientation, true);
     }
 
     @Override

@@ -12,6 +12,9 @@ import org.bukkit.inventory.ItemStack;
 import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
+import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
+import io.github.derbejijing.ic.crafting.weapon.WeaponRecipeRegistry;
+import io.github.derbejijing.ic.machines.component.CraftCenter;
 import io.github.derbejijing.ic.machines.component.Generator;
 import io.github.derbejijing.ic.machines.component.InputHatch;
 import io.github.derbejijing.ic.machines.component.Interface;
@@ -28,18 +31,26 @@ public abstract class MultiblockMachine {
 
     protected ArrayList<MultiblockComponent> components;
     protected ArrayList<ChemicalRecipeRegistry> available_recipes;
+    protected ArrayList<WeaponRecipeRegistry> available_weapons;
+
+    protected boolean is_chemical;
 
     protected ChemicalRecipe current_recipe;
+    protected WeaponRecipe current_weapon;
 
-    public MultiblockMachine(Location base_location, int orientation) {
+    public MultiblockMachine(Location base_location, int orientation, boolean is_chemical) {
         this.base_location = base_location;
         this.state = MultiblockState.BROKEN;
         this.power = 0;
 
+        this.is_chemical = is_chemical;
+
         this.components = new ArrayList<MultiblockComponent>();
         this.available_recipes = new ArrayList<ChemicalRecipeRegistry>();
+        this.available_weapons = new ArrayList<WeaponRecipeRegistry>();
 
         this.current_recipe = ChemicalRecipeRegistry.get_by_id(-1);
+        this.current_weapon = WeaponRecipeRegistry.get_by_id(-1);
 
         this.add_components();
         this.add_recipes();
@@ -86,7 +97,8 @@ public abstract class MultiblockMachine {
                 this.change_state(MultiblockState.IDLE);
             }
 
-            this.get_interface().update_data(this.power / 1000.0f, ChemicalRecipeRegistry.get_name(this.current_recipe));
+            if(this.is_chemical) this.get_interface().update_data(this.power / 1000.0f, ChemicalRecipeRegistry.get_name(this.current_recipe));
+            else this.get_interface().update_data(this.power / 1000.0f, WeaponRecipeRegistry.get_name(this.current_weapon));
         }
 
         if(this.state == MultiblockState.RUNNING) {
@@ -149,6 +161,11 @@ public abstract class MultiblockMachine {
     }
 
 
+    public void set_recipe(WeaponRecipeRegistry weapon) {
+        for(WeaponRecipeRegistry wrr : this.available_weapons) if(wrr.id == weapon.id) this.current_weapon = WeaponRecipeRegistry.get_by_id(weapon.id);
+    }
+
+
     private Inventory get_input() {
         InputHatch i = this.get_input_hatch();
         if(i != null) return i.get_inventory();
@@ -166,9 +183,8 @@ public abstract class MultiblockMachine {
 
 
     private void attempt_crafting() {
-        if(this.current_recipe != null) {
-            if(this.current_recipe.attempt_craft(this.get_input(), this.get_output(), this.power)) this.power -= this.current_recipe.get_power_required();
-        }
+        if(this.is_chemical) if(this.current_recipe != null) if(this.current_recipe.attempt_craft(this.get_input(), this.get_output(), this.power)) this.power -= this.current_recipe.get_power_required();
+        if(!this.is_chemical) if(this.current_weapon != null) if(this.current_weapon.attempt_craft(this.get_center().get_location_center(), this.get_input(), this.get_output(), this.power)) this.power -= this.current_weapon.get_power_required();
     }
 
 
@@ -255,6 +271,17 @@ public abstract class MultiblockMachine {
     }
 
 
+    protected void add_weapon(WeaponRecipeRegistry weapon) {
+        this.available_weapons.add(weapon);
+    }
+
+
+    protected CraftCenter get_center() {
+        for(MultiblockComponent mc : this.components) if(mc instanceof CraftCenter) return (CraftCenter) mc;
+        return null;
+    }
+
+
     protected SolarCell get_solar_cell() {
         for(MultiblockComponent mc : this.components) if(mc instanceof SolarCell) return (SolarCell) mc;
         return null;
@@ -282,11 +309,6 @@ public abstract class MultiblockMachine {
     protected OutputHatch get_output_hatch() {
         for(MultiblockComponent mc : this.components) if(mc instanceof OutputHatch) return (OutputHatch) mc;
         return null;
-    }
-
-
-    protected void set_output(ItemStack out) {
-
     }
 
 
@@ -319,20 +341,4 @@ public abstract class MultiblockMachine {
     protected abstract void on_destroy();
 
     protected abstract void on_change_state();
-
 }
-
-
-
-
-
-/* Notes
- * 
- * power consumption:
- * when power has reached 1, get the generator's inventory and try to remove one item, to regenerate power
- * the method should return, how much "energy" the item produces (wood < coal < lava)
- * if the power is then still at 0, the state is set to no_power
- * 
- * when the state is at no_power, the machine must attempt to refill
- * Thus, the method above should be packed into regenerate_power, returning if it was successful
- */
