@@ -17,6 +17,16 @@ Not only are they extremely dangerous, but also restrited by the government!
 
 <br>
 
+## Index  
+- [Usage](#usage)  
+- [About machines](#about-machines)  
+- [Added machines](#added-machines)  
+- [About weapons](#about-weapons)  
+- [About chemicals](#about-chemicals)  
+- [Added chemicals](#added-chemicals)  
+
+<br>
+
 ## Usage  
 All recipes and machines are obtained by first crafting a "blueprint" using one paper and one blue dye.  
 The blueprint can be written using:  
@@ -58,7 +68,14 @@ Click on any of them to get detailed instructions.
 | Centrifuge | Separate powders. |
 | Electrolyser | Separate molecules through electrolysis. |
 | Solar Electrolyser | The same as the normal electrolyser, but powered by the sun. |
+| Weapon assembly | Craft weapons |
 | Furnace | Burn materials. |
+
+<br>
+
+## About weapons  
+All weapons and magazines can only be crafted using machines.  
+The blueprint needs to be written and supplied to a weapon assembly machine.  
 
 <br>
 
