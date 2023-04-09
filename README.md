@@ -86,52 +86,52 @@ The following materials/chemicals were added.
 Click on any of them to get detailed information on their usage and synthesis.  
 | Raw | Special | Material |
 | --- | --- | --- |
-| :x: | | Acetic acid |
-| | | Acetone |
-| | | Acetone peroxide |
-| :white_check_mark: | | Apple |
-| :white_check_mark: | | Calcite |
-| | | Calcium carbonate |
-| | | Carbon |
-| | | Carbon dioxide |
-| | | Carbon monoxide |
-| | | Chlorinated hydrocarbons |
-| | | Chlorine |
-| | | Chloroacetone |
-| | | Chloroform |
-| :white_check_mark: | | Coal |
-| :white_check_mark: | | Cobble stone |
-| | | Crushed netherrack |
-| | | Distilled water |
-| :white_check_mark: | | Empty bucket |
-| | | Ethanol |
-| | | Gun powder |
-| | | Hydrogen |
-| | | Hydrogen peroxide |
-| | | Liquor |
-| | | Metal dust |
-| | | Methane |
-| | | Methanol |
-| | | Netherrack |
-| :white_check_mark: | | Organic waste |
-| | | Oxygen |
-| | | Phosphorous |
-| | | Potassium chlorate |
-| | | Potassium chloride |
-| | | Potassium hydroxide |
-| | | Potassium hydroxide (solution) |
-| | | Potassium nitrate |
-| | | Primer powder |
-| | | Sodium acetate |
-| | | Sodium carbonate |
-| | | Sodium chloride |
-| | | Sodium hydroxide |
-| | | Sodium hydroxide (solution) |
-| :white_check_mark: | | Soil |
-| | | Stone dust |
-| :white_check_mark: | | Sugar cane |
-| | | Sulfur |
-| | | Sulfur dioxide |
-| | | Sulfuric acid |
-| | | Sulfur trioxide |
-| :white_check_mark: | | Water |
+| :x: | - | Acetic acid |
+| :x: | - | Acetone |
+| :x: | explosive | Acetone peroxide |
+| :white_check_mark: | - | Apple |
+| :white_check_mark: | - | Calcite |
+| :x: | - | Calcium carbonate |
+| :x: | - | Carbon |
+| :x: | - | Carbon dioxide |
+| :x: | - | Carbon monoxide |
+| :x: | - | Chlorinated hydrocarbons |
+| :x: | - | Chlorine |
+| :x: | tear gas | Chloroacetone |
+| :x: | tear gas | Chloroform |
+| :white_check_mark: | - | Coal |
+| :white_check_mark: | - | Cobble stone |
+| :x: | - | Crushed netherrack |
+| :x: | - | Distilled water |
+| :white_check_mark: | - | Empty bucket |
+| :x: | - | Ethanol |
+| :x: | required for ammunnition | Gun powder |
+| :x: | - | Hydrogen |
+| :x: | - | Hydrogen peroxide |
+| :x: | - | Liquor |
+| :x: | - | Metal dust |
+| :x: | - | Methane |
+| :x: | - | Methanol |
+| :white_check_mark: | - | Netherrack |
+| :white_check_mark: | - | Organic waste |
+| :x: | - | Oxygen |
+| :x: | - | Phosphorous |
+| :x: | - | Potassium chlorate |
+| :x: | - | Potassium chloride |
+| :x: | - | Potassium hydroxide |
+| :x: | - | Potassium hydroxide (solution) |
+| :x: | - | Potassium nitrate |
+| :x: | required for ammunition | Primer powder |
+| :x: | - | Sodium acetate |
+| :x: | - | Sodium carbonate |
+| :x: | - | Sodium chloride |
+| :x: | - | Sodium hydroxide |
+| :x: | - | Sodium hydroxide (solution) |
+| :white_check_mark: | - | Soil |
+| :x: | - | Stone dust |
+| :white_check_mark: | - | Sugar cane |
+| :x: | - | Sulfur |
+| :x: | - | Sulfur dioxide |
+| :x: | - | Sulfuric acid |
+| :x: | - | Sulfur trioxide |
+| :white_check_mark: | - | Water |
