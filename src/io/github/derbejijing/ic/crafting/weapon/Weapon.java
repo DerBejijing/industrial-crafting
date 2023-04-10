@@ -15,7 +15,22 @@ public enum Weapon {
     GLOCK_18(""),
     M9(""),
     PM(""),
-    VZ61("");
+    VZ61(""),
+    MP5A3(""),
+    MAC10(""),
+    MP7A1(""),
+    PPSH(""),
+    STEN(""),
+    SPAS12(""),
+    M500(""),
+    M590(""),
+    SVD(""),
+    M82A1(""),
+    MOSIN(""),
+    M24A3(""),
+    RPG(""),
+    RPK(""),
+    M249("");
 
     public String command;
 

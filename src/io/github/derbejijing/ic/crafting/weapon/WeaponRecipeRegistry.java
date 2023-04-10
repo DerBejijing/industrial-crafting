@@ -10,9 +10,22 @@ import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponG3A3;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponGlock17;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponGlock18;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM16A4;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM249;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM24A3;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM4A1;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM500;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM590;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM82A1;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponM9;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponMAC10;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponMP4A3;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponMP7A1;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponMosin;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponPM;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponPPSH;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponRPG;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponSPAS12;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponSVD;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponScarH;
 
 public enum WeaponRecipeRegistry {
@@ -29,7 +42,20 @@ public enum WeaponRecipeRegistry {
     GLOCK_17(10, "Glock 17", WeaponGlock17.class),
     GLOCK_18(11, "Glock 18", WeaponGlock18.class),
     M9(12, "M9", WeaponM9.class),
-    PM(13, "PM", WeaponPM.class);
+    PM(13, "PM", WeaponPM.class),
+    MP5A3(14, "MP5A3", WeaponMP4A3.class),
+    MAC10(15, "MAC 10", WeaponMAC10.class),
+    MP7A1(16, "MP7A1", WeaponMP7A1.class),
+    PPSH(17, "PPSh", WeaponPPSH.class),
+    SPAS12(18, "SPAS12", WeaponSPAS12.class),
+    M500(19, "M500", WeaponM500.class),
+    M590(20, "M590", WeaponM590.class),
+    SVD(21, "SVD", WeaponSVD.class),
+    M82A1(22, "M82A1", WeaponM82A1.class),
+    Mosin(23, "Mosin", WeaponMosin.class),
+    M24A3(24, "M24A3", WeaponM24A3.class),
+    RPG(25, "RPG", WeaponRPG.class),
+    M249(26, "M249", WeaponM249.class);
 
     public final int id;
     public final String name;
