@@ -32,11 +32,11 @@ public class Centrifuge extends MultiblockMachine {
         this.add_component(new CasingStone(this, new Vector(3, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(4, 0, 1)));
 
-        this.add_component(new InputHatch(this, new Vector(0, 0, 2)));
+        this.add_component(new OutputHatch(this, new Vector(0, 0, 2)));
         this.add_component(new CasingStone(this, new Vector(1, 0, 2)));
         this.add_component(new CasingStone(this, new Vector(2, 0, 2)));
         this.add_component(new CasingStone(this, new Vector(3, 0, 2)));
-        this.add_component(new OutputHatch(this, new Vector(4, 0, 2)));
+        this.add_component(new InputHatch(this, new Vector(4, 0, 2)));
 
         this.add_component(new CasingStone(this, new Vector(0, 0, 3)));
         this.add_component(new CasingStone(this, new Vector(1, 0, 3)));

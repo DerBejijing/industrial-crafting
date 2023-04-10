@@ -42,13 +42,13 @@ public class ChemicalRefinery extends MultiblockMachine {
         this.add_component(new CasingStone(this, new Vector(5, 0, 0)));
         this.add_component(new CasingStone(this, new Vector(6, 0, 0)));
 
-        this.add_component(new InputHatch(this, new Vector(0, 0, 1)));
+        this.add_component(new OutputHatch(this, new Vector(0, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(1, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(2, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(3, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(4, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(5, 0, 1)));
-        this.add_component(new OutputHatch(this, new Vector(6, 0, 1)));
+        this.add_component(new InputHatch(this, new Vector(6, 0, 1)));
 
         this.add_component(new CasingStone(this, new Vector(0, 0, 2)));
         this.add_component(new CasingStone(this, new Vector(1, 0, 2)));

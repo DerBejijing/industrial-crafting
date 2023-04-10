@@ -25,9 +25,9 @@ public class Reactor extends MultiblockMachine {
         this.add_component(new CasingStone(this, new Vector(0, 0, 0)));
         this.add_component(new Interface(this, new Vector(1, 0, 0), false));
         this.add_component(new CasingStone(this, new Vector(2, 0, 0)));
-        this.add_component(new InputHatch(this, new Vector(0, 0, 1)));
+        this.add_component(new OutputHatch(this, new Vector(0, 0, 1)));
         this.add_component(new Cauldron(this, new Vector(1, 0, 1)));
-        this.add_component(new OutputHatch(this, new Vector(2, 0, 1)));
+        this.add_component(new InputHatch(this, new Vector(2, 0, 1)));
         this.add_component(new CasingStone(this, new Vector(0, 0, 2)));
         this.add_component(new Generator(this, new Vector(1, 0, 2)));
         this.add_component(new CasingStone(this, new Vector(2, 0, 2)));
