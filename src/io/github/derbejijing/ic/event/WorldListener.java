@@ -95,22 +95,26 @@ public class WorldListener implements Listener {
 
             if(chemical.getClass().equals(AcetonePeroxide.class)) {
                 entity.remove();
-                entity.getWorld().createExplosion(entity.getLocation(), 3, true);
+                entity.getWorld().createExplosion(entity.getLocation(), 2, true);
+                entity.getWorld().createExplosion(entity.getLocation(), 4, true, false);
             }
 
             if(chemical.getClass().equals(Acetone.class)) {
                 entity.remove();
                 entity.getWorld().createExplosion(entity.getLocation(), 1, true);
+                entity.getWorld().createExplosion(entity.getLocation(), 4, true, false);
             }
 
             if(chemical.getClass().equals(Methanol.class)) {
                 entity.remove();
                 entity.getWorld().createExplosion(entity.getLocation(), 1, true);
+                entity.getWorld().createExplosion(entity.getLocation(), 2, true, false);
             }
 
             if(chemical.getClass().equals(Ethanol.class)) {
                 entity.remove();
                 entity.getWorld().createExplosion(entity.getLocation(), 1, true);
+                entity.getWorld().createExplosion(entity.getLocation(), 2, true, false);
             }
 
             if(chemical.getClass().equals(GunPowder.class)) {
@@ -135,7 +139,8 @@ public class WorldListener implements Listener {
             NamespacedKey nsk = new NamespacedKey(Main.get_main(), "projectile_tatp");
 
             if(container == null || !container.has(nsk, PersistentDataType.BYTE)) return;
-            arrow.getWorld().createExplosion(arrow.getLocation(), 3, true);
+            arrow.getWorld().createExplosion(arrow.getLocation(), 3, true, true);
+            arrow.getWorld().createExplosion(arrow.getLocation(), 4, true, false);
             arrow.remove();
         }
     }
