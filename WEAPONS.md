@@ -170,3 +170,105 @@ Special:
 | Iron ingot | 8 |
 | Iron nugget | 3 |
 | Redstone torch | 1 |
+
+
+<br>
+
+## SMGs  
+
+### MP5A3  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 4 |
+| Iron bars | 1 |
+| Redstone torch | 1 |
+| Stick | 1 |
+
+### Mac 10  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 3 |
+| Iron bars | 1 |
+| Redstone torch | 1 |
+
+### MP7A1  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 3 |
+| Iron bars | 1 |
+| Redstone torch | 1 |
+| Stick | 1 |
+
+### PPSh  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 5 |
+| Redstone torch | 1 |
+| Stick | 1 |
+| Oak planks | 1 |
+
+### Sten  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 3 |
+| Rredstone torch | 1 |
+| Stick | 1 |
+
+<br>
+
+## Shotguns  
+
+### SPAS12  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 5 |
+| Iron bars | 1 |
+| Oak trapdoor | 1 |
+
+### M500  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 5 |
+| Oak trapdoor | 1 |
+| Oak planks | 2 |
+
+### M590  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 5 |
+| Oak trapdoor | 1 |
+| Stick | 1 |
+
+<br>
+
+## Sniper  
+
+### SVD  
+| Material | Amount |
+| --- | --- |
+| Iron Ingot | 10 |
+| Lever | 1 |
+| Stick | 2 |
+| Oak planks | 1 |
+
+###  M82A1  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 10 |
+| Lever | 1 |
+| Stick | 2 |
+
+### Mosin Nagant  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 5 |
+| Lever | 1 |
+| Stick | 1 |
+| Oak planks | 5 |
+
+### M24A3  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 10 |
+| Lever | 1 |
+| Stick | 2 |
