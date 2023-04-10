@@ -134,7 +134,7 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | required for ammunnition | Gun powder |
 | :x: | - | Hydrogen |
 | :x: | - | Hydrogen peroxide |
-| :white_checm_mark: | - | Iron |
+| :white_check_mark: | - | Iron |
 | :x: | - | Liquor |
 | :x: | - | Metal dust |
 | :x: | - | Methane |
