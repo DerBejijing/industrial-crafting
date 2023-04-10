@@ -272,3 +272,29 @@ Special:
 | Iron ingot | 10 |
 | Lever | 1 |
 | Stick | 2 |
+
+<br>
+
+## Special  
+
+### RPG7  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 10 |
+| Lever | 1 |
+| Stick | 2 |
+| Oak planks | 3 |
+
+### RPK  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 10 |
+| Stick | 2 |
+| Oak planks | 3 |
+
+### M249  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 16 |
+| Iron bars | 2 |
+| Green dye | 1 |
