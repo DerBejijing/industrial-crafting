@@ -84,6 +84,8 @@ The blueprint needs to be written and supplied to a weapon assembly machine.
 This plugin adds many new chemicals, some with certain abilities.  
 Every chemical has a certain purity assigned.  
 
+Some chemicals that are either extremely flammable or explosive will create an explosion when dropped into fire.  
+
 Unpure chemicals have the following undesirable side effects:  
 - the crafted material will (usually) also be contaminated  
 - in a final crafting stage, the recipe has an increased chance of producing junk  
@@ -108,6 +110,11 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | - | Acetone |
 | :x: | explosive | Acetone peroxide |
 | :white_check_mark: | - | Apple |
+| :x: | ammunition | Bullet (pistol) |
+| :x: | ammunition | Bullet (rifle) |
+| :x: | ammunition | Bullet (RPG)
+| :x: | ammunition | Bullet (shotgun)
+| :x: | ammunition | Bullet (sniper) |
 | :white_check_mark: | - | Calcite |
 | :x: | - | Calcium carbonate |
 | :x: | - | Carbon |
@@ -119,6 +126,7 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | tear gas | Chloroform |
 | :white_check_mark: | - | Coal |
 | :white_check_mark: | - | Cobble stone |
+| :white_check_mark: | - | Copper |
 | :x: | - | Crushed netherrack |
 | :x: | - | Distilled water |
 | :white_check_mark: | - | Empty bucket |
@@ -126,6 +134,7 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | required for ammunnition | Gun powder |
 | :x: | - | Hydrogen |
 | :x: | - | Hydrogen peroxide |
+| :white_checm_mark: | - | Iron |
 | :x: | - | Liquor |
 | :x: | - | Metal dust |
 | :x: | - | Methane |
