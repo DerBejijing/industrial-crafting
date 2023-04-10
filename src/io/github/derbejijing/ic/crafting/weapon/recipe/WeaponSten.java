@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 public class WeaponSten extends WeaponRecipe {
 
     public WeaponSten() {
-        super(10, 500);
+        super(120, 400);
     }
 
     @Override

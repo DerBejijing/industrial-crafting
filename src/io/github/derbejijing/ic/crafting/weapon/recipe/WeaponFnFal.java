@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 public class WeaponFnFal extends WeaponRecipe {
 
     public WeaponFnFal() {
-        super(10, 500);
+        super(120, 500);
     }
 
     @Override

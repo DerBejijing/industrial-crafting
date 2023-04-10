@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 public class WeaponPPSH extends WeaponRecipe {
 
     public WeaponPPSH() {
-        super(10, 500);
+        super(120, 400);
     }
 
     @Override

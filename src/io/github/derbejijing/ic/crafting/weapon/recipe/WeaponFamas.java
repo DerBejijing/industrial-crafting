@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 public class WeaponFamas extends WeaponRecipe {
 
     public WeaponFamas() {
-        super(10, 500);
+        super(120, 500);
     }
 
     @Override

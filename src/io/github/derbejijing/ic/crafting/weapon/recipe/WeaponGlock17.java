@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 public class WeaponGlock17 extends WeaponRecipe {
 
     public WeaponGlock17() {
-        super(10, 500);
+        super(120, 300);
     }
 
     @Override

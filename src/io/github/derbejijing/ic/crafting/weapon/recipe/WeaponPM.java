@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 public class WeaponPM extends WeaponRecipe {
 
     public WeaponPM() {
-        super(10, 500);
+        super(120, 300);
     }
 
     @Override

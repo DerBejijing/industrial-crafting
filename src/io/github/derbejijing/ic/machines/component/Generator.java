@@ -18,12 +18,12 @@ public class Generator extends MultiblockComponent {
 
 
     private enum Fuel {
-        LAVA_BUCKET(Material.LAVA_BUCKET, 20000),
-        COAL_BLOCK(Material.COAL_BLOCK, 16000),
-        DRIED_KELP_BLOCK(Material.DRIED_KELP_BLOCK, 4000),
-        BLAZE_ROD(Material.BLAZE_ROD, 2400),
-        COAL(Material.COAL, 1600),
-        CHARCOAL(Material.CHARCOAL, 1600);
+        LAVA_BUCKET(Material.LAVA_BUCKET, 500),
+        COAL_BLOCK(Material.COAL_BLOCK, 400),
+        DRIED_KELP_BLOCK(Material.DRIED_KELP_BLOCK, 150),
+        BLAZE_ROD(Material.BLAZE_ROD, 100),
+        COAL(Material.COAL, 50),
+        CHARCOAL(Material.CHARCOAL, 50);
     
         public final Material type;
         public final int burn_time;
@@ -42,7 +42,10 @@ public class Generator extends MultiblockComponent {
             Chemical chemical = Chemical.get_from(item);
             if(chemical == null) return 0;
 
-            if(chemical.getClass().equals(ChemicalItem.HYDROGEN.chemical_class)) return 1000;
+            if(chemical.getClass().equals(ChemicalItem.HYDROGEN.chemical_class)) return 200;
+            if(chemical.getClass().equals(ChemicalItem.ACETONE.chemical_class)) return 400;
+            if(chemical.getClass().equals(ChemicalItem.ETHANOL.chemical_class)) return 100;
+            if(chemical.getClass().equals(ChemicalItem.METHANOL.chemical_class)) return 100;
 
             return 0;
         }
@@ -84,8 +87,8 @@ public class Generator extends MultiblockComponent {
     public int generate_energy() {
         for(ItemStack item : this.inventory.getContents()) {
             if(item != null && item.getType() != Material.AIR) {
-                int power = Fuel.get_burn_time(item.getType()) / 20;
-                power += Fuel.get_chemical_burn_time(item) / 20;
+                int power = Fuel.get_burn_time(item.getType());
+                power += Fuel.get_chemical_burn_time(item);
 
                 if(power > 0) {
                     item.setAmount(item.getAmount() - 1);

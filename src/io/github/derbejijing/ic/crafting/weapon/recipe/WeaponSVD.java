@@ -9,7 +9,7 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 public class WeaponSVD extends WeaponRecipe {
 
     public WeaponSVD() {
-        super(10, 500);
+        super(240, 800);
     }
 
     @Override
