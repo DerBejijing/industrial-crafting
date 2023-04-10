@@ -70,7 +70,7 @@ public abstract class MultiblockMachine {
                     Bukkit.getLogger().info("fail here [" + mc.get_material() + "]: " + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ());
                 }
 
-                if(Main.get_manager().location_occupied(m.base_location)) valid = false;
+                if(Main.get_main().get_manager().location_occupied(m.base_location)) valid = false;
 
                 m.base_location.subtract(mc.get_location());
             }
@@ -215,7 +215,7 @@ public abstract class MultiblockMachine {
 
     private void occupy_locations() {
         for(MultiblockComponent mc : this.components) {
-            Main.get_manager().occupy_location(this, this.base_location.add(mc.get_location()));
+            Main.get_main().get_manager().occupy_location(this, this.base_location.add(mc.get_location()));
             this.base_location.subtract(mc.get_location());
         }
     }
@@ -223,7 +223,7 @@ public abstract class MultiblockMachine {
 
     private void free_locations() {
         for(MultiblockComponent mc : this.components) {
-            Main.get_manager().free_location(this, this.base_location.add(mc.get_location()));
+            Main.get_main().get_manager().free_location(this, this.base_location.add(mc.get_location()));
             this.base_location.subtract(mc.get_location());
         }
     }

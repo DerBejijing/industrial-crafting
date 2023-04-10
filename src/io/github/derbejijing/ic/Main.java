@@ -21,12 +21,18 @@ import net.md_5.bungee.api.ChatColor;
 public class Main extends JavaPlugin {
     
     private static Main main;
-    private static MultiblockMachineManager manager;
+
+    private MultiblockMachineManager manager;
+    private DataStorage storage;
 
     @Override
     public void onEnable() {
         main = this;
-        manager = new MultiblockMachineManager();
+
+        this.manager = new MultiblockMachineManager();
+        this.storage = new DataStorage(this, "machines.yml");
+
+        this.storage.load();
 
         this.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         this.getServer().getPluginManager().registerEvents(new WorldListener(), this);
@@ -38,12 +44,13 @@ public class Main extends JavaPlugin {
 
         this.add_recipes();
 
-        new BukkitRunnable() {       
-            @Override
-            public void run() {
-                manager.tick();
-            }
-        }.runTaskTimer(this, 0, 20);
+        this.run_scheduler();
+    }
+
+
+    @Override
+    public void onDisable() {
+        this.storage.save();
     }
 
 
@@ -52,8 +59,18 @@ public class Main extends JavaPlugin {
     }
 
 
-    public static MultiblockMachineManager get_manager() {
-        return manager;
+    public MultiblockMachineManager get_manager() {
+        return this.manager;
+    }
+
+
+    private void run_scheduler() {
+        new BukkitRunnable() {       
+            @Override
+            public void run() {
+                manager.tick();
+            }
+        }.runTaskTimer(this, 0, 20);
     }
 
 

@@ -56,7 +56,7 @@ public class PlayerListener implements Listener {
                 PersistentDataContainer data_container = meta.getPersistentDataContainer();
 
                 if(data_container.has(nsk_recipe, PersistentDataType.BYTE)) {
-                    MultiblockMachine machine = Main.get_manager().location_occupied_by(location);
+                    MultiblockMachine machine = Main.get_main().get_manager().location_occupied_by(location);
                     if(machine == null) return;
 
                     machine.set_recipe(ChemicalRecipeRegistry.get_type_by_id(data_container.get(nsk_recipe, PersistentDataType.BYTE)));
@@ -64,7 +64,7 @@ public class PlayerListener implements Listener {
                 }
 
                 if(data_container.has(nsk_weapon, PersistentDataType.BYTE)) {
-                    MultiblockMachine machine = Main.get_manager().location_occupied_by(location);
+                    MultiblockMachine machine = Main.get_main().get_manager().location_occupied_by(location);
                     if(machine == null) return;
 
                     machine.set_recipe(WeaponRecipeRegistry.get_type_by_id(data_container.get(nsk_weapon, PersistentDataType.BYTE)));
@@ -80,7 +80,7 @@ public class PlayerListener implements Listener {
                     int rotation = (int) (int) Math.floorMod(Math.round(player.getLocation().getYaw() / 90.0), 4);
                     if(rotation < 0) rotation += 4;
 
-                    Main.get_manager().place(e.getPlayer(), location, rotation, id);
+                    Main.get_main().get_manager().place(e.getPlayer(), location, rotation, id);
                 }
             }
         }
@@ -159,7 +159,7 @@ public class PlayerListener implements Listener {
                 event.setCancelled(true);
 
                 Location location = clicked_inventory.getLocation();
-                MultiblockMachine machine = Main.get_manager().location_occupied_by(location);
+                MultiblockMachine machine = Main.get_main().get_manager().location_occupied_by(location);
                 machine.click_button(clicked_item);
             }
         }

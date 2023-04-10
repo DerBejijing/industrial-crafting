@@ -40,13 +40,13 @@ public class WorldListener implements Listener {
         Inventory destination = e.getDestination();
 
         if(source.getType() == InventoryType.CHEST) {
-            if(Main.get_manager().location_occupied(source.getLocation())) {
+            if(Main.get_main().get_manager().location_occupied(source.getLocation())) {
                 e.setCancelled(true);
             }
         }
 
         if(destination.getType() == InventoryType.CHEST) {
-            if(Main.get_manager().location_occupied(destination.getLocation())) {
+            if(Main.get_main().get_manager().location_occupied(destination.getLocation())) {
                 e.setCancelled(true);
             }
         }
@@ -69,7 +69,7 @@ public class WorldListener implements Listener {
 
     private static void handle_destruction(Block block) {
         if(block.getType().equals(Material.CHEST)) {
-            if(Main.get_manager().location_occupied(block.getLocation())) {
+            if(Main.get_main().get_manager().location_occupied(block.getLocation())) {
                 BlockState bs = block.getState();
                 InventoryHolder inventory_holder = (InventoryHolder) bs;
                 Inventory inventory = inventory_holder.getInventory();
