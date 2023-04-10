@@ -48,4 +48,13 @@ Sniper:
 Special:  
 - [RPG7](#rpg7)  
 - [RPK](#rpk)  
-- [M249](#m249)
+- [M249](#m249)  
+
+<br>
+
+### 1911  
+| Material | Amount |
+| --- | --- |
+| Oak plank | 1 |
+| Iron ingot | 3 |
+| Stone button | 1 |
