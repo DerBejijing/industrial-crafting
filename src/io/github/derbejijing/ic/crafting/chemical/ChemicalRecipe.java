@@ -3,6 +3,7 @@ package io.github.derbejijing.ic.crafting.chemical;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
@@ -12,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import io.github.derbejijing.ic.chemical.Chemical;
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public abstract class ChemicalRecipe {
     private class OutputItemData {
@@ -32,6 +34,7 @@ public abstract class ChemicalRecipe {
         }
     }
 
+    private MultiblockMachine master;
 
     private ArrayList<ChemicalItem> ingredients;            // items that will be consumed
     private ArrayList<ChemicalItem> requirements;           // items that are required but will not be consumed
@@ -43,8 +46,12 @@ public abstract class ChemicalRecipe {
 
     private int progress;
 
+    private boolean may_fail;                               // if contaminated chemicals are used, the recipe might fail
+    private ChemicalRecipeFailure failure_action;
 
-    public ChemicalRecipe(int power_required, int time, int base_impurity) {
+
+    public ChemicalRecipe(MultiblockMachine master, int power_required, int time, int base_impurity) {
+        this.master = master;
         this.ingredients = new ArrayList<ChemicalItem>();
         this.requirements = new ArrayList<ChemicalItem>();
         this.outputs = new HashMap<ChemicalItem, OutputItemData>();
@@ -52,6 +59,25 @@ public abstract class ChemicalRecipe {
         this.time = time;
         this.base_impurity = base_impurity;
         this.progress = 0;
+        this.may_fail = false;
+        this.failure_action = ChemicalRecipeFailure.NOTHING;
+        this.add_ingredients();
+        this.add_requirements();
+        this.add_outputs();
+    }
+
+
+    public ChemicalRecipe(MultiblockMachine master, int power_required, int time, int base_impurity, ChemicalRecipeFailure failure_action) {
+        this.master = master;
+        this.ingredients = new ArrayList<ChemicalItem>();
+        this.requirements = new ArrayList<ChemicalItem>();
+        this.outputs = new HashMap<ChemicalItem, OutputItemData>();
+        this.power_required = power_required;
+        this.time = time;
+        this.base_impurity = base_impurity;
+        this.progress = 0;
+        this.may_fail = true;
+        this.failure_action = failure_action;
         this.add_ingredients();
         this.add_requirements();
         this.add_outputs();
@@ -108,7 +134,24 @@ public abstract class ChemicalRecipe {
 
         // all required items have been removed
         // check if output has enough space
-        if(!enough_space(outputs_copy, outputs)) return false;
+        boolean fail = this.may_fail;
+        if(fail) {
+            Random random = new Random();
+            fail = (random.nextInt(5 * 10) < purity_best);
+        }
+
+        // if it fails, do not produce anything
+        if(fail) {
+            if(this.failure_action == ChemicalRecipeFailure.DETONATE) {
+                this.master.get_location().getWorld().createExplosion(this.master.get_location(), 3, true);
+            }
+            if(this.failure_action == ChemicalRecipeFailure.WASTE) {
+                ArrayList<ItemStack> trash = new ArrayList<ItemStack>();
+                trash.add(ChemicalItem.WASTE.to_chemical(ChemicalPurity.HEAVY_CONTAMINATION, 1).to_item());
+                enough_space(outputs_copy, trash);
+            }
+        }
+        else if(!enough_space(outputs_copy, outputs)) return false;
 
         ++this.progress;
         if(this.progress < this.time) return false;

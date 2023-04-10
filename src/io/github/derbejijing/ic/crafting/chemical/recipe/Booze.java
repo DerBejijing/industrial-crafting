@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class Booze extends ChemicalRecipe {
 
-    public Booze() {
-        super(1, 10, 0);
+    public Booze(MultiblockMachine master) {
+        super(master, 1, 10, 0);
     }
 
 

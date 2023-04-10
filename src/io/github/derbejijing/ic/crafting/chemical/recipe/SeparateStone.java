@@ -3,11 +3,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class SeparateStone extends ChemicalRecipe {
 
-    public SeparateStone() {
-        super(10, 1, ChemicalPurity.CONTAMINATION.purity);
+    public SeparateStone(MultiblockMachine master) {
+        super(master, 10, 1, ChemicalPurity.CONTAMINATION.purity);
     }
 
 

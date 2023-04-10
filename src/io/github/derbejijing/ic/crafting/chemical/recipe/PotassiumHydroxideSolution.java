@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class PotassiumHydroxideSolution extends ChemicalRecipe {
 
-    public PotassiumHydroxideSolution() {
-        super(1, 1, 0);
+    public PotassiumHydroxideSolution(MultiblockMachine master) {
+        super(master, 1, 1, 0);
     }
 
 

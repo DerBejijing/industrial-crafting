@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class SulfuricAcid extends ChemicalRecipe {
 
-    public SulfuricAcid() {
-        super(1, 1, 0);
+    public SulfuricAcid(MultiblockMachine master) {
+        super(master, 1, 1, 0);
     }
 
 

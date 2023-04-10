@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class SodiumHydroxideSolutionElectrolysis extends ChemicalRecipe {
 
-    public SodiumHydroxideSolutionElectrolysis() {
-        super(10, 1, 0);
+    public SodiumHydroxideSolutionElectrolysis(MultiblockMachine master) {
+        super(master, 10, 1, 0);
     }
 
 

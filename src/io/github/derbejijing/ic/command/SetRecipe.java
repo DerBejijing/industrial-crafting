@@ -58,7 +58,7 @@ public class SetRecipe implements CommandExecutor {
                 return false;
             }
 
-            ChemicalRecipe recipe = ChemicalRecipeRegistry.get_by_id(id);
+            ChemicalRecipe recipe = ChemicalRecipeRegistry.get_by_id(null, id);
             if(recipe == null) return false;
 
             ItemStack item = player.getInventory().getItemInMainHand();

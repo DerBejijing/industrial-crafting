@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class BoozeSugarCane extends ChemicalRecipe {
 
-    public BoozeSugarCane() {
-        super(1, 10, 0);
+    public BoozeSugarCane(MultiblockMachine master) {
+        super(master, 1, 10, 0);
     }
 
 

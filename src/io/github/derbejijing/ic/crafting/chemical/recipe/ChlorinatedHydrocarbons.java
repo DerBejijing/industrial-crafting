@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class ChlorinatedHydrocarbons extends ChemicalRecipe {
 
-    public ChlorinatedHydrocarbons() {
-        super(100, 10, 0);
+    public ChlorinatedHydrocarbons(MultiblockMachine master) {
+        super(master, 100, 10, 0);
     }
 
 

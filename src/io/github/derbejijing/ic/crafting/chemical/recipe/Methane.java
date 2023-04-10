@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class Methane extends ChemicalRecipe {
 
-    public Methane() {
-        super(100, 10, 0);
+    public Methane(MultiblockMachine master) {
+        super(master, 100, 10, 0);
     }
 
 

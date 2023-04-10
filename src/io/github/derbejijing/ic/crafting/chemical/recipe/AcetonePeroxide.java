@@ -2,11 +2,13 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeFailure;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class AcetonePeroxide extends ChemicalRecipe {
 
-    public AcetonePeroxide() {
-        super(1, 100, 0);
+    public AcetonePeroxide(MultiblockMachine master) {
+        super(master, 1, 100, 0, ChemicalRecipeFailure.DETONATE);
     }
 
 

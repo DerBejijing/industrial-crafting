@@ -49,7 +49,7 @@ public abstract class MultiblockMachine {
         this.available_recipes = new ArrayList<ChemicalRecipeRegistry>();
         this.available_weapons = new ArrayList<WeaponRecipeRegistry>();
 
-        this.current_recipe = ChemicalRecipeRegistry.get_by_id(-1);
+        this.current_recipe = ChemicalRecipeRegistry.get_by_id(this, -1);
         this.current_weapon = WeaponRecipeRegistry.get_by_id(-1);
 
         this.add_components();
@@ -157,7 +157,7 @@ public abstract class MultiblockMachine {
 
 
     public void set_recipe(ChemicalRecipeRegistry recipe) {
-        for(ChemicalRecipeRegistry crr : this.available_recipes) if(crr.id == recipe.id) this.current_recipe = ChemicalRecipeRegistry.get_by_id(recipe.id);
+        for(ChemicalRecipeRegistry crr : this.available_recipes) if(crr.id == recipe.id) this.current_recipe = ChemicalRecipeRegistry.get_by_id(this, recipe.id);
     }
 
 

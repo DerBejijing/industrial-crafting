@@ -1,5 +1,7 @@
 package io.github.derbejijing.ic.event;
 
+import java.util.Random;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -92,6 +94,15 @@ public class PlayerListener implements Listener {
             Player player = e.getPlayer();
 
             if(chemical.getClass().equals(AcetonePeroxide.class)) {
+                if(chemical.get_purity().purity > 1) {
+                    Random random = new Random();
+                    if(random.nextInt(6) < chemical.get_purity().purity) {
+                        player.getWorld().createExplosion(player.getLocation(), 3, true);
+                        item.setAmount(item.getAmount() - 1);
+                        return;
+                    }
+                }
+
                 Arrow arrow = player.launchProjectile(Arrow.class);
                 arrow.setVelocity(player.getEyeLocation().getDirection().multiply(1.0f));
                 arrow.setDamage(0);
@@ -107,9 +118,10 @@ public class PlayerListener implements Listener {
                 ItemStack potion_item = new ItemStack(Material.SPLASH_POTION);
                 PotionMeta potion_meta = (PotionMeta) potion_item.getItemMeta();
 
-                potion_meta.setBasePotionData(new PotionData(PotionType.INSTANT_DAMAGE));
+                potion_meta.setBasePotionData(new PotionData(PotionType.AWKWARD));
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 3, 10), true);
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 7, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20 * 2, 20), true);
                 potion_item.setItemMeta(potion_meta);
 
                 ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));

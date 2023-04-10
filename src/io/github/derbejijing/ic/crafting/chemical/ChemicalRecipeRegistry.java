@@ -39,6 +39,7 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.SulfurTrioxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.SulfuricAcid;
 import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecomposition;
 import io.github.derbejijing.ic.crafting.chemical.recipe.WaterDecompositionCheap;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public enum ChemicalRecipeRegistry {
     GUNPOWDER(0, GunPowder.class, "Gunpowder"),
@@ -92,9 +93,9 @@ public enum ChemicalRecipeRegistry {
     }
 
 
-    public static ChemicalRecipe get_by_id(int id) {
+    public static ChemicalRecipe get_by_id(MultiblockMachine master, int id) {
         try {
-            for(ChemicalRecipeRegistry crr : ChemicalRecipeRegistry.values()) if(crr.id == id) return crr.recipe_class.getConstructor().newInstance();
+            for(ChemicalRecipeRegistry crr : ChemicalRecipeRegistry.values()) if(crr.id == id) return crr.recipe_class.getConstructor(MultiblockMachine.class).newInstance(master);
         } catch(Exception e) {
         }
         return null;

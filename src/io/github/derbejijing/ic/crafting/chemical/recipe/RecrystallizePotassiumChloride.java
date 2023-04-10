@@ -3,11 +3,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class RecrystallizePotassiumChloride extends ChemicalRecipe {
 
-    public RecrystallizePotassiumChloride() {
-        super(10, 60, 0);
+    public RecrystallizePotassiumChloride(MultiblockMachine master) {
+        super(master, 10, 60, 0);
     }
 
 

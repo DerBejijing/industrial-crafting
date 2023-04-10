@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class Chloroacetone extends ChemicalRecipe {
 
-    public Chloroacetone() {
-        super(1, 10, 0);
+    public Chloroacetone(MultiblockMachine master) {
+        super(master, 1, 10, 0);
     }
 
 

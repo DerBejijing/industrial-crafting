@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class HydrogenPeroxideCheap extends ChemicalRecipe {
 
-    public HydrogenPeroxideCheap() {
-        super(10, 1, 0);
+    public HydrogenPeroxideCheap(MultiblockMachine master) {
+        super(master, 10, 1, 0);
     }
 
 

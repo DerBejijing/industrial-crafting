@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class CrushNetherrack extends ChemicalRecipe {
 
-    public CrushNetherrack() {
-        super(100, 1, 0);
+    public CrushNetherrack(MultiblockMachine master) {
+        super(master, 100, 1, 0);
     }
 
 

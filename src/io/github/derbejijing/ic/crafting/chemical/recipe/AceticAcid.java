@@ -2,11 +2,12 @@ package io.github.derbejijing.ic.crafting.chemical.recipe;
 
 import io.github.derbejijing.ic.chemical.ChemicalItem;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
+import io.github.derbejijing.ic.machines.MultiblockMachine;
 
 public class AceticAcid extends ChemicalRecipe {
 
-    public AceticAcid() {
-        super(10, 10, 0);
+    public AceticAcid(MultiblockMachine master) {
+        super(master, 10, 10, 0);
     }
 
 

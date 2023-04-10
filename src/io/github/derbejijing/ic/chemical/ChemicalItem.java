@@ -6,6 +6,10 @@ import io.github.derbejijing.ic.chemical.material.AceticAcid;
 import io.github.derbejijing.ic.chemical.material.Acetone;
 import io.github.derbejijing.ic.chemical.material.AcetonePeroxide;
 import io.github.derbejijing.ic.chemical.material.Apple;
+import io.github.derbejijing.ic.chemical.material.BulletPistol;
+import io.github.derbejijing.ic.chemical.material.BulletRPG;
+import io.github.derbejijing.ic.chemical.material.BulletRifle;
+import io.github.derbejijing.ic.chemical.material.BulletShotgun;
 import io.github.derbejijing.ic.chemical.material.Calcite;
 import io.github.derbejijing.ic.chemical.material.CalciumCarbonate;
 import io.github.derbejijing.ic.chemical.material.Carbon;
@@ -17,6 +21,7 @@ import io.github.derbejijing.ic.chemical.material.Chloroacetone;
 import io.github.derbejijing.ic.chemical.material.Chloroform;
 import io.github.derbejijing.ic.chemical.material.Coal;
 import io.github.derbejijing.ic.chemical.material.CobbleStone;
+import io.github.derbejijing.ic.chemical.material.Copper;
 import io.github.derbejijing.ic.chemical.material.CrushedNetherrack;
 import io.github.derbejijing.ic.chemical.material.DistilledWater;
 import io.github.derbejijing.ic.chemical.material.EmptyBucket;
@@ -24,6 +29,7 @@ import io.github.derbejijing.ic.chemical.material.Ethanol;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
 import io.github.derbejijing.ic.chemical.material.HydrogenPeroxide;
+import io.github.derbejijing.ic.chemical.material.Iron;
 import io.github.derbejijing.ic.chemical.material.Liquor;
 import io.github.derbejijing.ic.chemical.material.MetalDust;
 import io.github.derbejijing.ic.chemical.material.Methane;
@@ -50,6 +56,7 @@ import io.github.derbejijing.ic.chemical.material.Sulfur;
 import io.github.derbejijing.ic.chemical.material.SulfurDioxide;
 import io.github.derbejijing.ic.chemical.material.SulfurTrioxide;
 import io.github.derbejijing.ic.chemical.material.SulfuricAcid;
+import io.github.derbejijing.ic.chemical.material.Waste;
 import io.github.derbejijing.ic.chemical.material.Water;
 import io.github.derbejijing.ic.chemical.property.ChemicalPurity;
 
@@ -102,7 +109,15 @@ public enum ChemicalItem {
     SODIUM_CARBONATE(47, Material.SUGAR, SodiumCarbonate.class, false),
     METHANE(48, Material.GLASS_BOTTLE, Methane.class, false),
     CHLOROFORM(49, Material.GLASS_BOTTLE, Chloroform.class, false),
-    CHLORINATED_HYDROCARBONS(50, Material.GLASS_BOTTLE, ChlorinatedHydrocarbons.class, false);
+    CHLORINATED_HYDROCARBONS(50, Material.GLASS_BOTTLE, ChlorinatedHydrocarbons.class, false),
+    IRON(51, Material.IRON_INGOT, Iron.class, true),
+    COPPER(52, Material.COPPER_INGOT, Copper.class, true),
+    BULLET_PISTOL(53, Material.SUGAR, BulletPistol.class, false),
+    BULLET_RIFLE(54, Material.SUGAR, BulletRifle.class, false),
+    BULLET_RPG(55, Material.SUGAR, BulletRPG.class, false),
+    BULLET_SNIPER(56, Material.SUGAR, BulletRifle.class, false),
+    BULLET_SHOTGUN(57, Material.SUGAR, BulletShotgun.class, false),
+    WASTE(58, Material.SUGAR, Waste.class, false);
 
 
     public final int id;
