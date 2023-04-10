@@ -52,9 +52,121 @@ Special:
 
 <br>
 
+## Crafting recipes  
+
+<br>
+
+## Pistols  
+
 ### 1911  
 | Material | Amount |
 | --- | --- |
-| Oak plank | 1 |
 | Iron ingot | 3 |
+| Oak plank | 1 |
 | Stone button | 1 |
+
+### M9  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 3 |
+| Iron nugget | 1 |
+| Stone button | 1 |
+
+### Desert Eagle
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 4 |
+| Iron nugget | 1 |
+| Stone button | 1 |
+
+### PM  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 4 |
+| Oak planks | 1 |
+| Stone button | 1 |
+
+### G17  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 3 |
+| Redstone torch | 1 |
+| Stone button | 1 |
+
+### G18  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 4 |
+| Redstone torch | 1 |
+| Stone button | 1 |
+
+### vz. 61  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 3 |
+| Iron nugget | 1 |
+| Redstone torch | 1 |
+| Oak planks | 1 |
+
+<br>
+
+## Rifles  
+
+### M16A4  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 9 |
+| Iron bars | 1 |
+| Redstone torch | 1 |
+
+### AK 47  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 5 |
+| Redstone torch | 1 |
+| Oak planks | 2 |
+
+### FN FAL  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 9 |
+| Iron bars | 2 |
+| Redstone torch | 1 |
+| Oak planks | 3 |
+
+### AUG A3  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 8 |
+| Iron bars | 1 |
+| Redstone torch | 1 |
+| Green dye | 1 |
+
+### M4A1  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 8 |
+| Iron bars | 1 |
+| Redstone torch | 1 |
+
+### G3A3  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 8 |
+| Iron bars | 1 |
+| Redstone torch |
+| Green dye | 2 |
+
+### FAMAS  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 7 |
+| Iron bars | 2 |
+| Redsone torch | 1 |
+
+### SCAR H  
+| Material | Amount |
+| --- | --- |
+| Iron ingot | 8 |
+| Iron nugget | 3 |
+| Redstone torch | 1 |
