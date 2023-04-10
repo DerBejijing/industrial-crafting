@@ -37,7 +37,7 @@ public abstract class WeaponRecipe {
 
         Inventory inputs_copy = Bukkit.createInventory((InventoryHolder) null, input.getSize());
         inputs_copy.setContents(input.getContents());
-
+        
         for(ItemStack item_required : this.ingredients) if(!inputs_copy.removeItem(item_required).isEmpty()) return false;
 
         ++this.progress;

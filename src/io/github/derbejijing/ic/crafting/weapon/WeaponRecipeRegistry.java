@@ -24,9 +24,11 @@ import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponMosin;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponPM;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponPPSH;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponRPG;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponRPK;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponSPAS12;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponSVD;
 import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponScarH;
+import io.github.derbejijing.ic.crafting.weapon.recipe.WeaponSten;
 
 public enum WeaponRecipeRegistry {
     M16A4(0, "M16A4", WeaponM16A4.class),
@@ -47,15 +49,17 @@ public enum WeaponRecipeRegistry {
     MAC10(15, "MAC 10", WeaponMAC10.class),
     MP7A1(16, "MP7A1", WeaponMP7A1.class),
     PPSH(17, "PPSh", WeaponPPSH.class),
-    SPAS12(18, "SPAS12", WeaponSPAS12.class),
-    M500(19, "M500", WeaponM500.class),
-    M590(20, "M590", WeaponM590.class),
-    SVD(21, "SVD", WeaponSVD.class),
-    M82A1(22, "M82A1", WeaponM82A1.class),
-    Mosin(23, "Mosin", WeaponMosin.class),
-    M24A3(24, "M24A3", WeaponM24A3.class),
-    RPG(25, "RPG", WeaponRPG.class),
-    M249(26, "M249", WeaponM249.class);
+    STEN(18, "Sten", WeaponSten.class),
+    SPAS12(19, "SPAS12", WeaponSPAS12.class),
+    M500(20, "M500", WeaponM500.class),
+    M590(21, "M590", WeaponM590.class),
+    SVD(22, "SVD", WeaponSVD.class),
+    M82A1(23, "M82A1", WeaponM82A1.class),
+    MOSIN(24, "Mosin", WeaponMosin.class),
+    M24A3(25, "M24A3", WeaponM24A3.class),
+    RPG(26, "RPG", WeaponRPG.class),
+    RPK(27, "RPK", WeaponRPK.class),
+    M249(28, "M249", WeaponM249.class);
 
     public final int id;
     public final String name;

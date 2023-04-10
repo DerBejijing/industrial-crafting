@@ -89,7 +89,35 @@ public class WeaponAssembly extends MultiblockMachine {
 
     @Override
     protected void add_recipes() {
+        this.add_weapon(WeaponRecipeRegistry.M16A4);
         this.add_weapon(WeaponRecipeRegistry.AK_47);
+        this.add_weapon(WeaponRecipeRegistry.FN_FAL);
+        this.add_weapon(WeaponRecipeRegistry.AUG_A3);
+        this.add_weapon(WeaponRecipeRegistry.M4A1);
+        this.add_weapon(WeaponRecipeRegistry.G3A3);
+        this.add_weapon(WeaponRecipeRegistry.FAMAS);
+        this.add_weapon(WeaponRecipeRegistry.SCAR_H);
+        this.add_weapon(WeaponRecipeRegistry.P1911);
+        this.add_weapon(WeaponRecipeRegistry.M9);
+        this.add_weapon(WeaponRecipeRegistry.DESERT_EAGLE);
+        this.add_weapon(WeaponRecipeRegistry.PM);
+        this.add_weapon(WeaponRecipeRegistry.GLOCK_17);
+        this.add_weapon(WeaponRecipeRegistry.GLOCK_18);
+        this.add_weapon(WeaponRecipeRegistry.MP5A3);
+        this.add_weapon(WeaponRecipeRegistry.MAC10);
+        this.add_weapon(WeaponRecipeRegistry.MP7A1);
+        this.add_weapon(WeaponRecipeRegistry.PPSH);
+        this.add_weapon(WeaponRecipeRegistry.STEN);
+        this.add_weapon(WeaponRecipeRegistry.SPAS12);
+        this.add_weapon(WeaponRecipeRegistry.M500);
+        this.add_weapon(WeaponRecipeRegistry.M590);
+        this.add_weapon(WeaponRecipeRegistry.SVD);
+        this.add_weapon(WeaponRecipeRegistry.M82A1);
+        this.add_weapon(WeaponRecipeRegistry.MOSIN);
+        this.add_weapon(WeaponRecipeRegistry.M24A3);
+        this.add_weapon(WeaponRecipeRegistry.RPG);
+        this.add_weapon(WeaponRecipeRegistry.RPK);
+        this.add_weapon(WeaponRecipeRegistry.M249);
     }
 
     @Override
