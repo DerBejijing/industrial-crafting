@@ -15,6 +15,7 @@ public abstract class WeaponRecipe {
 
     private ArrayList<ItemStack> ingredients;
     private Weapon output;
+    private boolean mag;
 
     private int time_required;
     private int power_required;
@@ -49,10 +50,10 @@ public abstract class WeaponRecipe {
         ArmorStand armor_stand = (ArmorStand) center.getWorld().spawnEntity(center, EntityType.ARMOR_STAND);
         armor_stand.setInvisible(true);
         
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute as " + armor_stand.getUniqueId().toString() + " at @s run function " + this.output.command);
+        if(this.mag) Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute as " + armor_stand.getUniqueId().toString() + " at @s run function " + this.output.command_weapon + "_mag");
+        else Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "execute as " + armor_stand.getUniqueId().toString() + " at @s run function " + this.output.command_weapon);
 
         armor_stand.setHealth(0);
-
         return true;
     }
 
@@ -78,6 +79,12 @@ public abstract class WeaponRecipe {
 
     protected void set_output(Weapon weapon) {
         this.output = weapon;
+    }
+
+
+    protected void set_output(Weapon weapon, boolean mag) {
+        this.output = weapon;
+        this.mag = true;
     }
 
 

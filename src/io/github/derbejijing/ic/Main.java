@@ -28,11 +28,8 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         main = this;
-        Bukkit.getLogger().info("test #1");
         this.manager = new MultiblockMachineManager();
         this.storage = new DataStorage(this, "machines.yml");
-
-        Bukkit.getLogger().info("test #2");
 
         this.storage.load();
 
