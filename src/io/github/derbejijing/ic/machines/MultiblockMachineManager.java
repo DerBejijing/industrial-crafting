@@ -20,6 +20,16 @@ public class MultiblockMachineManager {
     }
 
 
+    public ArrayList<MultiblockMachine> get_machines() {
+        return this.machines;
+    }
+
+
+    public void set_machines(ArrayList<MultiblockMachine> machines) {
+        if(machines != null) this.machines = machines;
+    }
+
+
     public void tick() {
         for(MultiblockMachine mbm : this.machines) mbm.tick();
 

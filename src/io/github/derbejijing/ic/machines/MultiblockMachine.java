@@ -1,10 +1,13 @@
 package io.github.derbejijing.ic.machines;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.BlockState;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
@@ -24,10 +27,12 @@ import io.github.derbejijing.ic.machines.component.OutputHatch;
 import io.github.derbejijing.ic.machines.component.SolarCell;
 import io.github.derbejijing.ic.machines.component.InterfaceUtils.InterfaceItem;
 
-public abstract class MultiblockMachine {
+public abstract class MultiblockMachine implements ConfigurationSerializable {
     protected Location base_location;
     private MultiblockState state;
     private float power;
+
+    protected int orientation;
 
     protected ArrayList<MultiblockComponent> components;
     protected ArrayList<ChemicalRecipeRegistry> available_recipes;
@@ -57,12 +62,90 @@ public abstract class MultiblockMachine {
     }
 
 
+    // save the location, the rotation and the class name and power level and current state and current job
+    // when loading, set the data and reinitialize the machine
+
+    @Override
+    public Map<String, Object> serialize() {
+        Map<String, Object> data = new HashMap<>();
+        data.put("class_name", this.getClass().getName());
+        data.put("world", this.base_location.getWorld().getName());
+        data.put("base_x", this.base_location.getX());
+        data.put("base_y", this.base_location.getY());
+        data.put("base_z", this.base_location.getZ());
+        data.put("orientation", this.orientation);
+        data.put("power", this.power);
+        data.put("state", this.state.id);
+        data.put("current_recipe", ChemicalRecipeRegistry.get_name(this.current_recipe));
+        data.put("current_weapon", WeaponRecipeRegistry.get_name(this.current_weapon));
+        return data;
+    }
+
+
+    @SuppressWarnings("unchecked")
+    public static MultiblockMachine deserialize(Map<String, Object> data) {
+        String class_name = (String)data.get("class_name");
+        String world = (String)data.get("world");
+        double x = (double)data.get("base_x");
+        double y = (double)data.get("base_y");
+        double z = (double)data.get("base_z");
+        int orientation = (int)data.get("orientation");
+        double power = (double)data.get("power");
+        MultiblockState state = MultiblockState.get_by_id((int)data.get("state"));
+        String current_recipe = (String)data.get("current_recipe");
+        String current_weapon = (String)data.get("current_weapon");
+
+        try {
+            Class<?> clazz = Class.forName(class_name);
+
+            if(MultiblockMachine.class.isAssignableFrom(clazz)) {
+                Class<? extends MultiblockMachine> machine_class = (Class<? extends MultiblockMachine>)clazz;
+
+                MultiblockMachine machine = machine_class.getConstructor(Location.class, int.class).newInstance(new Location(Bukkit.getWorld(world), x, y, z), orientation);
+                machine.set_recipe(ChemicalRecipeRegistry.get_by_string(current_recipe));
+                machine.set_recipe(WeaponRecipeRegistry.get_by_string(current_weapon));
+                
+                machine.power = (float)power;
+                machine.state = state;
+
+                boolean valid = true;
+
+                for(MultiblockComponent mc : machine.components) {
+                    mc.rotate(orientation);
+                    if(!machine.base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) {
+                        valid = false;
+                        Bukkit.getLogger().info("fail here [" + mc.get_material() + "]: " + machine.base_location.getX() + " " + machine.base_location.getY() + " " + machine.base_location.getZ());
+                    }
+    
+                    if(Main.get_main().get_manager().location_occupied(machine.base_location)) valid = false;
+    
+                    machine.base_location.subtract(mc.get_location());
+                }
+                
+                if(valid) if(machine.init_and_build()) return machine;
+            }
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
+    public static MultiblockMachine valueOf(Map<String, Object> data) {
+        return deserialize(data);
+    }
+
+
     public static <T extends MultiblockMachine> T place(Location base_location, int orientation, Class<T> clazz) {
         try {
             T m = clazz.getConstructor(Location.class, int.class).newInstance(base_location, orientation);
 
             boolean valid = true;
             
+            m.orientation = orientation;
+
             for(MultiblockComponent mc : m.components) {
                 mc.rotate(orientation);
                 if(!m.base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) {

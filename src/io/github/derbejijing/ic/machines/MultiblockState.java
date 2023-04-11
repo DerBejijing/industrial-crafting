@@ -11,4 +11,10 @@ public enum MultiblockState {
     private MultiblockState(int id) {
         this.id = id;
     }
+
+
+    public static MultiblockState get_by_id(int id) {
+        for(MultiblockState state : MultiblockState.values()) if(state.id == id) return state;
+        return MultiblockState.BROKEN;
+    }
 }

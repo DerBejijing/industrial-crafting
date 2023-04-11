@@ -102,6 +102,15 @@ public enum ChemicalRecipeRegistry {
     }
 
 
+    public static ChemicalRecipeRegistry get_by_string(String name) {
+        try {
+            for(ChemicalRecipeRegistry crr : ChemicalRecipeRegistry.values()) if(crr.name.equals(name)) return crr;
+        } catch(Exception e) {
+        }
+        return null;
+    }
+
+
     public static ChemicalRecipeRegistry get_type_by_id(int id) {
         try {
             for(ChemicalRecipeRegistry crr : ChemicalRecipeRegistry.values()) if(crr.id == id) return crr;

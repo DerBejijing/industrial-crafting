@@ -81,6 +81,15 @@ public enum WeaponRecipeRegistry {
     }
 
 
+    public static WeaponRecipeRegistry get_by_string(String name) {
+        try {
+            for(WeaponRecipeRegistry wrr : WeaponRecipeRegistry.values()) if(wrr.name.equals(name)) return wrr;
+        } catch(Exception e) {
+        }
+        return null;
+    }
+
+
     public static WeaponRecipeRegistry get_type_by_id(int id) {
         try {
             for(WeaponRecipeRegistry wrr : WeaponRecipeRegistry.values()) if(wrr.id == id) return wrr;
