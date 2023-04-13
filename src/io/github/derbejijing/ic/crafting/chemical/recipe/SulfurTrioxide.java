@@ -7,7 +7,7 @@ import io.github.derbejijing.ic.machines.MultiblockMachine;
 public class SulfurTrioxide extends ChemicalRecipe {
 
     public SulfurTrioxide(MultiblockMachine master) {
-        super(master, 1, 1, 0);
+        super(master, 100, 10, 0);
     }
 
 

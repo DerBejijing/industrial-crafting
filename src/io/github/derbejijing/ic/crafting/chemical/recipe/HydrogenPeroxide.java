@@ -27,7 +27,5 @@ public class HydrogenPeroxide extends ChemicalRecipe {
     @Override
     public void add_outputs() {
         this.add_output(ChemicalItem.HYDROGEN_PEROXIDE, 1);
-        this.add_output(ChemicalItem.HYDROGEN, 2);
-        this.add_output(ChemicalItem.OXYGEN, 1);
     }
 }
