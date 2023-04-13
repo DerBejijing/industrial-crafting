@@ -23,6 +23,21 @@ Under "notes" important things will be listed, like that if contaminated ingredi
 
 <br>
 
+## Disclaimer  
+I am once again required to remind you about the disclaimer:  
+```
+The synthesis-machanisms for some chemicals have been slightly simplified or modified for two reasons:
+
+    some recipes would be extremely complicated
+    some chemicals are controlled and restricted for obvious reasons and I legaly cannot provide detailed instructions on their manufacture
+
+The synthesis mechanisms have been derived from public information. I do not provide any information that would not be available otherwise!
+Do not attempt to reproduce any of the chemical recipes at home!
+Not only are they extremely dangerous, but also restrited by the government!
+```
+
+<br>
+
 ## Acetic acid  
 ```
 Machine:        reactor
