@@ -568,3 +568,50 @@ time required:  1
 
 notes:          -
 ```
+
+## Sulfur trioxide  
+```
+Machine:        furnace
+
+Ingredients:    1x sulfur dioxide
+                1x oxygen
+catalysts:      -
+outputs:        1x sulfur trioxide
+
+power required: 1
+time required:  1
+
+notes:          -
+```
+
+## Water decomposition  
+```
+Machine:        electrolyzer
+
+Ingredients:    3x distilled water
+catalysts:      1x sulfuric acid
+outputs:        2x hydrogen
+                1x oxygen
+
+power required: 10
+time required:  1
+
+notes:          -
+```
+
+## Water decomposition (cheap)  
+```
+Machine:        reactor
+
+Ingredients:    3x distilled water
+                1x sodium chloride
+catalysts:      -
+outputs:        2x hydrogen
+                1x oxygen
+                1x chlorine
+
+power required: 10
+time required:  1
+
+notes:          -
+```
