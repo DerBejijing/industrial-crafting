@@ -9,6 +9,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
+import io.github.derbejijing.ic.command.Attachment;
 import io.github.derbejijing.ic.command.GetChemical;
 import io.github.derbejijing.ic.command.SetMachine;
 import io.github.derbejijing.ic.command.SetRecipe;
@@ -40,6 +41,7 @@ public class Main extends JavaPlugin {
         this.getCommand("setrecipe").setExecutor(new SetRecipe());
         this.getCommand("setmachine").setExecutor(new SetMachine());
         this.getCommand("setweapon").setExecutor(new SetWeapon());
+        this.getCommand("attachment").setExecutor(new Attachment());
 
         this.add_recipes();
 

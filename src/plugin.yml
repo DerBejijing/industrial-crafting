@@ -14,3 +14,5 @@ commands:
     description: write a machine to the blueprint
   setweapon:
     description: write a weapon recipe to the blueprint
+  attachment:
+    description: put an attachment to the weapon in your offhand
