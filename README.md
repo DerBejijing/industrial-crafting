@@ -3,6 +3,7 @@ multiblock machines for minecraft
 
 ## About  
 This is a minecraft plugin that adds multiblock machines and recipes to produce various chemicals and weapons for a certain datapack.  
+The weapons themselves are from this amazing datapack: https://www.youtube.com/watch?v=Ia5Mlkn6ipM  
 
 <br>
 
