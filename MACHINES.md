@@ -22,7 +22,7 @@ S C S     S G S
 ```
 
 All required ingredients will be taken from the input slot (on the left),  
-and all aoutputs will appear on the output slot (on the right).  
+and all outputs will appear on the output slot (on the right).  
 
 <br>
 
