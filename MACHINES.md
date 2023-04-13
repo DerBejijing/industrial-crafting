@@ -18,7 +18,7 @@ G : glass
 Layer 0:  Layer 1:
 S D S     S S S
 d S d     S   S
-S c S     S G S
+S C S     S G S
 ```
 
 <br>
@@ -33,13 +33,14 @@ S : smooth stone
 s : smooth stone slab
 D : dropper
 d : dispenser
+C : chest
 
 Layer 0:      Layer 1:
 S S d S S     s s s s s
 S S S S S     s s s s s
 D S S S D     s s s s s
 S S S S S     s s s s s
-S S c S S     s s s s s
+S S C S S     s s s s s
 ```
 
 ## Chemical Refinery  
@@ -53,11 +54,12 @@ D : dropper
 d : dispenser
 g : tinted glass
 w : water
+C : chest
 
 Layer 0:          Layer 1:          Layer 2:
 S S S d S S S     S S S S S S S     S S S S S S S
 D S S S S S D     S D w w w D S     S S S S S S S
-S S S c S S S     S S g g g S S     S S S S S S S
+S S S C S S S     S S g g g S S     S S S S S S S
 ```
 
 ## Condenser  
@@ -71,10 +73,127 @@ D : dropper
 d : dispenser
 g : glass
 w : water
+C : chest
 
 Layer 0:  Layer 1:  Layer 2:
 S d S     S S S     S S S
 D S D     S w S     S S S
-S c S     S g S     S S S
+S C S     S g S     S S S
+```
+
+## Electrolyzer  
+This machine will split molecules like H2O into their atoms, if this is possible.  
+The substance needs to be conductive, and as Water is not conductive, an acid is required as a catalyst and will therefore not be consumed.    
+A cheap alternative would be adding salt, which will be decomposed and release chlorine gas.  
+The construction is the same as the condenser.  
+
+```
+Materials:
+S : smooth stone
+D : dropper
+d : dispenser
+g : glass
+w : water
+C : chest
+
+Layer 0:  Layer 1:  Layer 2:
+S d S     S S S     S S S
+D S D     S w S     S S S
+S C S     S g S     S S S
+```
+
+## Furnace  
+A furnace is used to burn compounds or to react chemicals under high pressure and temperature.  
+
+```
+Materials:
+S : smooth stone
+D : dropper
+d : dispenser
+g : tinted glass
+b : blast furnace
+C : chest
+
+Layer 0:  Layer 1:  Layer 2:  Layer 3:
+S d S     S S S     S S S     S S S
+D S D     S b S     S   S     S   S
+S C S     S g S     S S S     S S S
+```
+
+## Macerator  
+A macerator is used to crush solid blocks into powder, so they can either be separated or directly used.  
+
+```
+Materials:
+S : smooth stone
+s : smooth stone slab 
+D : dropper
+d : dispenser
+C : chest
+
+Layer 0:  Layer 1:
+D d D     s s s
+S C S     s s s
+```
+
+## Reactor  
+The reactor is used to react chemicals.  
+
+```
+Materials:
+S : smooth stone
+D : dropper
+d : dispenser
+g : glass
+c : cauldron
+l : lightning rod
+C : chest
+
+Layer 0:  Layer 1:  Layer 2:
+S d S     S S S     S S S
+D c D     S l S     S S S
+S C S     S g S     S S S
+```
+
+## Recrystallizer  
+Some contaminated chemicals can be purified through recrystallisation. This is only possible for crystalline chemicals, like NaCl.  
+The result will be of industrial grade purity, but take a lot of time.  
+
+```
+Materials:
+S : smooth stone
+D : dropper
+d : dispenser
+g : tinted glass
+w : water
+C : chest
+
+Layer 0:  Layer 1:  Layer 2:  Layer 3:  Layer 4:
+S d S     S S S     S S S     S S S     S S S
+D S D     S w S     S w S     S w S     S S S
+S C S     S g S     S g S     S g S     S S S
+```
+
+## Solar Electrolyzer  
+This device will generate it's energy using "solar cells" (daylight sensors) and use that to drive electrolysis.  
+Note that it will work best in warm biomes like deserts and not at all in cold biomes.  
+Speaking in numbers, it will not be generating anything below a temperature of 0.5, above it will generate 0.5 power units per second.  
+Above 1.0, it will be 1.5 power units per second and at 2.0 it will be 2.0 power units per second.  
+Note that access to daylight is required, and that the cells cannot be obscured.  
+
+```
+Materials:
+S : smooth stone
+D : dropper
+d : dispenser
+g : glass
+w : water
+x : daylight sensor
+C : chest
+
+Layer 0:  Layer 1:  Layer 2:  Layer 3:
+S d S     S S S     S S S     x x x
+D S D     S w S     S S S     x x x
+S C S     S g S     S S S     x x x
 ```
 
