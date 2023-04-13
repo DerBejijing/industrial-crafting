@@ -37,7 +37,6 @@ public class Main extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new PlayerListener(), this);
         this.getServer().getPluginManager().registerEvents(new WorldListener(), this);
 
-        this.getCommand("getchemical").setExecutor(new GetChemical());
         this.getCommand("setrecipe").setExecutor(new SetRecipe());
         this.getCommand("setmachine").setExecutor(new SetMachine());
         this.getCommand("setweapon").setExecutor(new SetWeapon());
