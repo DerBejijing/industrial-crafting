@@ -58,7 +58,7 @@ public class SetWeapon implements CommandExecutor {
                 return false;
             }
 
-            WeaponRecipe recipe = WeaponRecipeRegistry.get_by_id(id);
+            WeaponRecipe recipe = WeaponRecipeRegistry.get_by_id(id, false);
             if(recipe == null) return false;
 
             ItemStack item = player.getInventory().getItemInMainHand();
@@ -100,6 +100,8 @@ public class SetWeapon implements CommandExecutor {
 
             List<String> lore = new ArrayList<String>();
             lore.add(ChatColor.GRAY + "Weapon: " + ChatColor.BLUE + WeaponRecipeRegistry.get_name(recipe));
+            lore.add(ChatColor.GRAY + "Right click machine to set weapon,");
+            lore.add(ChatColor.GRAY + "Shift-Right click for magazine");
             meta.setLore(lore);
 
             item.setItemMeta(meta);

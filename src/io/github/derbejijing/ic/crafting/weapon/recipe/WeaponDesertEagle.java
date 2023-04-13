@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponDesertEagle extends WeaponRecipe {
 
-    public WeaponDesertEagle() {
-        super(120, 300);
+    public WeaponDesertEagle(boolean mag) {
+        super(120, 300, mag);
     }
 
     @Override

@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponScarH extends WeaponRecipe {
 
-    public WeaponScarH() {
-        super(120, 500);
+    public WeaponScarH(boolean mag) {
+        super(120, 500, mag);
     }
 
     @Override

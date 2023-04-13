@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponSPAS12 extends WeaponRecipe {
 
-    public WeaponSPAS12() {
-        super(120, 500);
+    public WeaponSPAS12(boolean mag) {
+        super(120, 500, mag);
     }
 
     @Override

@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponFnFal extends WeaponRecipe {
 
-    public WeaponFnFal() {
-        super(120, 500);
+    public WeaponFnFal(boolean mag) {
+        super(120, 500, mag);
     }
 
     @Override

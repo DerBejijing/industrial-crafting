@@ -67,7 +67,7 @@ public class PlayerListener implements Listener {
                     MultiblockMachine machine = Main.get_main().get_manager().location_occupied_by(location);
                     if(machine == null) return;
 
-                    machine.set_recipe(WeaponRecipeRegistry.get_type_by_id(data_container.get(nsk_weapon, PersistentDataType.BYTE)));
+                    machine.set_recipe(WeaponRecipeRegistry.get_type_by_id(data_container.get(nsk_weapon, PersistentDataType.BYTE)), e.getPlayer().isSneaking());
                     return;
                 }
 

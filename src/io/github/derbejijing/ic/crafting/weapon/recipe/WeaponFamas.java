@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponFamas extends WeaponRecipe {
 
-    public WeaponFamas() {
-        super(120, 500);
+    public WeaponFamas(boolean mag) {
+        super(120, 500, mag);
     }
 
     @Override

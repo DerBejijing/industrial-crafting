@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponRPK extends WeaponRecipe {
 
-    public WeaponRPK() {
-        super(240, 800);
+    public WeaponRPK(boolean mag) {
+        super(240, 800, mag);
     }
 
     @Override

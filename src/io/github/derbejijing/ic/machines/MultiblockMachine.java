@@ -49,13 +49,14 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
         this.power = 0;
 
         this.is_chemical = is_chemical;
+        this.orientation = orientation;
 
         this.components = new ArrayList<MultiblockComponent>();
         this.available_recipes = new ArrayList<ChemicalRecipeRegistry>();
         this.available_weapons = new ArrayList<WeaponRecipeRegistry>();
 
         this.current_recipe = ChemicalRecipeRegistry.get_by_id(this, -1);
-        this.current_weapon = WeaponRecipeRegistry.get_by_id(-1);
+        this.current_weapon = WeaponRecipeRegistry.get_by_id(-1, false);
 
         this.add_components();
         this.add_recipes();
@@ -78,6 +79,8 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
         data.put("state", this.state.id);
         data.put("current_recipe", ChemicalRecipeRegistry.get_name(this.current_recipe));
         data.put("current_weapon", WeaponRecipeRegistry.get_name(this.current_weapon));
+        if(this.current_weapon != null) data.put("weapon_mag", this.current_weapon.is_mag());
+        else data.put("weapon_mag", false);
         return data;
     }
 
@@ -94,6 +97,7 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
         MultiblockState state = MultiblockState.get_by_id((int)data.get("state"));
         String current_recipe = (String)data.get("current_recipe");
         String current_weapon = (String)data.get("current_weapon");
+        boolean weapon_mag = (boolean)data.get("weapon_mag");
 
         try {
             Class<?> clazz = Class.forName(class_name);
@@ -103,7 +107,7 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
 
                 MultiblockMachine machine = machine_class.getConstructor(Location.class, int.class).newInstance(new Location(Bukkit.getWorld(world), x, y, z), orientation);
                 machine.set_recipe(ChemicalRecipeRegistry.get_by_string(current_recipe));
-                machine.set_recipe(WeaponRecipeRegistry.get_by_string(current_weapon));
+                machine.set_recipe(WeaponRecipeRegistry.get_by_string(current_weapon.replace(" (ammo)", "")), weapon_mag);
                 
                 machine.power = (float)power;
                 machine.state = state;
@@ -244,8 +248,8 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
     }
 
 
-    public void set_recipe(WeaponRecipeRegistry weapon) {
-        for(WeaponRecipeRegistry wrr : this.available_weapons) if(wrr.id == weapon.id) this.current_weapon = WeaponRecipeRegistry.get_by_id(weapon.id);
+    public void set_recipe(WeaponRecipeRegistry weapon, boolean mag) {
+        for(WeaponRecipeRegistry wrr : this.available_weapons) if(wrr.id == weapon.id) this.current_weapon = WeaponRecipeRegistry.get_by_id(weapon.id, mag);
     }
 
 

@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponMP4A3 extends WeaponRecipe {
 
-    public WeaponMP4A3() {
-        super(120, 400);
+    public WeaponMP4A3(boolean mag) {
+        super(120, 400, mag);
     }
 
     @Override

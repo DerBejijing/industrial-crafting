@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponPM extends WeaponRecipe {
 
-    public WeaponPM() {
-        super(120, 300);
+    public WeaponPM(boolean mag) {
+        super(120, 300, mag);
     }
 
     @Override

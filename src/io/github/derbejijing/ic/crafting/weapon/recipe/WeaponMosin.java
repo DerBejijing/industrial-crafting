@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponMosin extends WeaponRecipe {
 
-    public WeaponMosin() {
-        super(240, 800);
+    public WeaponMosin(boolean mag) {
+        super(240, 800, mag);
     }
 
     @Override

@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponSVD extends WeaponRecipe {
 
-    public WeaponSVD() {
-        super(240, 800);
+    public WeaponSVD(boolean mag) {
+        super(240, 800, mag);
     }
 
     @Override

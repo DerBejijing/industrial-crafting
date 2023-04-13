@@ -8,8 +8,8 @@ import io.github.derbejijing.ic.crafting.weapon.WeaponRecipe;
 
 public class WeaponPPSH extends WeaponRecipe {
 
-    public WeaponPPSH() {
-        super(120, 400);
+    public WeaponPPSH(boolean mag) {
+        super(120, 400, mag);
     }
 
     @Override

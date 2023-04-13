@@ -72,9 +72,9 @@ public enum WeaponRecipeRegistry {
     }
 
 
-    public static WeaponRecipe get_by_id(int id) {
+    public static WeaponRecipe get_by_id(int id, boolean mag) {
         try {
-            for(WeaponRecipeRegistry wrr : WeaponRecipeRegistry.values()) if(wrr.id == id) return wrr.recipe_class.getConstructor().newInstance();
+            for(WeaponRecipeRegistry wrr : WeaponRecipeRegistry.values()) if(wrr.id == id) return wrr.recipe_class.getConstructor(boolean.class).newInstance(mag);
         } catch(Exception e) {
         }
         return null;
@@ -101,7 +101,7 @@ public enum WeaponRecipeRegistry {
 
     public static String get_name(WeaponRecipe wr_lookup) {
         try {
-            for(WeaponRecipeRegistry wrr : WeaponRecipeRegistry.values()) if(wrr.recipe_class.equals(wr_lookup.getClass())) return wrr.name;
+            for(WeaponRecipeRegistry wrr : WeaponRecipeRegistry.values()) if(wrr.recipe_class.equals(wr_lookup.getClass())) return wrr.name + (wr_lookup.is_mag() ? " (ammo)" : "");
         } catch(Exception e) {
         }
         return "None";
