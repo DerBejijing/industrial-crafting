@@ -18,6 +18,7 @@ Not only are they extremely dangerous, but also restrited by the government!
 <br>
 
 ## Index  
+Index for this document:  
 - [Usage](#usage)  
 - [About machines](#about-machines)  
 - [Added machines](#added-machines)  
