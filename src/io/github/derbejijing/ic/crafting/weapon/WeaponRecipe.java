@@ -38,11 +38,7 @@ public abstract class WeaponRecipe {
         this.mag = mag;
         this.add_ingredients();
         this.set_output();
-
-        this.add_ingredient_mag(Material.IRON_NUGGET, this.output.mag_size);
-        this.add_ingredient_mag(Material.SUGAR, ChemicalItem.GUNPOWDER.id, this.output.mag_size / 2);
-        this.add_ingredient_mag(Material.SUGAR, ChemicalItem.PRIMER_POWDER.id, this.output.mag_size / 2);
-        this.add_ingredient_mag(Material.IRON_INGOT, 2);
+        this.add_ingredients_mag();
     }
 
 
@@ -122,82 +118,6 @@ public abstract class WeaponRecipe {
     }
 
 
-
-    public boolean check_inputs(ArrayList<ItemStack> requirements, Inventory input) {
-        // Create a copy of the input inventory to preserve its original state
-        Inventory inputCopy = Bukkit.createInventory((InventoryHolder)null, input.getSize());
-        inputCopy.setContents(input.getContents());
-    
-        // Create a map to store the remaining amounts of each required item
-        Map<String, Integer> remainingAmounts = new HashMap<>();
-        for (ItemStack req : requirements) {
-            Material material = req.getType();
-            int amount = req.getAmount();
-            Integer customModelData = req.getItemMeta().hasCustomModelData() ? req.getItemMeta().getCustomModelData() : null;
-            String displayName = req.getItemMeta().hasDisplayName() ? req.getItemMeta().getDisplayName() : null;
-            String lore = req.getItemMeta().hasLore() ? req.getItemMeta().getLore().toString() : null;
-
-            // Use a unique identifier for each requirement to account for custom model data, display name, and lore
-            String reqIdentifier = material.toString() + "_" + amount + "_" + customModelData + "_" + displayName + "_" + lore;
-            remainingAmounts.put(reqIdentifier, amount);
-        }
-
-        // Iterate through the input inventory and try to match the requirements
-        for (ItemStack item : input.getContents()) {
-            if (item == null) {
-                continue;
-            }
-
-            Material material = item.getType();
-            int amount = item.getAmount();
-            Integer customModelData = item.getItemMeta().hasCustomModelData() ? item.getItemMeta().getCustomModelData() : null;
-            String displayName = item.getItemMeta().hasDisplayName() ? item.getItemMeta().getDisplayName() : null;
-            String lore = item.getItemMeta().hasLore() ? item.getItemMeta().getLore().toString() : null;
-
-            // Use a unique identifier for each item in the inventory to account for custom model data, display name, and lore
-            String itemIdentifier = material.toString() + "_" + amount + "_" + customModelData + "_" + displayName + "_" + lore;
-
-            for (ItemStack req : requirements) {
-                Material reqMaterial = req.getType();
-                int reqAmount = req.getAmount();
-                Integer reqCustomModelData = req.getItemMeta().hasCustomModelData() ? req.getItemMeta().getCustomModelData() : null;
-                String reqDisplayName = req.getItemMeta().hasDisplayName() ? req.getItemMeta().getDisplayName() : null;
-                String reqLore = req.getItemMeta().hasLore() ? req.getItemMeta().getLore().toString() : null;
-
-                // Use a unique identifier for each requirement to account for custom model data, display name, and lore
-                String reqIdentifier = reqMaterial.toString() + "_" + reqAmount + "_" + reqCustomModelData + "_" + reqDisplayName + "_" + reqLore;
-
-                if (itemIdentifier.equals(reqIdentifier) && reqAmount <= remainingAmounts.get(reqIdentifier)) {
-                    int remainingAmount = remainingAmounts.get(reqIdentifier);
-                    if (amount <= remainingAmount) {
-                        // Enough items in the inventory to fulfill the requirement
-                        remainingAmounts.put(reqIdentifier, remainingAmount - amount);
-                        inputCopy.removeItem(item);
-                    } else {
-                        // Not enough items in the inventory, remove partial amount
-                        remainingAmounts.put(reqIdentifier, 0);
-                        inputCopy.removeItem(new ItemStack(material, remainingAmount));
-                    }
-                    break;
-                }
-            }
-        }
-    
-        // Check if all requirements are fulfilled
-        for (int remainingAmount : remainingAmounts.values()) {
-            if (remainingAmount > 0) {
-                return false;
-            }
-        }
-    
-        // Update the original input inventory to reflect the removed items
-        input.setContents(inputCopy.getContents());
-    
-        return true;
-    }
-
-
-
     public int get_power_required() {
         return this.power_required;
     }
@@ -205,6 +125,20 @@ public abstract class WeaponRecipe {
 
     public boolean is_mag() {
         return this.mag;
+    }
+
+
+    private void add_ingredients_mag() {
+        if(this.output == Weapon.RPG) {
+            this.add_ingredient_mag(Material.IRON_INGOT, 2);
+            this.add_ingredient_mag(Material.SUGAR, ChemicalItem.GUNPOWDER.id, 9);
+            this.add_ingredient_mag(Material.SUGAR, ChemicalItem.PRIMER_POWDER.id, 1);
+        } else {
+            this.add_ingredient_mag(Material.IRON_NUGGET, this.output.mag_size);
+            this.add_ingredient_mag(Material.SUGAR, ChemicalItem.GUNPOWDER.id, this.output.mag_size / 2);
+            this.add_ingredient_mag(Material.SUGAR, ChemicalItem.PRIMER_POWDER.id, this.output.mag_size / 2);
+            this.add_ingredient_mag(Material.IRON_INGOT, 2);
+        }
     }
 
 
