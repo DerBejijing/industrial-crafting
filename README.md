@@ -25,6 +25,12 @@ Not only are they extremely dangerous, but also restrited by the government!
 - [About chemicals](#about-chemicals)  
 - [Added chemicals](#added-chemicals)  
 
+
+Refer to these documents for detailed information:  
+- [Machines](MACHINES.md)  
+- [Chemical crafting](CHEMICALS.md)
+- [Weapon crafting](WEAPONS.md)  
+
 <br>
 
 ## Usage  
