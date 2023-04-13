@@ -197,3 +197,24 @@ D S D     S w S     S S S     x x x
 S C S     S g S     S S S     x x x
 ```
 
+## Weapon Assembly  
+This machine will craft weapons.  
+Power and time demands are very high, yet dependant on the recipe, of course.  
+It is also used to craft ammunition and to do so the weapon recipe must be shift-right-clicked on the machine when applying.  
+Note that a hopper is required. It has to face towards the output slot on the right, as indicated by the arrow in the instructions.  
+
+```
+Materials:
+S : smooth stone
+D : dropper
+d : dispenser
+g : tinted glass
+> : hopper
+b : blast furnace
+C : chest
+
+Layer 0:      Layer 1:      Layer 2:      Layer 3:
+S S d S S     S S S S S     S S S S S     S S S S S
+D S S > D     S S S   S     S S S   S     S S S S S
+S S C S S     S b S g S     S b S g S     S S S S S
+```
