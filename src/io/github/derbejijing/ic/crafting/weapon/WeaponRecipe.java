@@ -1,8 +1,6 @@
 package io.github.derbejijing.ic.crafting.weapon;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -31,7 +29,7 @@ public abstract class WeaponRecipe {
     public WeaponRecipe(int time_required, int power_required, boolean mag) {
         this.ingredients = new ArrayList<ItemStack>();
         this.ingredients_mag = new ArrayList<ItemStack>();
-        this.output = null;                     // 
+        this.output = null;
         this.time_required = time_required;
         this.power_required = power_required;
         this.progress = 0;
@@ -50,7 +48,7 @@ public abstract class WeaponRecipe {
             inputs_copy.setContents(input.getContents());
             
             for(ItemStack item_required : this.ingredients) if(!inputs_copy.removeItem(item_required).isEmpty()) return false;
-
+            
             ++this.progress;
             if(this.progress < this.time_required) return false;
             this.progress = 0;

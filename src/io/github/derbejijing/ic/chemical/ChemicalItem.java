@@ -6,10 +6,6 @@ import io.github.derbejijing.ic.chemical.material.AceticAcid;
 import io.github.derbejijing.ic.chemical.material.Acetone;
 import io.github.derbejijing.ic.chemical.material.AcetonePeroxide;
 import io.github.derbejijing.ic.chemical.material.Apple;
-import io.github.derbejijing.ic.chemical.material.BulletPistol;
-import io.github.derbejijing.ic.chemical.material.BulletRPG;
-import io.github.derbejijing.ic.chemical.material.BulletRifle;
-import io.github.derbejijing.ic.chemical.material.BulletShotgun;
 import io.github.derbejijing.ic.chemical.material.Calcite;
 import io.github.derbejijing.ic.chemical.material.CalciumCarbonate;
 import io.github.derbejijing.ic.chemical.material.Carbon;
@@ -112,12 +108,7 @@ public enum ChemicalItem {
     CHLORINATED_HYDROCARBONS(50, Material.GLASS_BOTTLE, ChlorinatedHydrocarbons.class, false),
     IRON(51, Material.IRON_INGOT, Iron.class, true),
     COPPER(52, Material.COPPER_INGOT, Copper.class, true),
-    BULLET_PISTOL(53, Material.SUGAR, BulletPistol.class, false),
-    BULLET_RIFLE(54, Material.SUGAR, BulletRifle.class, false),
-    BULLET_RPG(55, Material.SUGAR, BulletRPG.class, false),
-    BULLET_SNIPER(56, Material.SUGAR, BulletRifle.class, false),
-    BULLET_SHOTGUN(57, Material.SUGAR, BulletShotgun.class, false),
-    WASTE(58, Material.SUGAR, Waste.class, false);
+    WASTE(53, Material.SUGAR, Waste.class, false);
 
 
     public final int id;
