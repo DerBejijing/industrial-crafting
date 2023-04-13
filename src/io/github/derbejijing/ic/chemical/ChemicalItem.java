@@ -17,7 +17,6 @@ import io.github.derbejijing.ic.chemical.material.Chloroacetone;
 import io.github.derbejijing.ic.chemical.material.Chloroform;
 import io.github.derbejijing.ic.chemical.material.Coal;
 import io.github.derbejijing.ic.chemical.material.CobbleStone;
-import io.github.derbejijing.ic.chemical.material.Copper;
 import io.github.derbejijing.ic.chemical.material.CrushedNetherrack;
 import io.github.derbejijing.ic.chemical.material.DistilledWater;
 import io.github.derbejijing.ic.chemical.material.EmptyBucket;
@@ -25,7 +24,6 @@ import io.github.derbejijing.ic.chemical.material.Ethanol;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
 import io.github.derbejijing.ic.chemical.material.HydrogenPeroxide;
-import io.github.derbejijing.ic.chemical.material.Iron;
 import io.github.derbejijing.ic.chemical.material.Liquor;
 import io.github.derbejijing.ic.chemical.material.MetalDust;
 import io.github.derbejijing.ic.chemical.material.Methane;
@@ -106,9 +104,7 @@ public enum ChemicalItem {
     METHANE(48, Material.GLASS_BOTTLE, Methane.class, false),
     CHLOROFORM(49, Material.GLASS_BOTTLE, Chloroform.class, false),
     CHLORINATED_HYDROCARBONS(50, Material.GLASS_BOTTLE, ChlorinatedHydrocarbons.class, false),
-    IRON(51, Material.IRON_INGOT, Iron.class, true),
-    COPPER(52, Material.COPPER_INGOT, Copper.class, true),
-    WASTE(53, Material.SUGAR, Waste.class, false);
+    WASTE(51, Material.SUGAR, Waste.class, false);
 
 
     public final int id;

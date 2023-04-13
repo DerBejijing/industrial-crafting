@@ -117,11 +117,6 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | - | Acetone |
 | :x: | explosive | Acetone peroxide |
 | :white_check_mark: | - | Apple |
-| :x: | ammunition | Bullet (pistol) |
-| :x: | ammunition | Bullet (rifle) |
-| :x: | ammunition | Bullet (RPG)
-| :x: | ammunition | Bullet (shotgun)
-| :x: | ammunition | Bullet (sniper) |
 | :white_check_mark: | - | Calcite |
 | :x: | - | Calcium carbonate |
 | :x: | - | Carbon |
@@ -133,7 +128,6 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | tear gas | Chloroform |
 | :white_check_mark: | - | Coal |
 | :white_check_mark: | - | Cobble stone |
-| :white_check_mark: | - | Copper |
 | :x: | - | Crushed netherrack |
 | :x: | - | Distilled water |
 | :white_check_mark: | - | Empty bucket |
@@ -169,3 +163,4 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | - | Sulfuric acid |
 | :x: | - | Sulfur trioxide |
 | :white_check_mark: | - | Water |
+| :x: | - | Waste |
