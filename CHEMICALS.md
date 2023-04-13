@@ -311,3 +311,260 @@ time required:  10
 
 notes:          the products will be of industrial grade purity
 ```
+
+## Potassium hydroxide electrolysis  
+```
+Machine:        electrolyzer
+
+Ingredients:    1x potassium chloride
+                1x distilled water
+catalysts:      -
+outputs:        1x potassium hydroxide solution
+                1x chlorine
+                1x hydrogen
+
+power required: 10
+time required:  1
+
+notes:          -
+```
+
+## Potassium hydroxide solution  
+```
+Machine:        reactor
+
+Ingredients:    1x potassium hydroxide
+                1x distilled water
+catalysts:      -
+outputs:        1x potassium hydroxide solution
+
+power required: 1
+time required:  1
+
+notes:          -
+```
+
+## Primer powder  
+```
+Machine:        reactor
+
+Ingredients:    1x phosphorous
+                1x potassium chlorate
+catalysts:      -
+outputs:        1x primer powder
+
+power required: 1
+time required:  1
+
+notes:          -
+```
+
+## Recrystallize phosphorous  
+```
+Machine:        recrystallizer
+
+Ingredients:    1x phosphorous
+catalysts:      1x distilled water
+outputs:        1x phosphorous
+
+power required: 10
+time required:  60
+
+notes:          the product will be of industrial grade purity
+```
+
+## Recrystallize potassium chloride  
+```
+Machine:        recrystallizer
+
+Ingredients:    1x potassium chloride
+catalysts:      1x distilled water
+outputs:        1x potassium chloride
+
+power required: 10
+time required:  60
+
+notes:          the product will be of industrial grade purity
+```
+
+## Recrystallize potassium nitrate  
+```
+Machine:        recrystallizer
+
+Ingredients:    1x potassium nitrate
+catalysts:      1x distilled water
+outputs:        1x potassium nitrate
+
+power required: 10
+time required:  60
+
+notes:          the product will be of industrial grade purity
+```
+
+## Recrystallize sodium chloride  
+```
+Machine:        recrystallizer
+
+Ingredients:    1x sodium chloride
+catalysts:      1x distilled water
+outputs:        1x sodium chloride
+
+power required: 10
+time required:  60
+
+notes:          the product will be of industrial grade purity
+```
+
+## Recrystallize sulfur  
+```
+Machine:        recrystallizer
+
+Ingredients:    1x sulfur
+catalysts:      1x distilled water
+outputs:        1x sulfur
+
+power required: 10
+time required:  60
+
+notes:          the product will be of industrial grade purity
+```
+
+## Salt  
+```
+Machine:        condenser
+
+Ingredients:    1x water
+catalysts:      -
+outputs:        1x sodium chloride
+                1x distilled water
+
+power required: 100
+time required:  10
+
+notes:          the sodium chloride will be contaminated
+```
+
+## Separate netherrack  
+```
+Machine:        centrifuge
+
+Ingredients:    32x crushed netherrack
+catalysts:      -
+outputs:        1x sulfur
+                1x phosphorous
+                8x potassium nitrate
+
+power required: 10
+time required:  1
+
+notes:          the products will be contaminated
+```
+
+## Separate stone  
+```
+Machine:        centrifuge
+
+Ingredients:    32x stone dust
+catalysts:      -
+outputs:        1x potassium chloride
+                1x sulfur
+                1x phosphorous
+                1x potassium nitrate
+                1x sodium chloride
+
+power required: 10
+time required:  1
+
+notes:          the products will be contaminated
+```
+
+## Sodium acetate  
+```
+Machine:        reactor
+
+Ingredients:    1x acetic acid
+                1x sodium hydroxide
+catalysts:      -
+outputs:        1x sodium acetate
+
+power required: 1
+time required:  1
+
+notes:          -
+```
+
+## Sodium hydroxide  
+```
+Machine:        condenser
+
+Ingredients:    1x sodium hydroxide solution
+catalysts:      -
+outputs:        1x sodium hydroxide
+                1x distilled water
+
+power required: 1
+time required:  1
+
+notes:          the results will be of industrial grade purity
+```
+
+## Sodium hydroxide solution  
+```
+Machine:        reactor
+
+Ingredients:    1x sodium hydroxide
+                1x distilled water
+catalysts:      -
+outputs:        1x sodium hydroxide solution
+
+power required: 1
+time required:  1
+
+notes:          -
+```
+
+## Sodium hydroxide electrolysis  
+```
+Machine:        electrolyzer
+
+Ingredients:    1x distilled water
+                1x sodium chloride
+catalysts:      -
+outputs:        1x sodium hydroxide solution
+                3x chlorine
+
+power required: 1
+time required:  1
+
+notes:          -
+```
+
+## Sulfur dioxide  
+```
+Machine:        furnace
+
+Ingredients:    1x sulfur
+                1x oxygen
+catalysts:      -
+outputs:        1x sulfur dioxide
+
+power required: 100
+time required:  10
+
+notes:          -
+```
+
+## Sulfuric acid  
+```
+Machine:        reactor
+
+Ingredients:    1x sulfur trioxide
+                1x distilled water
+catalysts:      -
+outputs:        1x sulfuric acid
+
+power required: 1
+time required:  1
+
+notes:          -
+```
