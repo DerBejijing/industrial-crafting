@@ -1,0 +1,29 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/glass_bottle"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data":6}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":7}, "model": "item/glass_bottle/transparent_gas"},
+        {"predicate": {"custom_model_data":8}, "model": "item/glass_bottle/transparent_gas"},
+        {"predicate": {"custom_model_data":9}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":20}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":21}, "model": "item/glass_bottle/transparent_gas"},
+        {"predicate": {"custom_model_data":22}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":23}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":24}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":26}, "model": "item/glass_bottle/transparent_gas"},
+        {"predicate": {"custom_model_data":27}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":30}, "model": "item/glass_bottle/transparent_yellow"},
+        {"predicate": {"custom_model_data":31}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":36}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":38}, "model": "item/glass_bottle/brown_1"},
+        {"predicate": {"custom_model_data":42}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":43}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":45}, "model": "item/glass_bottle/transparent_liquid"},
+        {"predicate": {"custom_model_data":48}, "model": "item/glass_bottle/transparent_gas"},
+        {"predicate": {"custom_model_data":49}, "model": "item/glass_bottle/brown_1"},
+        {"predicate": {"custom_model_data":50}, "model": "item/glass_bottle/brown_1"}
+    ]
+}

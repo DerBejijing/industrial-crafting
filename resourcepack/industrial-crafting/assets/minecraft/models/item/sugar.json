@@ -1,0 +1,27 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/sugar"
+    },
+    "overrides": [
+        {"predicate": {"custom_model_data":1}, "model": "item/sugar/black"},
+        {"predicate": {"custom_model_data":2}, "model": "item/sugar/yellow"},
+        {"predicate": {"custom_model_data":3}, "model": "item/sugar/white_5"},
+        {"predicate": {"custom_model_data":4}, "model": "item/sugar/gray"},
+        {"predicate": {"custom_model_data":5}, "model": "item/sugar/white_5"},
+        {"predicate": {"custom_model_data":13}, "model": "item/sugar/light_gray"},
+        {"predicate": {"custom_model_data":14}, "model": "item/sugar/light_gray"},
+        {"predicate": {"custom_model_data":16}, "model": "item/sugar/red"},
+        {"predicate": {"custom_model_data":17}, "model": "item/sugar/red_fine"},
+        {"predicate": {"custom_model_data":19}, "model": "item/sugar/white_0"},
+        {"predicate": {"custom_model_data":33}, "model": "item/sugar/white_1"},
+        {"predicate": {"custom_model_data":34}, "model": "item/sugar/white_4"},
+        {"predicate": {"custom_model_data":35}, "model": "item/sugar/white_4"},
+        {"predicate": {"custom_model_data":37}, "model": "item/sugar/red"},
+        {"predicate": {"custom_model_data":39}, "model": "item/sugar/white_3"},
+        {"predicate": {"custom_model_data":44}, "model": "item/sugar/white_5"},
+        {"predicate": {"custom_model_data":46}, "model": "item/sugar/white_0"},
+        {"predicate": {"custom_model_data":47}, "model": "item/sugar/white_0"},
+        {"predicate": {"custom_model_data":51}, "model": "item/sugar/green_black"}
+    ]
+}
