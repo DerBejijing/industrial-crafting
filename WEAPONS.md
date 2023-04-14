@@ -56,6 +56,23 @@ Special:
 
 <br>
 
+## Ammunition  
+All ammunition can be crafted using the weapon assembly.  
+To do so, the machine must be shift-right-clicked when setting the recipe.  
+Note that none of the recipes use the "normal" gunpowder from minecraft.  
+The recipes for ammunition is always as follows:  
+ - as many iron nuggets as the weapon has bullets  
+ - 2 iron ingots  
+ - as many gun powder as half the amount of bullets  
+ - as many primer powder as half the amount of bullets  
+
+For the RPG:  
+ - 2 iron ingots  
+ - 9 gun powder  
+ - 1 primer powder
+
+<br>
+
 ## Pistols  
 
 ### 1911  
