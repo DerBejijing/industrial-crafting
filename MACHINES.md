@@ -195,7 +195,7 @@ x : daylight sensor
 C : chest
 
 Layer 0:  Layer 1:  Layer 2:  Layer 3:
-S d S     S S S     S S S     x x x
+S S S     S S S     S S S     x x x
 D S D     S w S     S S S     x x x
 S C S     S g S     S S S     x x x
 ```
