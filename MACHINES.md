@@ -219,5 +219,5 @@ C : chest
 Layer 0:      Layer 1:      Layer 2:      Layer 3:
 S S d S S     S S S S S     S S S S S     S S S S S
 D S S > D     S S S   S     S S S   S     S S S S S
-S S C S S     S b S g S     S b S g S     S S S S S
+S S S C S     S b S g S     S b S g S     S S S S S
 ```
