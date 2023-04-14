@@ -41,6 +41,7 @@ The blueprint can be written using:
 `/setrecipe` : choose from a list of all available recipes  
 `/setmachine`: choose from a list of all available machines  
 `/setweapon`: choose from a list of all available weapons  
+Note that shift-right clicken the weapon assembly with a weapon blueprint will cause it to craft ammo.  
 
 <br>
 
