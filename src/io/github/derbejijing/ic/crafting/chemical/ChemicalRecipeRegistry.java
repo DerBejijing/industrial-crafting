@@ -18,6 +18,7 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
 import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxideCheap;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Methane;
+import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumChlorate;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideElectrolysis;
 import io.github.derbejijing.ic.crafting.chemical.recipe.PotassiumHydroxideSolution;
@@ -80,6 +81,7 @@ public enum ChemicalRecipeRegistry {
     RECRYSTALLIZE_POTASSIUM_NITRATE(35, RecrystallizePotassiumNitrate.class, "Recrystallize potassium nitrate"),
     RECRYSTALLIZE_SODIUM_CHLORIDE(36, RecrystallizeSodiumChloride.class, "Recrystallize sodium chloride"),
     RECRYSTALLIZE_SULFUR(37, RecrystallizeSulfur.class, "Recrystallize sulfur"),
+    POTASSIUM_CHLORATE(38, PotassiumChlorate.class, "Potassium chlorate"),
     NONE(-1, null, "None");
 
     public final int id;
