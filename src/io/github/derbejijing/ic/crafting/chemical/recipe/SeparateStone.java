@@ -14,7 +14,7 @@ public class SeparateStone extends ChemicalRecipe {
 
     @Override
     public void add_ingredients() {
-        this.add_ingredient(ChemicalItem.STONE_DUST, 32);
+        this.add_ingredient(ChemicalItem.STONE_DUST, 16);
     }
 
 
