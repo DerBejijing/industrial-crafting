@@ -25,6 +25,6 @@ public class PrimerPowder extends ChemicalRecipe {
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.PRIMER_POWDER, 1);
+        this.add_output(ChemicalItem.PRIMER_POWDER, 2);
     }
 }
