@@ -7,7 +7,7 @@ import io.github.derbejijing.ic.machines.MultiblockMachine;
 public class CrushStone extends ChemicalRecipe {
 
     public CrushStone(MultiblockMachine master) {
-        super(master, 100, 1, 0);
+        super(master, 10, 1, 0);
     }
 
 
