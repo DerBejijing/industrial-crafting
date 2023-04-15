@@ -67,6 +67,7 @@ public class Reactor extends MultiblockMachine {
         this.add_recipe(ChemicalRecipeRegistry.SULFURIC_ACID);
         this.add_recipe(ChemicalRecipeRegistry.SODIUM_ACETATE);
         this.add_recipe(ChemicalRecipeRegistry.SODIUM_HYDROXIDE_SOLUTION);
+        this.add_recipe(ChemicalRecipeRegistry.POTASSIUM_CHLORATE);
     }
 
     @Override
