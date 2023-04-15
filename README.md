@@ -59,6 +59,9 @@ Most machines have the following interfaces with each a different purpose:
 | Output | All crafted items, as well as chemical waste appear here. |  
 | Interface | This is used to get an overview of the current job, the power level and is used to power on the machine. |  
 
+Fuel options:  
+Machines can be powered using normal minecraft fuel: lava bucket, coal block, coal, charcoal, dried kelp and blaze rods or chemicals: Hydrogen, Methanol, Ethanol or Acetone.  
+
 Before a machine can be used to manufacture anything, a recipe must be set.  
 To do so, the bottom right block of the machine must be clicked with a blueprint containing the recipe.  
 Note, that not all recipes work on all machines!  
