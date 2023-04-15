@@ -116,7 +116,10 @@ public abstract class ChemicalRecipe {
                 ChemicalItem chemical_item = ChemicalItem.get_from(chemical);
 
                 // check if the item is required and remove it from the copy inventory
-                while(ingredients_copy.remove(chemical_item)) item.setAmount(item.getAmount() - 1);
+                while(ingredients_copy.remove(chemical_item)) {
+                    if(item.getAmount() == 0) return false;
+                    item.setAmount(item.getAmount() - 1);
+                }
 
                 requirements_copy.remove(chemical_item);
             }
