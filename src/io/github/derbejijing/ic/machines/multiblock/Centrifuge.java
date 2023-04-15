@@ -85,6 +85,7 @@ public class Centrifuge extends MultiblockMachine {
     @Override
     protected void add_recipes() {
         this.add_recipe(ChemicalRecipeRegistry.SEPARATE_NETHERRACK);
+        this.add_recipe(ChemicalRecipeRegistry.SEPARATE_STONE);
     }
 
     @Override
