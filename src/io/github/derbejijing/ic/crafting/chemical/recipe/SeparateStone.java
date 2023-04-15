@@ -25,7 +25,8 @@ public class SeparateStone extends ChemicalRecipe {
 
     @Override
     public void add_outputs() {
-        this.add_output(ChemicalItem.POTASSIUM_CHLORIDE, 1);
+        this.add_output(ChemicalItem.CALCIUM_CARBONATE, 5);
+        this.add_output(ChemicalItem.POTASSIUM_CHLORIDE, 5);
         this.add_output(ChemicalItem.SULFUR, 1);
         this.add_output(ChemicalItem.PHOSPHOROUS, 1);
         this.add_output(ChemicalItem.POTASSIUM_NITRATE, 1);
