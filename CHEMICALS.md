@@ -214,7 +214,7 @@ Ingredients:    1x netherrack
 catalysts:      -
 outputs:        1x crushed netherrack
 
-power required: 100
+power required: 10
 time required:  1
 
 notes:          -
@@ -228,7 +228,7 @@ Ingredients:    1x cobble stone
 catalysts:      -
 outputs:        1x stone dust
 
-power required: 100
+power required: 10
 time required:  1
 
 notes:          -
@@ -312,6 +312,21 @@ time required:  10
 notes:          -
 ```
 
+## Potassium chlorate    
+```
+Machine:        reactor
+
+Ingredients:    1x potassium hydroxide solution
+                1x chlorine
+catalysts:      -
+outputs:        1x potassium chlorate
+
+power required: 1
+time required:  1
+
+notes:          -
+```
+
 ## Potassium hydroxide  
 ```
 Machine:        condenser
@@ -381,6 +396,20 @@ Machine:        recrystallizer
 Ingredients:    1x phosphorous
 catalysts:      1x distilled water
 outputs:        1x phosphorous
+
+power required: 10
+time required:  60
+
+notes:          the product will be of industrial grade purity
+```
+
+## Recrystallize potassium chlorate    
+```
+Machine:        recrystallizer
+
+Ingredients:    1x potassium chlorate
+catalysts:      1x distilled water
+outputs:        1x potassium chlorate
 
 power required: 10
 time required:  60
@@ -603,7 +632,7 @@ notes:          -
 ```
 Machine:        electrolyzer
 
-Ingredients:    3x distilled water
+Ingredients:    1x distilled water
 catalysts:      1x sulfuric acid
 outputs:        2x hydrogen
                 1x oxygen
@@ -618,7 +647,7 @@ notes:          -
 ```
 Machine:        reactor
 
-Ingredients:    3x distilled water
+Ingredients:    1x distilled water
                 1x sodium chloride
 catalysts:      -
 outputs:        2x hydrogen
