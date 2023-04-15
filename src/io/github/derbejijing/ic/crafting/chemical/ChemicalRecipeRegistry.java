@@ -82,7 +82,7 @@ public enum ChemicalRecipeRegistry {
     RECRYSTALLIZE_POTASSIUM_NITRATE(35, RecrystallizePotassiumNitrate.class, "Recrystallize potassium nitrate"),
     RECRYSTALLIZE_SODIUM_CHLORIDE(36, RecrystallizeSodiumChloride.class, "Recrystallize sodium chloride"),
     RECRYSTALLIZE_SULFUR(37, RecrystallizeSulfur.class, "Recrystallize sulfur"),
-    RECRYSTALLIZE_POTASSIUM_CHLORATE(38, RecrystallizePotassiumChlorate.class, "Recrystallize potassium chlorate")
+    RECRYSTALLIZE_POTASSIUM_CHLORATE(38, RecrystallizePotassiumChlorate.class, "Recrystallize potassium chlorate"),
     POTASSIUM_CHLORATE(39, PotassiumChlorate.class, "Potassium chlorate"),
     NONE(-1, null, "None");
 
