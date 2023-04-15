@@ -13,7 +13,7 @@ public class WaterDecomposition extends ChemicalRecipe {
 
     @Override
     public void add_ingredients() {
-        this.add_ingredient(ChemicalItem.DISTILLED_WATER, 3);
+        this.add_ingredient(ChemicalItem.DISTILLED_WATER, 1);
     }
 
 
