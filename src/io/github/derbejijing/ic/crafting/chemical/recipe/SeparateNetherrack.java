@@ -14,7 +14,7 @@ public class SeparateNetherrack extends ChemicalRecipe {
 
     @Override
     public void add_ingredients() {
-        this.add_ingredient(ChemicalItem.CRUSHED_NETHERRACK, 32);
+        this.add_ingredient(ChemicalItem.CRUSHED_NETHERRACK, 16);
     }
 
 
