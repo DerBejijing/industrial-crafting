@@ -32,8 +32,8 @@ public enum Weapon {
     RPK("mgs_catalog:special/rpk", 75),
     M249("mgs_catalog:special/m249", 150);
 
-    public String command_weapon;
-    public int mag_size;
+    public final String command_weapon;
+    public final int mag_size;
 
     private Weapon(String command_weapon, int mag_size) {
         this.command_weapon = command_weapon;
