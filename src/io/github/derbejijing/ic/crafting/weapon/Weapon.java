@@ -26,7 +26,7 @@ public enum Weapon {
     M590("mgs_catalog:shotguns/m590", 8),
     SVD("mgs_catalog:sniper_rifle/dragunov", 10),
     M82A1("mgs_catalog:sniper_rifle/barrett_50cal", 10),
-    MOSIN("mgs_catalog:sniper_rifle/mosin_nagant", 5),
+    MOSIN("mgs_catalog:sniper_rifles/mosin_nagant", 5),
     M24A3("mgs_catalog:sniper_rifle/m24", 5),
     RPG("mgs_catalog:special/rpg7", 1),
     RPK("mgs_catalog:special/rpk", 75),
