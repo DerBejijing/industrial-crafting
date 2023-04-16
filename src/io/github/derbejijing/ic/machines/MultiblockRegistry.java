@@ -25,7 +25,7 @@ public class MultiblockRegistry {
         CENTRIFUGE(4, Centrifuge.class),
         MACERATOR(5, Macerator.class),
         SOLAR_ELECTROLYZER(6, SolarElectrolyzer.class),
-        SOLAR_CONDENSER(7, SolarElectrolyzer.class),
+        SOLAR_CONDENSER(7, SolarCondenser.class),
         FURNACE(8, Furnace.class),
         REACTOR(9, Reactor.class),
         RECRYSTALLIZER(10, Recrystallizer.class),
