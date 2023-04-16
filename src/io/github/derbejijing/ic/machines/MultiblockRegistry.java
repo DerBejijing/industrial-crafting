@@ -25,11 +25,11 @@ public class MultiblockRegistry {
         CENTRIFUGE(4, Centrifuge.class),
         MACERATOR(5, Macerator.class),
         SOLAR_ELECTROLYZER(6, SolarElectrolyzer.class),
-        SOLAR_CONDENSER(7, SolarCondenser.class),
-        FURNACE(8, Furnace.class),
-        REACTOR(9, Reactor.class),
-        RECRYSTALLIZER(10, Recrystallizer.class),
-        WEAPON_ASSEMBLY(11, WeaponAssembly.class);
+        FURNACE(7, Furnace.class),
+        REACTOR(8, Reactor.class),
+        RECRYSTALLIZER(9, Recrystallizer.class),
+        WEAPON_ASSEMBLY(10, WeaponAssembly.class),
+        SOLAR_CONDENSER(11, SolarCondenser.class);
 
         public final int id;
         public final Class<? extends MultiblockMachine> machine_class;
