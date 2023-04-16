@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import io.github.derbejijing.ic.machines.MultiblockMachine;
@@ -32,6 +33,7 @@ public class DataStorage {
             }
             this.main.get_manager().set_machines(machines);
         }catch (Exception e) {
+            Bukkit.getLogger().info("===== ISSUES ON LOADING MACHINES =====");
             e.printStackTrace();
         }
     }
@@ -46,6 +48,7 @@ public class DataStorage {
         try {
             this.config.save(this.file);
         } catch(Exception e) {
+            Bukkit.getLogger().info("===== ISSUES ON LOADING MACHINES =====");
             e.printStackTrace();
         }
     }

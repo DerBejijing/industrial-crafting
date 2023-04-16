@@ -3,7 +3,6 @@ package io.github.derbejijing.ic.machines;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -12,11 +11,20 @@ import io.github.derbejijing.ic.machines.MultiblockRegistry.RegistryEnum;
 public class MultiblockMachineManager {
     private ArrayList<MultiblockMachine> machines;
     private HashMap<Location, MultiblockMachine> occupied_locations;
+    private boolean changed;
 
 
     public MultiblockMachineManager() {
         this.machines = new ArrayList<MultiblockMachine>();
         this.occupied_locations = new HashMap<Location, MultiblockMachine>();
+        this.changed = false;
+    }
+
+
+    public boolean has_changed() {
+        boolean has_changed = this.changed;
+        this.changed = false;
+        return has_changed;
     }
 
 
@@ -27,6 +35,7 @@ public class MultiblockMachineManager {
 
     public void set_machines(ArrayList<MultiblockMachine> machines) {
         if(machines != null) this.machines = machines;
+        this.changed = true;
     }
 
 
@@ -35,7 +44,7 @@ public class MultiblockMachineManager {
 
         ArrayList<MultiblockMachine> machines_remove = new ArrayList<MultiblockMachine>();
         for(MultiblockMachine mbm : this.machines) if(mbm.get_state() == MultiblockState.BROKEN) machines_remove.add(mbm);
-        this.machines.removeAll(machines_remove);
+        if(this.machines.removeAll(machines_remove)) this.changed = true;
     }
 
 
@@ -67,8 +76,7 @@ public class MultiblockMachineManager {
     public void register(MultiblockMachine machine) {
         if(machine == null) return;
         if(machine.get_state() == MultiblockState.BROKEN) return;
-        Bukkit.getLogger().info("machine [" + machine.getClass().getName() + "] registered");
         this.machines.add(machine);
-        for(MultiblockMachine m : this.machines) Bukkit.getLogger().info("machine: " + m.toString());
+        this.changed = true;
     }
 }

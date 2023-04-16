@@ -10,7 +10,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import io.github.derbejijing.ic.command.Attachment;
-import io.github.derbejijing.ic.command.GetChemical;
 import io.github.derbejijing.ic.command.SetMachine;
 import io.github.derbejijing.ic.command.SetRecipe;
 import io.github.derbejijing.ic.command.SetWeapon;
@@ -69,6 +68,10 @@ public class Main extends JavaPlugin {
             @Override
             public void run() {
                 manager.tick();
+                if(manager.has_changed()) {
+                    Bukkit.getLogger().info("Machines have changed, saving..");
+                    storage.save();
+                }
             }
         }.runTaskTimer(this, 0, 20);
     }
