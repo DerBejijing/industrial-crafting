@@ -14,7 +14,7 @@ public enum Weapon {
     GLOCK_17("mgs_catalog:pistols/glock17", 17),
     GLOCK_18("mgs_catalog:pistols/glock18", 19),
     M9("mgs_catalog:pistols/m9", 15),
-    PM("mgs_catalog:pistols/pm", 8),
+    PM("mgs_catalog:pistols/makarov", 8),
     VZ61("mgs_catalog:pistols/vz61", 20),
     MP5A3("mgs_catalog:smgs/mp5", 30),
     MAC10("mgs_catalog:smgs/mac10", 30),
