@@ -1,8 +1,15 @@
 package io.github.derbejijing.ic;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.World;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
+import org.bukkit.block.Chest;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -96,11 +103,3 @@ public class Main extends JavaPlugin {
         Bukkit.addRecipe(recipe);
     }
 }
-
-
-
-/*Notes
- * swap locations of in and out
- * 
- * remove getchemical command
- */
