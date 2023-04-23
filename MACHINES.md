@@ -177,6 +177,29 @@ D S D     S w S     S w S     S w S     S S S
 S C S     S g S     S g S     S g S     S S S
 ```
 
+## Solar Condenser  
+Condensation and distillation is done using the power of the sun.  
+Note that it will work best in warm biomes like deserts and not at all in cold biomes.  
+Speaking in numbers, it will not be generating anything below a temperature of 0.5, above it will generate 0.5 power units per second.  
+Above 1.0, it will be 1.5 power units per second and at 2.0 it will be 2.0 power units per second.  
+Note that access to daylight is required, and that the cells cannot be obscured.  
+
+```
+Materials:
+S : smooth stone
+D : dropper
+d : dispenser
+g : glass
+w : water
+x : daylight sensor
+C : chest
+
+Layer 0:  Layer 1:  Layer 2:  Layer 3:
+S S S     S S S     S S S     x x x
+D S D     S w S     S S S     x x x
+S C S     S g S     S S S     x x x
+```
+
 ## Solar Electrolyzer  
 This device will generate it's energy using "solar cells" (daylight sensors) and use that to drive electrolysis.  
 Note that it will work best in warm biomes like deserts and not at all in cold biomes.  
