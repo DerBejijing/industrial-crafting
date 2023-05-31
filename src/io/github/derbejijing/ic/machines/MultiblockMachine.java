@@ -171,8 +171,20 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
         return null;
     }
 
+    
+    // this sucks ass but it should do it
+    // as a machine may inhabit multiple chunks, this check is required
+    public boolean is_loaded() {
+        for(MultiblockComponent mc : this.components) {
+            if(!mc.get_location_absolute().getChunk().isLoaded()) return false;
+        }
+        return true;
+    }
+    
 
     public void tick() {
+        if(!this.is_loaded()) return;
+        
         if(this.check_damage()) this.destroy();
         if(this.state != MultiblockState.BROKEN) {
             this.on_tick();
