@@ -47,6 +47,10 @@ public abstract class MultiblockComponent {
     public Vector get_location() {
         return this.location;
     }
+    
+    public Location get_location_absolute() {
+        return this.location_absolute;
+    }
 
 
     public Material get_material() {
