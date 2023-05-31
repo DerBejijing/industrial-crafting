@@ -85,7 +85,7 @@ public class PlayerListener implements Listener {
             }
         }
 
-        if(e.getAction() == Action.RIGHT_CLICK_AIR && e.hasItem()) {
+        if((e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) && e.hasItem()) {
             ItemStack item = e.getItem();
 
             Chemical chemical = Chemical.get_from(item);
@@ -119,9 +119,26 @@ public class PlayerListener implements Listener {
                 PotionMeta potion_meta = (PotionMeta) potion_item.getItemMeta();
 
                 potion_meta.setBasePotionData(new PotionData(PotionType.AWKWARD));
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 8, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 8, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20 * 4, 20), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 4, 2), true);
+                potion_item.setItemMeta(potion_meta);
+
+                ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
+                potion.setItem(potion_item);
+
+                item.setAmount(item.getAmount() - 1);
+            }
+            
+            if(chemical.getClass().equals(Chlorine.class)) {
+                ItemStack potion_item = new ItemStack(Material.SPLASH_POTION);
+                PotionMeta potion_meta = (PotionMeta) potion_item.getItemMeta();
+
+                potion_meta.setBasePotionData(new PotionData(PotionType.AWKWARD));
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 3, 10), true);
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 7, 10), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20 * 2, 20), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20 * 4, 20), true);
                 potion_item.setItemMeta(potion_meta);
 
                 ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
