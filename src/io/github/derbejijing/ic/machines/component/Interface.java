@@ -3,6 +3,7 @@ package io.github.derbejijing.ic.machines.component;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Chest;
@@ -79,7 +80,7 @@ public class Interface extends MultiblockComponent {
         if(state == MultiblockState.IDLE) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_IDLE);
         if(state == MultiblockState.NO_POWER) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_NO_POWER);
         if(state == MultiblockState.RUNNING) InterfaceUtils.set_interface_item(pane_button, InterfaceItem.STATE_RUNNING);
-
+        
         this.inventory.setItem(10, pane_button);
     }
 

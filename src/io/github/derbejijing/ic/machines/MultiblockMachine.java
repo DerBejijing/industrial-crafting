@@ -11,6 +11,7 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.World;
 
 import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipe;
@@ -158,7 +159,6 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
                 mc.rotate(orientation);
                 if(!m.base_location.add(mc.get_location()).getBlock().getType().equals(mc.get_material())) {
                     valid = false;
-                    Bukkit.getLogger().info("fail here [" + mc.get_material() + "]: " + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ());
                 }
 
                 if(Main.get_main().get_manager().location_occupied(m.base_location)) valid = false;
@@ -171,7 +171,7 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
         } catch(Exception e) {
             e.printStackTrace();
         }
-        Bukkit.getLogger().info("invalid location or blocks");
+        Bukkit.getLogger().info("invalid location or blocks for machine \"" + clazz.getSimpleName() + "\" at [" + base_location.getX() + " " + base_location.getY() + " " + base_location.getZ() + "]");
         return null;
     }
 
@@ -179,8 +179,11 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
     // this sucks ass but it should do it
     // as a machine may inhabit multiple chunks, this check is required
     public boolean is_loaded() {
+        World world = this.base_location.getWorld();
         for(MultiblockComponent mc : this.components) {
-            if(!mc.get_location_absolute().getChunk().isLoaded()) return false;
+            if(!world.isChunkLoaded((int)mc.get_location_absolute().getX() / 16, (int)mc.get_location_absolute().getZ() / 16)) {
+                return false;
+            }
         }
         return true;
     }
@@ -217,14 +220,11 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
         if(interface_item == InterfaceItem.STATE_RUNNING || interface_item == InterfaceItem.STATE_IDLE || interface_item == InterfaceItem.STATE_NO_POWER) {
             if(this.state == MultiblockState.IDLE) {
                 this.change_state(MultiblockState.RUNNING);
-                Bukkit.getLogger().info("now running");
             }
             else if(this.state == MultiblockState.RUNNING) {
                 this.change_state(MultiblockState.IDLE);
-                Bukkit.getLogger().info("now idle");
             }
             else if(this.state == MultiblockState.NO_POWER) {
-                Bukkit.getLogger().info("no power!");
             }
         }
     }
