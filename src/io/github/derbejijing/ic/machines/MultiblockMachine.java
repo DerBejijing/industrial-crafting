@@ -126,7 +126,11 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
                     machine.base_location.subtract(mc.get_location());
                 }
                 
-                if(valid) if(machine.init_and_build()) return machine;
+                if(valid) if(machine.init_and_build()) {
+                    machine.change_state(state);
+                    machine.power = (float)power;
+                    return machine;
+                }
             }
 
         } catch(Exception e) {
