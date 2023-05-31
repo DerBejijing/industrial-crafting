@@ -28,6 +28,7 @@ import org.bukkit.potion.PotionType;
 import io.github.derbejijing.ic.Main;
 import io.github.derbejijing.ic.chemical.Chemical;
 import io.github.derbejijing.ic.chemical.material.AcetonePeroxide;
+import io.github.derbejijing.ic.chemical.material.Chlorine;
 import io.github.derbejijing.ic.chemical.material.Chloroacetone;
 import io.github.derbejijing.ic.chemical.material.Chloroform;
 import io.github.derbejijing.ic.crafting.chemical.ChemicalRecipeRegistry;
