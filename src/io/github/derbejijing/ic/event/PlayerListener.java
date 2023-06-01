@@ -120,10 +120,10 @@ public class PlayerListener implements Listener {
                 PotionMeta potion_meta = (PotionMeta) potion_item.getItemMeta();
 
                 potion_meta.setBasePotionData(new PotionData(PotionType.AWKWARD));
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 8, 10), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 8, 10), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20 * 4, 20), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 4, 2), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 10, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 10, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20 * 2, 20), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 2), true);
                 potion_item.setItemMeta(potion_meta);
 
                 ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
@@ -139,7 +139,7 @@ public class PlayerListener implements Listener {
                 potion_meta.setBasePotionData(new PotionData(PotionType.AWKWARD));
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.BLINDNESS, 20 * 3, 10), true);
                 potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 7, 10), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 20 * 4, 20), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.WITHER, 20 * 5, 2), true);
                 potion_item.setItemMeta(potion_meta);
 
                 ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
@@ -153,9 +153,9 @@ public class PlayerListener implements Listener {
                 PotionMeta potion_meta = (PotionMeta) potion_item.getItemMeta();
 
                 potion_meta.setBasePotionData(new PotionData(PotionType.AWKWARD));
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.DARKNESS, 20 * 3, 10), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 7, 10), true);
-                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 4, 2), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.DARKNESS, 20 * 10, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.CONFUSION, 20 * 10, 10), true);
+                potion_meta.addCustomEffect(new PotionEffect(PotionEffectType.SLOW, 20 * 10, 2), true);
                 potion_item.setItemMeta(potion_meta);
 
                 ThrownPotion potion = player.launchProjectile(ThrownPotion.class, player.getEyeLocation().getDirection().multiply(1.0f));
