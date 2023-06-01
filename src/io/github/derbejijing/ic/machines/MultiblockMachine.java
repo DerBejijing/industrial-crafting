@@ -204,10 +204,10 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
 
 
     private void re_sync() {
-        this.get_interface().re_sync();
-        this.get_generator().re_sync();
-        this.get_input_hatch().re_sync();
-        this.get_output_hatch().re_sync();
+        if(this.get_interface() != null) this.get_interface().re_sync();
+        if(this.get_generator() != null) this.get_generator().re_sync();
+        if(this.get_input_hatch() != null) this.get_input_hatch().re_sync();
+        if(this.get_output_hatch() != null) this.get_output_hatch().re_sync();
     }
     
 
