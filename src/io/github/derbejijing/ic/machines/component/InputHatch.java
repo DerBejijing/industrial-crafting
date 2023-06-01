@@ -40,6 +40,13 @@ public class InputHatch extends MultiblockComponent {
     }
 
 
+    public void re_sync() {
+        BlockState block_state = this.location_absolute.getBlock().getState();
+        InventoryHolder inventory_holder = (InventoryHolder) block_state;
+        this.inventory = inventory_holder.getInventory();
+    }
+
+
     public Inventory get_inventory() {
         return this.inventory;
     }

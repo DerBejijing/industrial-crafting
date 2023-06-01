@@ -78,6 +78,13 @@ public class Generator extends MultiblockComponent {
     }
 
 
+    public void re_sync() {
+        BlockState block_state = this.location_absolute.getBlock().getState();
+        InventoryHolder inventory_holder = (InventoryHolder) block_state;
+        this.inventory = inventory_holder.getInventory();
+    }
+
+
     private void setup_inventory() {
         InventoryHolder inventory_holder = (InventoryHolder) this.location_absolute.getBlock().getState();
         this.inventory = inventory_holder.getInventory();

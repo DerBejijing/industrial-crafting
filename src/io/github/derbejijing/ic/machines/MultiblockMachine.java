@@ -32,6 +32,7 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
     protected Location base_location;
     private MultiblockState state;
     private float power;
+    private boolean loaded;
 
     protected int orientation;
 
@@ -48,6 +49,8 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
         this.base_location = base_location;
         this.state = MultiblockState.BROKEN;
         this.power = 0;
+
+        this.loaded = false;
 
         this.is_chemical = is_chemical;
         this.orientation = orientation;
@@ -178,19 +181,40 @@ public abstract class MultiblockMachine implements ConfigurationSerializable {
     
     // this sucks ass but it should do it
     // as a machine may inhabit multiple chunks, this check is required
-    public boolean is_loaded() {
+    private void check_loaded() {
         World world = this.base_location.getWorld();
         for(MultiblockComponent mc : this.components) {
             if(!world.isChunkLoaded((int)mc.get_location_absolute().getX() / 16, (int)mc.get_location_absolute().getZ() / 16)) {
-                return false;
+                if(this.loaded) {
+                    Bukkit.getLogger().info("unloading machine [" + this.base_location.getX() + " " + this.base_location.getY() + " " + this.base_location.getZ() + "]");
+                }
+                
+                this.loaded = false;
+                return;
             }
         }
-        return true;
+
+        if(!this.loaded) {
+            Bukkit.getLogger().info("reloading machine [" + this.base_location.getX() + " " + this.base_location.getY() + " " + this.base_location.getZ() + "]");
+            this.re_sync();
+        }
+
+        this.loaded = true;
+    }
+
+
+    private void re_sync() {
+        this.get_interface().re_sync();
+        this.get_generator().re_sync();
+        this.get_input_hatch().re_sync();
+        this.get_output_hatch().re_sync();
     }
     
 
     public void tick() {
-        if(!this.is_loaded()) return;
+        this.check_loaded();
+
+        if(!this.loaded) return;
         
         if(this.check_damage()) this.destroy();
         if(this.state != MultiblockState.BROKEN) {
