@@ -117,7 +117,8 @@ Important Note: all normal minecraft items (list below) need to be refined with 
 
 ## Added chemicals  
 The following materials/chemicals were added.  
-Click on any of them to get detailed information on their usage and synthesis.  
+"Raw" means that the item is from vanilla minecraft und must be refined before usage.  
+Please refer to the README on chemicals to get detailed information on their usage and synthesis.  
 | Raw | Special | Material |
 | --- | --- | --- |
 | :x: | - | Acetic acid |
