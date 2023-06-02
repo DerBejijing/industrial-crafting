@@ -111,6 +111,8 @@ These are the purity rates, ranked from worst to best:
 - Commercial grade purity  
 - Industrial grade purity  
 
+Important Note: all normal minecraft items (list below) need to be refined with the chemical refinary. This sucks, and the only reason is the way I implemented the crafting.  
+
 <br>
 
 ## Added chemicals  
@@ -146,7 +148,7 @@ Click on any of them to get detailed information on their usage and synthesis.
 | :x: | - | Methane |
 | :x: | - | Methanol |
 | :white_check_mark: | - | Netherrack |
-| :white_check_mark: | - | Organic waste |
+| :white_check_mark: | - | Organic waste (rotten flesh)|
 | :x: | - | Oxygen |
 | :x: | - | Phosphorous |
 | :x: | - | Potassium chlorate |
