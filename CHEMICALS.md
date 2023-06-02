@@ -105,7 +105,7 @@ Machine:        reactor
 
 Ingredients:    1x organic waste
                 1x apple
-                1x distilled water
+                1x water
 catalysts:      -
 outputs:        1x liquor
 
@@ -121,7 +121,7 @@ Machine:        reactor
 
 Ingredients:    1x organic waste
                 1x sugar cane
-                1x distilled water
+                1x water
 catalysts:      -
 outputs:        1x liquor
 
