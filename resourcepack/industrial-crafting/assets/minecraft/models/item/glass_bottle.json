@@ -24,6 +24,7 @@
         {"predicate": {"custom_model_data":45}, "model": "item/glass_bottle/transparent_liquid"},
         {"predicate": {"custom_model_data":48}, "model": "item/glass_bottle/transparent_gas"},
         {"predicate": {"custom_model_data":49}, "model": "item/glass_bottle/brown_1"},
-        {"predicate": {"custom_model_data":50}, "model": "item/glass_bottle/brown_1"}
+        {"predicate": {"custom_model_data":50}, "model": "item/glass_bottle/brown_1"},
+        {"predicate": {"custom_model_data":52}, "model": "item/glass_bottle/transparent_liquid"}
     ]
 }

@@ -22,6 +22,7 @@ import io.github.derbejijing.ic.chemical.material.DistilledWater;
 import io.github.derbejijing.ic.chemical.material.EmptyBucket;
 import io.github.derbejijing.ic.chemical.material.Ethanol;
 import io.github.derbejijing.ic.chemical.material.GunPowder;
+import io.github.derbejijing.ic.chemical.material.HydrochloricAcid;
 import io.github.derbejijing.ic.chemical.material.Hydrogen;
 import io.github.derbejijing.ic.chemical.material.HydrogenPeroxide;
 import io.github.derbejijing.ic.chemical.material.Liquor;
@@ -104,7 +105,8 @@ public enum ChemicalItem {
     METHANE(48, Material.GLASS_BOTTLE, Methane.class, false),
     CHLOROFORM(49, Material.GLASS_BOTTLE, Chloroform.class, false),
     CHLORINATED_HYDROCARBONS(50, Material.GLASS_BOTTLE, ChlorinatedHydrocarbons.class, false),
-    WASTE(51, Material.SUGAR, Waste.class, false);
+    WASTE(51, Material.SUGAR, Waste.class, false),
+    HYDROCHLORIC_ACID(52, Material.GLASS_BOTTLE, HydrochloricAcid.class, false);
 
 
     public final int id;

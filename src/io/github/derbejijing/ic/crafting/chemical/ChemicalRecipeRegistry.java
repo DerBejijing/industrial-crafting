@@ -15,6 +15,7 @@ import io.github.derbejijing.ic.crafting.chemical.recipe.Chloroform;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushNetherrack;
 import io.github.derbejijing.ic.crafting.chemical.recipe.CrushStone;
 import io.github.derbejijing.ic.crafting.chemical.recipe.GunPowder;
+import io.github.derbejijing.ic.crafting.chemical.recipe.HydrochloricAcid;
 import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxide;
 import io.github.derbejijing.ic.crafting.chemical.recipe.HydrogenPeroxideCheap;
 import io.github.derbejijing.ic.crafting.chemical.recipe.Methane;
@@ -83,6 +84,7 @@ public enum ChemicalRecipeRegistry {
     RECRYSTALLIZE_SODIUM_CHLORIDE(36, RecrystallizeSodiumChloride.class, "Recrystallize sodium chloride"),
     RECRYSTALLIZE_SULFUR(37, RecrystallizeSulfur.class, "Recrystallize sulfur"),
     RECRYSTALLIZE_POTASSIUM_CHLORATE(38, RecrystallizePotassiumChlorate.class, "Recrystallize potassium chlorate"),
+    HYDROCHLORIC_ACID(39, HydrochloricAcid.class, "Hydrochloric Acid"),
     POTASSIUM_CHLORATE(39, PotassiumChlorate.class, "Potassium chlorate"),
     NONE(-1, null, "None");
 
